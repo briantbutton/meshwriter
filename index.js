@@ -6,14 +6,14 @@
  */
 
 define(
-  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal'],
+  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium'],
 
   // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
   // This function loads the specific type-faces and returns the superconstructor
   // If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
   // Otherwise it assigns it to global variable 'BABYLONTYPE'
 
-  function(HPB,HNM,CSN){
+  function(HPB,HNM,CSN,JUR){
 
     var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor;
 
@@ -26,10 +26,11 @@ define(
     FONTS["Comic"]               = CSN;
     FONTS["comic"]               = CSN;
     FONTS["ComicSans"]           = CSN;
+    FONTS["Jura"]                = JUR;
     defaultColor                 = "#808080";
     defaultOpac                  = 1;
     curveSampleSize              = 6;
-    naturalLetterHeight          = 1000; 
+    naturalLetterHeight          = 1000;
 
     // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
     //  SUPERCONSTRUCTOR  SUPERCONSTRUCTOR  SUPERCONSTRUCTOR 
@@ -47,21 +48,6 @@ define(
       defaultFont                = NNO(FONTS[preferences.defaultFont]) ? preferences.defaultFont : "HelveticaNeue-Medium";
       meshOrigin                 = preferences.meshOrigin==="fontOrigin" ? preferences.meshOrigin : "letterCenter";
       scale                      = tyN(preferences.scale)?preferences.scale:1;
-
-      // Thanks Gijs, wherever you are
-      BABYLON.Path2.prototype.addCurveTo = function(redX, redY, blueX, blueY){
-        var points               = this.getPoints();
-        var lastPoint            = points[points.length - 1];
-        var origin               = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
-        var control              = new BABYLON.Vector3(redX, redY, 0);
-        var destination          = new BABYLON.Vector3(blueX, blueY, 0);
-        var nb_of_points         = curveSampleSize;
-        var curve                = BABYLON.Curve3.CreateQuadraticBezier(origin, control, destination, nb_of_points);
-        var curvePoints          = curve.getPoints();
-        for(var i=1; i<curvePoints.length; i++){
-          this.addLineTo(curvePoints[i].x, curvePoints[i].y);
-        }
-      };
 
       // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
       //  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR
@@ -95,8 +81,7 @@ define(
             meshesAndBoxes       = constructLetterPolygons(letters, fontSpec, 0, 0, 0, letterScale, thickness, material, meshOrigin),
             offsetX              = anchor==="right" ? (0-meshesAndBoxes.xWidth) : ( anchor==="center" ? (0-meshesAndBoxes.xWidth/2) : 0 ),
             meshes               = meshesAndBoxes[0],
-
-            letterBoxes          = meshes.letterBoxes,
+            lettersBoxes         = meshesAndBoxes[1],
             combo                = makeSPS(scene, meshesAndBoxes, material),
             sps                  = combo[0],
             mesh                 = combo[1];
@@ -109,9 +94,10 @@ define(
         this.getMesh             = function()  {return mesh};
         this.getMaterial         = function()  {return material};
         this.getOffsetX          = function()  {return offsetX};
-        this.getLetterBoxes      = function()  {return letterBoxes};
+        this.getLettersBoxes     = function()  {return lettersBoxes};
         this.color               = function(c) {return NES(c)?color=c:color};
         this.alpha               = function(o) {return Amp(o)?opac=o:opac};
+        this.clearall            = function()  {sps=null;mesh=null;material=null};
 
         function setOption(field, tst, defalt) { return tst(options[field]) ? options[field] : defalt };
         function setColor(field, tst, defalt)  { return tst(colors[field]) ? colors[field] : defalt };
@@ -146,14 +132,21 @@ define(
         return new BABYLON.Vector2(0,0)
       }
       proto.dispose              = function(){
-        if(NNO(this.getMesh())){this.getMesh().dispose()}
+        var mesh                 = this.getMesh(),
+            sps                  = this.getSPS(),
+            material             = this.getMaterial();
+        if(sps){sps.dispose()}
+        this.clearall()
       };
 
       return MeshWriter;
 
     };
     window.TYPE                  = Wrapper;
-    if ( typeof BABYLON === "object" ) { BABYLON.MeshWriter = Wrapper }
+    if ( typeof BABYLON === "object" ) {
+      BABYLON.MeshWriter = Wrapper;
+      supplementCurveFunctions();
+    };
     return Wrapper;
 
     function makeSPS(scene,meshesAndBoxes,material){
@@ -190,7 +183,7 @@ define(
         letter                   = letters[i];
         letterSpec               = fontSpec[letter];
         if(NNO(letterSpec)){
-          lists                  = buildLetterMeshes(letter, i, letterSpec);
+          lists                  = buildLetterMeshes(letter, i, letterSpec, fontSpec.reverseShapes, fontSpec.reverseHoles);
           shapesList             = lists[0];
           holesList              = lists[1];
           letterMeshes           = [];
@@ -217,7 +210,7 @@ define(
       meshesAndBoxes.count       = ix;
       return meshesAndBoxes;
 
-      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
       // A letter may have one or more shapes and zero or more holes
       // The shapeCmds is an array of shapes
       // The holeCmds is an array of array of holes (since one shape 'B' may have multiple holes)
@@ -226,9 +219,10 @@ define(
       // 
       // For mystifying reasons, the holeCmds (provided by the font) must be reversed
       // from the original order and the shapeCmds must *not* be reversed
-      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      // UNLESS the font is Jura, in which case the holeCmds are inverted from above instructions
+      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
-      function buildLetterMeshes(letter,index,spec){
+      function buildLetterMeshes(letter, index, spec, reverseShapes, reverseHoles){
         var balanced             = meshOrigin === "letterCenter",
             centerX              = (spec.xMin+spec.xMax)/2,
             centerZ              = (spec.yMin+spec.yMax)/2,
@@ -241,24 +235,28 @@ define(
         letterOrigins            = [ round(letterOffsetX), -1*adjustX(0), -1*adjustZ(0) ];
         letterOffsetX            = letterOffsetX+spec.width*letterScale;
 
-        return [shapeCmdsLists.map(meshFromCmdsList),holeCmdsListsArray.map(meshesFromCmdsListArray)];
+        return [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShapes)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
 
         function meshesFromCmdsListArray(cmdsListArray){
-          return cmdsListArray.map(function(d){return meshFromCmdsList(d,true)})
+          return cmdsListArray.map(makeMeshFromCmdsList(reverseHoles))
         };
-        function meshFromCmdsList(cmdsList,noReverse){
-          var path               = new BABYLON.Path2(adjustX(cmdsList[0][0]), adjustZ(cmdsList[0][1])), cmd, array, meshBuilder, mesh, j;
+        function makeMeshFromCmdsList(reverse){
+          return function meshFromCmdsList(cmdsList){
+            var path             = new BABYLON.Path2(adjustX(cmdsList[0][0]), adjustZ(cmdsList[0][1])), cmd, array, meshBuilder, mesh, j;
 
-          for(j=1;j<cmdsList.length;j++){
-            cmd                  = cmdsList[j];
-            if(cmd.length===2){ path.addLineTo(adjustX(cmd[0]), adjustZ(cmd[1])) }
-            if(cmd.length===4){ path.addCurveTo(adjustX(cmd[0]), adjustZ(cmd[1]), adjustX(cmd[2]), adjustZ(cmd[3])) }
+            for(j=1;j<cmdsList.length;j++){
+              cmd                = cmdsList[j];
+              if(cmd.length===2){ path.addLineTo(adjustX(cmd[0]), adjustZ(cmd[1])) }
+              if(cmd.length===4){ path.addQuadraticCurveTo(adjustX(cmd[0]), adjustZ(cmd[1]), adjustX(cmd[2]), adjustZ(cmd[3])) }
+              if(cmd.length===6){ path.addCubicCurveTo(adjustX(cmd[0]), adjustZ(cmd[1]), adjustX(cmd[2]), adjustZ(cmd[3]), adjustX(cmd[4]), adjustZ(cmd[5])) }
+            }
+            array                = path.getPoints().map(point2Vector);
+            if(array[0].x===array[array.length-1].x&&array[0].y===array[array.length-1].y){array=array.slice(1)}
+            if(reverse){array.reverse()}
+            meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
+            mesh                 = meshBuilder.build(true,thickness);
+            return mesh;
           }
-          array                  = path.getPoints().map(point2Vector);
-          if(noReverse!==true){array.reverse()}
-          meshBuilder            = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
-          mesh                   = meshBuilder.build(true,thickness);
-          return mesh;
         };
         function adjustX(xVal){return round(letterScale*(xVal+offX))};
         function adjustZ(zVal){return round(letterScale*(zVal+offZ))}
@@ -285,6 +283,38 @@ define(
       cm0.alpha                  = opac;
       return cm0
     };
+
+    function supplementCurveFunctions(){
+
+      // Thanks Gijs, wherever you are
+      BABYLON.Path2.prototype.addQuadraticCurveTo = function(redX, redY, blueX, blueY){
+        var points               = this.getPoints();
+        var lastPoint            = points[points.length - 1];
+        var origin               = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
+        var control              = new BABYLON.Vector3(redX, redY, 0);
+        var destination          = new BABYLON.Vector3(blueX, blueY, 0);
+        var nb_of_points         = curveSampleSize;
+        var curve                = BABYLON.Curve3.CreateQuadraticBezier(origin, control, destination, nb_of_points);
+        var curvePoints          = curve.getPoints();
+        for(var i=1; i<curvePoints.length; i++){
+          this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+        }
+      };
+      BABYLON.Path2.prototype.addCubicCurveTo = function(redX, redY, greenX, greenY, blueX, blueY){
+        var points               = this.getPoints();
+        var lastPoint            = points[points.length - 1];
+        var origin               = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
+        var control1             = new BABYLON.Vector3(redX, redY, 0);
+        var control2             = new BABYLON.Vector3(greenX, greenY, 0);
+        var destination          = new BABYLON.Vector3(blueX, blueY, 0);
+        var nb_of_points         = Math.floor(0.3+curveSampleSize*1.5);
+        var curve                = BABYLON.Curve3.CreateCubicBezier(origin, control1, control2, destination, nb_of_points);
+        var curvePoints          = curve.getPoints();
+        for(var i=1; i<curvePoints.length; i++){
+          this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+        }
+      }
+    }
 
     // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
     // Conversion functions
