@@ -48,7 +48,7 @@ new Writer() is called with a string and an (optional) options parameter.&nbsp; 
 	        x                   0
 	        y                   0
 	        z                   0
-	    colors
+	    colors                                       # if you need to control more than just emissive
 	        diffuse             #F0F0F0
 	        specular            #000000
 	        ambient             #F0F0F0

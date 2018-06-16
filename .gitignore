@@ -1,0 +1,6 @@
+# The ubiquitous DS_Store files from Apple OS
+.DS_Store
+
+# This one
+r.js
+READMECSG.md
