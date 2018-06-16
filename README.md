@@ -1,4 +1,4 @@
-# BabylonType
+# Mesh Writer
 
 Generate letters in BABYLON meshes.
 
@@ -35,7 +35,7 @@ The call to BABYLON.MeshWriter returns a constructor.  Call it "**Writer**".
 
 ### Constructor - new Writer()
 
-new Writer() is called with a string and an (optional) options parameter.&nbsp; The options conform roughly to normal BabylonJS structures and terminology.
+new Writer() is called with a string and an (optional) options parameter.&nbsp; The options object conforms to normal BabylonJS structures and terminology.
 
 	      FIELD                 DEFAULT
 	    font-family             default-font
@@ -76,9 +76,11 @@ Each **writer** instance has methods to allow one to retrieve the BabylonJS obje
 
 I probably don't do colors or orientation the way you want but there are easy methods to get the mesh and material and change them as you see fit.
 
-### Helpful Hints
+### Usage Hints
 
-If you wish to do extensive things with color, position, rotation or animation, retrieve the meshes and materials front the instance using the methods shown above.&nbsp; The output from **new Writer()** is an SPS with one particle for each character.
+If you wish to do extensive things with position, rotation or animation, retrieve the meshes and materials front the instance using the methods shown above.&nbsp; The output from **new Writer()** is an SPS with one particle for each character.
+
+Colors:&nbsp; With most lighting, it is enough just to use the "color" field to specify the letter coloring.&nbsp; However, programmers may specify all four color types by putting a "colors" object in the options object.
 
 Unless you have a specific need, do not specify a font.&nbsp; The default font, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp; Jura was added because the author likes it for numbers.
 
