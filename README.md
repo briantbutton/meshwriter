@@ -42,7 +42,7 @@ new Writer() is called with a string and an (optional) options parameter.&nbsp; 
 	    anchor                  left
 	    letter-height           100
 	    letter-thickness        1
-	    color                   #808080              # hits emissive, the only one i use
+	    color                   #808080              # hits emissive only
 	    alpha                   1
 	    position
 	        x                   0
@@ -66,18 +66,19 @@ Each **writer** instance has methods to allow one to retrieve the BabylonJS obje
 	   getSPS
 	   getMesh
 	   getMaterial
-	   getLetterCenter         # called with a number, the index of the letter in question
-	                           # returns a Vector2, the letter center from the origin in 2 dimensions
 	   color                   # sets or gets color but no change to material
 	   alpha                   # sets or gets alpha but no change to material
 	   setColor                # set emissive color and change color value
 	   setAlpha                # change value and material
 	   overrideOpac            # change material but not value
 	   resetOpac               # sets material to current value
-	   dispose                 # not implemented yet
-
-
+	   dispose                 
 
 I probably don't do colors or orientation the way you want but there are easy methods to get the mesh and material and change them as you see fit.
 
-Only a few symbols are supported in two fonts.  If your string contains an unsupported symbol, NOTHING will render.
+### Helpful Hints
+
+If you wish to do extensive things with color, position, rotation or animation, retrieve the meshes and materials front the instance using the methods shown above.&nbsp; The output from **new Writer()** is an SPS with one particle for each character.
+
+Unless you have a specific need, do not specify a font.&nbsp; The default font, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp; Jura was added because the author likes it for numbers.
+
