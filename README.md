@@ -74,11 +74,9 @@ Each **writer** instance has methods to allow one to retrieve the BabylonJS obje
 	   resetOpac               # sets material to current value
 	   dispose                 
 
-I probably don't do colors or orientation the way you want but there are easy methods to get the mesh and material and change them as you see fit.
-
 ### Usage Hints
 
-If you wish to do extensive things with position, rotation or animation, retrieve the meshes and materials front the instance using the methods shown above.&nbsp; The output from **new Writer()** is an SPS with one particle for each character.
+If you wish to do extensive things with position, rotation or animation, retrieve the meshes and materials from the instance using the methods shown above.&nbsp; The output from **new Writer()** is an SPS with one particle for each character.
 
 Colors:&nbsp; With most lighting, it is enough just to use the "color" field to specify the letter coloring.&nbsp; However, programmers may specify all four color types by putting a "colors" object in the options object.
 
