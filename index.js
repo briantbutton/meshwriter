@@ -15,18 +15,24 @@ define(
 
   function(HPB,HNM,CSN,JUR){
 
-    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor;
-
+    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur;
+    var b128back=new Uint8Array(256),b128digits=new Array(128);
+    prepArray();
+    hpb                          = HPB(codeList);
+    hnm                          = HNM(codeList);
+    csn                          = CSN(codeList);
+    jur                          = JUR(codeList);
     FONTS                        = {};
-    FONTS["HirukoPro-Book"]      = HPB;
-    FONTS["HelveticaNeue-Medium"]= HNM;
-    FONTS["Helvetica"]           = HNM;
-    FONTS["Arial"]               = HNM;
-    FONTS["sans-serif"]          = HNM;
-    FONTS["Comic"]               = CSN;
-    FONTS["comic"]               = CSN;
-    FONTS["ComicSans"]           = CSN;
-    FONTS["Jura"]                = JUR;
+    FONTS["HirukoPro-Book"]      = hpb;
+    FONTS["HelveticaNeue-Medium"]= hnm;
+    FONTS["Helvetica"]           = hnm;
+    FONTS["Arial"]               = hnm;
+    FONTS["sans-serif"]          = hnm;
+    FONTS["Comic"]               = csn;
+    FONTS["comic"]               = csn;
+    FONTS["ComicSans"]           = csn;
+    FONTS["Jura"]                = jur;
+    FONTS["jura"]                = jur;
     defaultColor                 = "#808080";
     defaultOpac                  = 1;
     curveSampleSize              = 6;
@@ -138,6 +144,7 @@ define(
         if(sps){sps.dispose()}
         this.clearall()
       };
+      MeshWriter.codeList        = codeList;
 
       return MeshWriter;
 
@@ -181,7 +188,7 @@ define(
 
       for(i=0;i<letters.length;i++){
         letter                   = letters[i];
-        letterSpec               = fontSpec[letter];
+        letterSpec               = makeLetterSpec(fontSpec,letter);
         if(NNO(letterSpec)){
           lists                  = buildLetterMeshes(letter, i, letterSpec, fontSpec.reverseShapes, fontSpec.reverseHoles);
           shapesList             = lists[0];
@@ -339,6 +346,83 @@ define(
       }else{
         return { defaultFont: args[2] , scale: args[1] }
       }
+    };
+    function makeLetterSpec(fontSpec,letter){
+      var letterSpec           = fontSpec[letter],shapeCmds=[];
+      // function makeLetterSpec(letterSpec){var shapeCmds=[];
+      if(NNO(letterSpec)){
+        if(!tyA(letterSpec.shapeCmds)&&tyA(letterSpec.sC)){
+          letterSpec.shapeCmds   = letterSpec.sC.map(function(cmds){return decodeList(cmds)})
+          letterSpec.sC          = null;
+        }
+        if(!tyA(letterSpec.holeCmds)&&tyA(letterSpec.hC)){
+          letterSpec.holeCmds    = letterSpec.hC.map(function(cmdslists){if(tyA(cmdslists)){return cmdslists.map(function(cmds){return decodeList(cmds)})}else{return cmdslists}});
+          letterSpec.hC          = null;
+        }
+      }
+      return letterSpec;
+
+      function decodeList(str){
+        var split = str.split(" "),
+            list  = [];
+        split.forEach(function(cmds){
+          if(cmds.length===12){list.push(decode6(cmds))}
+          if(cmds.length===8){list.push(decode4(cmds))}
+          if(cmds.length===4){list.push(decode2(cmds))}
+        });
+        return list
+      };
+      function decode6(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8)),decode1(s.substring(8,10)),decode1(s.substring(10,12))]};
+      function decode4(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8))]};
+      function decode2(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4))]};
+      function decode1(s){return (frB128(s)-4000)/2};
+    };
+    function codeList(list,_str,_xtra){
+      _str = _xtra = "";
+      if(tyA(list)){
+        list.forEach(function(cmds){
+          if(cmds.length===6){_str+=_xtra+code6(cmds);_xtra=" "}
+          if(cmds.length===4){_str+=_xtra+code4(cmds);_xtra=" "}
+          if(cmds.length===2){_str+=_xtra+code2(cmds);_xtra=" "}
+        });
+      }
+      return _str
+      function code6(a){return code1(a[0])+code1(a[1])+code1(a[2])+code1(a[3])+code1(a[4])+code1(a[5])};
+      function code4(a){return code1(a[0])+code1(a[1])+code1(a[2])+code1(a[3])};
+      function code2(a){return code1(a[0])+code1(a[1])};
+      function code1(n){return toB128((n+n)+4000)};
+    };
+
+    function frB128(s){
+      var result=0,i=-1,l=s.length-1;
+      while(i++<l){result = result*128+b128back[s.charCodeAt(i)]}
+      return result;
+    };
+    function toB128(i){
+      var s = b128digits[(i%128)];
+      i     = Γ(i/128);
+      while (i>0) {
+        s   = b128digits[(i%128)]+s;
+        i   = Γ(i/128);
+      }
+      return s;
+    };
+    function prepArray(){
+      var pntr                   = -1,n;
+      while(160>pntr++){
+        if(pntr<128){
+          n                      = fr128to256(pntr);
+          b128digits[pntr]       = String.fromCharCode(n);
+          b128back[n]            = pntr
+        }else{
+          if(pntr===128){
+            b128back[32]         = pntr
+          }else{
+            b128back[pntr+71]    = pntr
+          }
+        }
+      };
+      function fr128to256(n){if(n<92){return n<58?n<6?n+33:n+34:n+35}else{return n+69}}
     };
 
     // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*

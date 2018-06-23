@@ -6,6 +6,8 @@ define(
   [],
   function(){
 
+    return function(codeList){
+
     var jur={reverseHoles:true,reverseShapes:false},nbsp="\u00A0";
     jur["A"]                     = {
       fullPath                   : "M 346 636 L 264 636 L 27 37 C 25 31 24 24 24 18 C 24 -9 51 -16 60 -16 C 75 -16 89 -6 97 12 L 166 189 L 444 189 L 513 12 C 518 -1 532 -16 550 -16 C 560 -16 586 -9 586 18 C 586 24 585 31 583 37 Z M 195 261 L 304 532 L 415 261 Z",
@@ -487,5 +489,6 @@ function makeD(path){
  */
 
     return jur;
+    }
   }
 );
