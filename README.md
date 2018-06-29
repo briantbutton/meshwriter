@@ -18,7 +18,7 @@ Generate letters in BABYLON meshes.
 	            );
 
 &#9679; See playground example:
-https://www.babylonjs-playground.com/#PL752W#1
+https://www.babylonjs-playground.com/#PL752W#6
 
 ### Superconstructor - BABYLON.MeshWriter()
 
