@@ -151,10 +151,11 @@ define(
     };
     window.TYPE                  = Wrapper;
     if ( typeof BABYLON === "object" ) {
-      BABYLON.MeshWriter = Wrapper;
+      BABYLON.MeshWriter         = Wrapper;
       supplementCurveFunctions();
     };
     return Wrapper;
+
 
     function makeSPS(scene,meshesAndBoxes,material){
       var meshes                 = meshesAndBoxes[0],
@@ -348,8 +349,7 @@ define(
       }
     };
     function makeLetterSpec(fontSpec,letter){
-      var letterSpec           = fontSpec[letter],shapeCmds=[];
-      // function makeLetterSpec(letterSpec){var shapeCmds=[];
+      var letterSpec             = fontSpec[letter],shapeCmds=[];
       if(NNO(letterSpec)){
         if(!tyA(letterSpec.shapeCmds)&&tyA(letterSpec.sC)){
           letterSpec.shapeCmds   = letterSpec.sC.map(function(cmds){return decodeList(cmds)})
@@ -386,7 +386,7 @@ define(
           if(cmds.length===2){_str+=_xtra+code2(cmds);_xtra=" "}
         });
       }
-      return _str
+      return _str;
       function code6(a){return code1(a[0])+code1(a[1])+code1(a[2])+code1(a[3])+code1(a[4])+code1(a[5])};
       function code4(a){return code1(a[0])+code1(a[1])+code1(a[2])+code1(a[3])};
       function code2(a){return code1(a[0])+code1(a[1])};
@@ -399,11 +399,11 @@ define(
       return result;
     };
     function toB128(i){
-      var s = b128digits[(i%128)];
-      i     = Γ(i/128);
+      var s                      = b128digits[(i%128)];
+      i                          = Γ(i/128);
       while (i>0) {
-        s   = b128digits[(i%128)]+s;
-        i   = Γ(i/128);
+        s                        = b128digits[(i%128)]+s;
+        i                        = Γ(i/128);
       }
       return s;
     };
