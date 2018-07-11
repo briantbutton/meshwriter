@@ -80,5 +80,10 @@ If you wish to do extensive things with position, rotation or animation, retriev
 
 Colors:&nbsp; With most lighting, it is enough just to use the "color" field to specify the letter coloring.&nbsp; However, programmers may specify all four color types by putting a "colors" object in the options object.
 
-Unless you have a specific need, do not specify a font.&nbsp; The default font, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp; Jura was added because the author likes it for numbers.
+
+### Fonts
+
+There are four font families available, 'Helvetica', 'HirukoPro-Book', 'Jura', 'Comic' and 'WebGL-Dings but you probably do not need to specify one.&nbsp; The default font, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp; Jura was added because the author likes it for numbers.
+
+**Important:** Comic and Web-Dings are really just placeholders as of this writing, with only a few glyphs.
 

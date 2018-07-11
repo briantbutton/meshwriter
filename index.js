@@ -15,7 +15,7 @@ define(
 
   function(HPB,HNM,CSN,JUR,WGD){
 
-    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd;
+    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd,debug;
     var b128back=new Uint8Array(256),b128digits=new Array(128);
     prepArray();
     hpb                          = HPB(codeList);
@@ -57,6 +57,7 @@ define(
       defaultFont                = NNO(FONTS[preferences.defaultFont]) ? preferences.defaultFont : "HelveticaNeue-Medium";
       meshOrigin                 = preferences.meshOrigin==="fontOrigin" ? preferences.meshOrigin : "letterCenter";
       scale                      = tyN(preferences.scale)?preferences.scale:1;
+      debug                      = tyB(preferences.debug)?preferences.debug:false;
 
       // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
       //  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR
@@ -91,6 +92,7 @@ define(
             offsetX              = anchor==="right" ? (0-meshesAndBoxes.xWidth) : ( anchor==="center" ? (0-meshesAndBoxes.xWidth/2) : 0 ),
             meshes               = meshesAndBoxes[0],
             lettersBoxes         = meshesAndBoxes[1],
+            lettersOrigins       = meshesAndBoxes[2],
             combo                = makeSPS(scene, meshesAndBoxes, material),
             sps                  = combo[0],
             mesh                 = combo[1];
@@ -104,6 +106,7 @@ define(
         this.getMaterial         = function()  {return material};
         this.getOffsetX          = function()  {return offsetX};
         this.getLettersBoxes     = function()  {return lettersBoxes};
+        this.getLettersOrigins   = function()  {return lettersOrigins};
         this.color               = function(c) {return NES(c)?color=c:color};
         this.alpha               = function(o) {return Amp(o)?opac=o:opac};
         this.clearall            = function()  {sps=null;mesh=null;material=null};
@@ -188,7 +191,7 @@ define(
           lettersOrigins         = new Array(letters.length),
           lettersBoxes           = new Array(letters.length),
           lettersMeshes          = new Array(letters.length),
-          ix                     = 0,letter,letterSpec,i,j,lists,shapesList,holesList,shape,holes,letterMesh,letterMeshes,letterBoxes,letterOrigins,meshesAndBoxes;
+          ix                     = 0, letter, letterSpec, lists, shapesList, holesList, shape, holes, letterMesh, letterMeshes, letterBox, letterOrigins, meshesAndBoxes, i, j;
 
       for(i=0;i<letters.length;i++){
         letter                   = letters[i];
@@ -211,7 +214,7 @@ define(
           if(letterMeshes.length){
             lettersMeshes[ix]    = merge(letterMeshes);
             lettersOrigins[ix]   = letterOrigins;
-            lettersBoxes[ix]     = letterBoxes;
+            lettersBoxes[ix]     = letterBox;
             ix++
           }
         }
@@ -239,18 +242,34 @@ define(
             centerZ              = (spec.yMin+spec.yMax)/2,
             xFactor              = tyN(spec.xFactor)?spec.xFactor:1,
             zFactor              = tyN(spec.yFactor)?spec.yFactor:1,
+            xShift               = tyN(spec.xShift)?spec.xShift:0,
+            zShift               = tyN(spec.yShift)?spec.yShift:0,
             reverseShape         = tyB(spec.reverseShape)?spec.reverseShape:reverseShapes,
             reverseHole          = tyB(spec.reverseHole)?spec.reverseHole:reverseHoles,
             offX                 = xOffset-(balanced?centerX:0),
             offZ                 = zOffset-(balanced?centerZ:0),
             shapeCmdsLists       = tyA(spec.shapeCmds) ? spec.shapeCmds : [],
-            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ;
+            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ, minX=NaN, maxX=NaN, minZ=NaN, maxZ=NaN, minXadj=NaN, maxXadj=NaN, minZadj=NaN, maxZadj=NaN, combo,
+            //  ~  ~  ~  ~  ~  ~  ~  
+            // To accomodate letter-by-letter scaling and shifts, we have several adjust functions
+            adjX                 = makeAdjust(letterScale,xFactor,offX,0,false,true),                     // no shift
+            adjZ                 = makeAdjust(letterScale,zFactor,offZ,0,false,false),
+            adjXfix              = makeAdjust(letterScale,xFactor,offX,xShift,false,true),                // shifted / fixed
+            adjZfix              = makeAdjust(letterScale,zFactor,offZ,zShift,false,false),
+            adjXrel              = makeAdjust(letterScale,xFactor,offX,xShift,true,true),                 // shifted / relative
+            adjZrel              = makeAdjust(letterScale,zFactor,offZ,zShift,true,false);
 
-        letterBoxes              = [ adjustX(spec.xMin), adjustX(spec.xMax), adjustZ(spec.yMin), adjustZ(spec.yMax) ];
-        letterOrigins            = [ round(letterOffsetX), -1*adjustX(0), -1*adjustZ(0) ];
+        letterBox                = [ adjX(spec.xMin), adjX(spec.xMax), adjZ(spec.yMin), adjZ(spec.yMax) ];
+        letterOrigins            = [ round(letterOffsetX), -1*adjX(0), -1*adjZ(0) ];
         letterOffsetX            = letterOffsetX+spec.width*letterScale;
+        combo                    = [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
 
-        return [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
+        if(debug&&spec.show){
+          console.log([minX,maxX,minZ,maxZ]);
+          console.log([minXadj,maxXadj,minZadj,maxZadj])
+        }
+
+        return combo;
 
         function meshesFromCmdsListArray(cmdsListArray){
           return cmdsListArray.map(makeMeshFromCmdsList(reverseHole))
@@ -258,48 +277,39 @@ define(
         function makeMeshFromCmdsList(reverse){
           return function meshFromCmdsList(cmdsList){
             var cmd              = getCmd(cmdsList,0),
-                path             = new BABYLON.Path2(adjustX(cmd[0]), adjustZ(cmd[1])), array, meshBuilder, mesh, j;
+                path             = new BABYLON.Path2(adjXfix(cmd[0]), adjZfix(cmd[1])), array, meshBuilder, mesh, j;
 
             for(j=1;j<cmdsList.length;j++){
               cmd                = getCmd(cmdsList,j);
               if(cmd.length===2){
-                path.addLineTo(adjustX(cmd[0],false), adjustZ(cmd[1]),false) 
+                path.addLineTo(adjXfix(cmd[0]),adjZfix(cmd[1])) 
               }
               if(cmd.length===3){
-                path.addLineTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true)]);
+                path.addLineTo(adjXrel(cmd[1]),adjZrel(cmd[2]));
               }
               if(cmd.length===4){
-                path.addQuadraticCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false))
+                path.addQuadraticCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]))
               }
               if(cmd.length===5){
-                path.addQuadraticCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true)])
+                path.addQuadraticCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]));
               }
               if(cmd.length===6){
-                path.addCubicCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false), adjustX(cmd[4],false), adjustZ(cmd[5],false))
+                path.addCubicCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]),adjXfix(cmd[4]),adjZfix(cmd[5]))
               }
               if(cmd.length===7){
-                path.addCubicCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true)])
+                path.addCubicCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]),adjXrel(cmd[5]),adjZrel(cmd[6]))
               }
             }
             array                = path.getPoints().map(point2Vector);
+
+            // Sometimes redundant coordinates will cause artifacts - delete them!
             if(array[0].x===array[array.length-1].x&&array[0].y===array[array.length-1].y){array=array.slice(1)}
             if(reverse){array.reverse()}
-            window.array         = array.slice();
+
             meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
             mesh                 = meshBuilder.build(true,thickness);
             return mesh;
           }
-        };
-        function adjustX(xVal,relative){
-          var r                  = relative?lastX:0;
-          return round(letterScale*((xVal*xFactor)+r+offX))
-        };
-        function adjustZ(zVal,relative){
-          var r                  = relative?lastZ:0;
-          return round(letterScale*((zVal*zFactor)+r+offZ))
         };
         function getCmd(list,ix){
           var cmd,len;
@@ -309,7 +319,26 @@ define(
           len                    = cmd.length;
           thisX                  = len===3||len===5||len===7?round((cmd[len-2]*xFactor)+thisX):round(cmd[len-2]*xFactor);
           thisZ                  = len===3||len===5||len===7?round((cmd[len-1]*zFactor)+thisZ):round(cmd[len-1]*zFactor);
+          minX                   = thisX>minX?minX:thisX;
+          maxX                   = thisX<maxX?maxX:thisX;
+          minXadj                = thisX+xShift>minXadj?minXadj:thisX+xShift;
+          maxXadj                = thisX+xShift<maxXadj?maxXadj:thisX+xShift;
+          minZ                   = thisZ>minZ?minZ:thisZ;
+          maxZ                   = thisZ<maxZ?maxZ:thisZ;
+          minZadj                = thisZ+zShift>minZadj?minZadj:thisZ+zShift;
+          maxZadj                = thisZ+zShift<maxZadj?maxZadj:thisZ+zShift;
           return cmd
+        };
+        function makeAdjust(letterScale,factor,off,shift,relative,xAxis){
+          if(relative){
+            if(xAxis){
+              return function(val){return round(letterScale*((val*factor)+shift+lastX+off))}
+            }else{
+              return function(val){return round(letterScale*((val*factor)+shift+lastZ+off))}
+            }
+          }else{
+            return function(val){return round(letterScale*((val*factor)+shift+off))}
+          }
         }
       };
 
@@ -386,9 +415,10 @@ define(
         if(p["default-font"]){prefs.defaultFont=p["default-font"]}else{if(p.defaultFont){prefs.defaultFont=p.defaultFont}}
         if(p["mesh-origin"]){prefs.meshOrigin=p["mesh-origin"]}else{if(p.meshOrigin){prefs.meshOrigin=p.meshOrigin}}
         if(p.scale){prefs.scale=p.scale}
+        if(tyB(p.debug)){prefs.debug=p.debug}
         return prefs
       }else{
-        return { defaultFont: args[2] , scale: args[1] }
+        return { defaultFont: args[2] , scale: args[1] , debug: false }
       }
     };
     function makeLetterSpec(fontSpec,letter){

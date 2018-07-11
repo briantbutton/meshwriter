@@ -8,190 +8,190 @@ define(
 
     return function(codeList){
 
-      var hnm={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
-      hnm["A"]                     = {
+      var wgd={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
+      wgd["A"]                     = {
         xMin                       : -7,
         xMax                       : 675,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 667
       };
-      hnm["B"]                     = {
+      wgd["B"]                     = {
         xMin                       : 76,
         xMax                       : 667,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 704
       };
-      hnm["C"]                     = {
+      wgd["C"]                     = {
         xMin                       : 38,
         xMax                       : 684,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 722
       };
-      hnm["D"]                     = {
+      wgd["D"]                     = {
         xMin                       : 76,
         xMax                       : 687,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["E"]                     = {
+      wgd["E"]                     = {
         xMin                       : 76,
         xMax                       : 597,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 630
       };
-      hnm["F"]                     = {
+      wgd["F"]                     = {
         xMin                       : 76,
         xMax                       : 569,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 593
       };
-      hnm["G"]                     = {
+      wgd["G"]                     = {
         xMin                       : 43,
         xMax                       : 699,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 759
       };
-      hnm["H"]                     = {
+      wgd["H"]                     = {
         xMin                       : 73,
         xMax                       : 648,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["I"]                     = {
+      wgd["I"]                     = {
         xMin                       : 76,
         xMax                       : 201,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 278
       };
-      hnm["J"]                     = {
+      wgd["J"]                     = {
         xMin                       : 13,
         xMax                       : 461,
         yMin                       : -17,
         yMax                       : 714,
         width                      : 537
       };
-      hnm["K"]                     = {
+      wgd["K"]                     = {
         xMin                       : 76,
         xMax                       : 693,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 685
       };
-      hnm["L"]                     = {
+      wgd["L"]                     = {
         xMin                       : 76,
         xMax                       : 564,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 574
       };
-      hnm["M"]                     = {
+      wgd["M"]                     = {
         xMin                       : 48,
         xMax                       : 815,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 889
       };
-      hnm["N"]                     = {
+      wgd["N"]                     = {
         xMin                       : 71,
         xMax                       : 650,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["O"]                     = {
+      wgd["O"]                     = {
         xMin                       : 38,
         xMax                       : 722,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 760
       };
-      hnm["P"]                     = {
+      wgd["P"]                     = {
         xMin                       : 76,
         xMax                       : 634,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 667
       };
-      hnm["Q"]                     = {
+      wgd["Q"]                     = {
         xMin                       : 38,
         xMax                       : 722,
         yMin                       : -65,
         yMax                       : 731,
         width                      : 760
       };
-      hnm["R"]                     = {
+      wgd["R"]                     = {
         xMin                       : 76,
         xMax                       : 680,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 704
       };
-      hnm["S"]                     = {
+      wgd["S"]                     = {
         xMin                       : 33,
         xMax                       : 615,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 648
       };
-      hnm["T"]                     = {
+      wgd["T"]                     = {
         xMin                       : 8,
         xMax                       : 586,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 593
       };
-      hnm["U"]                     = {
+      wgd["U"]                     = {
         xMin                       : 68,
         xMax                       : 654,
         yMin                       : -17,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["V"]                     = {
+      wgd["V"]                     = {
         xMin                       : -5,
         xMax                       : 616,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["W"]                     = {
+      wgd["W"]                     = {
         xMin                       : 6,
         xMax                       : 938,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 944
       };
-      hnm["X"]                     = {
+      wgd["X"]                     = {
         xMin                       : -3,
         xMax                       : 651,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 648
       };
-      hnm["Y"]                     = {
+      wgd["Y"]                     = {
         xMin                       : -6,
         xMax                       : 654,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 648
       };
-      hnm["Z"]                     = {
+      wgd["Z"]                     = {
         xMin                       : 23,
         xMax                       : 608,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 630
       };
-      hnm["a"]                     = {
+      wgd["a"]                     = {
         shapeCmds                  : [
                                         [
                                           [0,0],
@@ -247,16 +247,17 @@ define(
                                      ],
         reverseShape               : false,
         reverseHole                : false,
-        xFactor                    : 8,
-        yFactor                    : -8,         // 6.78      - 6.77
-       // xAdjust                    : 
-        xMin                       : -340,
+        xFactor                    : 7,
+        yFactor                    : -7,
+        xShift                     : 350,          // These values are not calibrated
+        xMin                       : -340,         // Refer to the next symbol for an example
         xMax                       : 340,
         yMin                       : 47,
         yMax                       : 806,
-        width                      : 700
+        width                      : 700,
+        show                       : true
       };
-      hnm["á"]                     = {
+      wgd["á"]                     = {
         shapeCmds                  : [
                                         [
                                           [0,0],
@@ -330,249 +331,251 @@ define(
                                      ],
         reverseShape               : false,
         reverseHole                : false,
-        xFactor                    : 8,
-        yFactor                    : -8,         // 6.78      - 6.77
-       // xAdjust                    : 
-        xMin                       : -340,
-        xMax                       : 340,
-        yMin                       : 47,
-        yMax                       : 806,
-        width                      : 700
+        xFactor                    : 7,
+        yFactor                    : -7,
+        xShift                     : 475,
+        yShift                     : -312.6,                // The middle is at the bottom reference -- a kludge
+        xMin                       : 20,
+        xMax                       : 950,
+        yMin                       : -145.6,
+        yMax                       : 894.4,
+        width                      : 950,
+        show                       : true
       };
-      hnm["b"]                     = {
+      wgd["b"]                     = {
         xMin                       : 63,
         xMax                       : 575,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["c"]                     = {
+      wgd["c"]                     = {
         xMin                       : 35,
         xMax                       : 523,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 556
       };
-      hnm["d"]                     = {
+      wgd["d"]                     = {
         xMin                       : 35,
         xMax                       : 547,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["e"]                     = {
+      wgd["e"]                     = {
         xMin                       : 35,
         xMax                       : 531,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 556
       };
-      hnm["f"]                     = {
+      wgd["f"]                     = {
         xMin                       : 9,
         xMax                       : 317,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 315
       };
-      hnm["g"]                     = {
+      wgd["g"]                     = {
         xMin                       : 35,
         xMax                       : 538,
         yMin                       : -205,
         yMax                       : 531,
         width                      : 593
       };
-      hnm["h"]                     = {
+      wgd["h"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 574
       };
-      hnm["i"]                     = {
+      wgd["i"]                     = {
         xMin                       : 48,
         xMax                       : 159,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["í"]                     = {
+      wgd["í"]                     = {
         xMin                       : 45,
         xMax                       : 270,
         yMin                       : 0,
         yMax                       : 731,
         width                      : 241
       };
-      hnm["j"]                     = {
+      wgd["j"]                     = {
         xMin                       : -22,
         xMax                       : 177,
         yMin                       : -205,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["k"]                     = {
+      wgd["k"]                     = {
         xMin                       : 63,
         xMax                       : 542,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 537
       };
-      hnm["l"]                     = {
+      wgd["l"]                     = {
         xMin                       : 63,
         xMax                       : 177,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["m"]                     = {
+      wgd["m"]                     = {
         xMin                       : 60,
         xMax                       : 810,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 870
       };
-      hnm["n"]                     = {
+      wgd["n"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 574
       };
-      hnm["o"]                     = {
+      wgd["o"]                     = {
         xMin                       : 36,
         xMax                       : 558,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 593
       };
-      hnm["p"]                     = {
+      wgd["p"]                     = {
         xMin                       : 63,
         xMax                       : 575,
         yMin                       : -191,
         yMax                       : 531,
         width                      : 611
       };
-      hnm["q"]                     = {
+      wgd["q"]                     = {
         xMin                       : 35,
         xMax                       : 547,
         yMin                       : -191,
         yMax                       : 531,
         width                      : 611
       };
-      hnm["r"]                     = {
+      wgd["r"]                     = {
         xMin                       : 60,
         xMax                       : 363,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 352
       };
-      hnm["s"]                     = {
+      wgd["s"]                     = {
         xMin                       : 32,
         xMax                       : 492,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 519
       };
-      hnm["t"]                     = {
+      wgd["t"]                     = {
         xMin                       : 8,
         xMax                       : 311,
         yMin                       : -5,
         yMax                       : 672,
         width                      : 333
       };
-      hnm["u"]                     = {
+      wgd["u"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : -14,
         yMax                       : 517,
         width                      : 574
       };
-      hnm["v"]                     = {
+      wgd["v"]                     = {
         xMin                       : 9,
         xMax                       : 510,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 519
       };
-      hnm["w"]                     = {
+      wgd["w"]                     = {
         xMin                       : 13,
         xMax                       : 765,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 778
       };
-      hnm["x"]                     = {
+      wgd["x"]                     = {
         xMin                       : 4,
         xMax                       : 533,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 537
       };
-      hnm["y"]                     = {
+      wgd["y"]                     = {
         xMin                       : 3,
         xMax                       : 515,
         yMin                       : -205,
         yMax                       : 517,
         width                      : 519
       };
-      hnm["z"]                     = {
+      wgd["z"]                     = {
         xMin                       : 22,
         xMax                       : 477,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 500
       };
-      hnm["0"]                     = { 
+      wgd["0"]                     = { 
         xMin                       : 36,
         xMax                       : 520,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["1"]                     = {
+      wgd["1"]                     = {
         xMin                       : 53,
         xMax                       : 350,
         yMin                       : 0,
         yMax                       : 700,
         width                      : 556
       };
-      hnm["2"]                     = {
+      wgd["2"]                     = {
         xMin                       : 39,
         xMax                       : 518,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["3"]                     = {
+      wgd["3"]                     = {
         xMin                       : 31,
         xMax                       : 525,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["4"]                     = {
+      wgd["4"]                     = {
         xMin                       : 24,
         xMax                       : 522,
         yMin                       : 0,
         yMax                       : 700,
         width                      : 556
       };
-      hnm["5"]                     = { 
+      wgd["5"]                     = { 
         xMin                       : 34,
         xMax                       : 522,
         yMin                       : -14,
         yMax                       : 700,
         width                      : 556
       };
-      hnm[nbsp]                    = {
+      wgd[nbsp]                    = {
         xMin                       : 31,
         xMax                       : 400,
         yMin                       : -4,
         yMax                       : 644,
         width                      : 278
       };
-      hnm[" "]                     = hnm[nbsp];
+      wgd[" "]                     = wgd[nbsp];
 
-      return hnm;
+      return wgd;
     }
   }
 );

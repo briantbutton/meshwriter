@@ -37,8 +37,8 @@ define(
         width                      : 741
       };
       hpb["D"]                     = {
-        shapeCmds                  : [[[296,0],[119,0],[95,0,76.5,16.5],[58,33,58,57],[58,687],[58,715,76,732.5],[94,750,121,750],[296,750],[451,750,561,639.5],[671,529,671,375],[671,220,561.5,110],[452,0,296,0]]],
-        holeCmds                   : [[[[298,633],[181,633],[175,633,175,628],[175,122],[175,116,181,116],[296,116],[405,116,480,191],[555,266,555,375],[555,485,481.5,559],[408,633,298,633]]]],
+        sC                         : ["EµAB C0AB B£ABB[Ad B6A§B6B4 B6KÃ B6LXBZL| B¡LÁC4LÁ EµLÁ HHLÁJ#KA K£IeK£G0 K£D{J$BÁ HJABEµAB"],
+        hC                         : [["E¹K4 D,K4 CÃK4CÃK* CÃC6 CÃC*D,C* EµC* GmC*H¥D@ I»EVI»G0 I»H¯H¨IÃ GsK4E¹K4"]],
         xMin                       : 58,
         xMax                       : 671,
         yMin                       : 0,
@@ -54,7 +54,7 @@ define(
         width                      : 488
       };
       hpb["F"]                     = {
-        shapeCmds                  : [[[450,377],[450,352,433.5,335],[417,318,393,318],[181,318],[175,318,175,312],[175,74],[175,-6,117,-6],[58,-6,58,74],[58,692],[58,718,74.5,734],[91,750,114,750],[393,750],[414,750,430.5,734],[447,718,447,696],[447,633,370,633],[181,633],[175,633,175,627],[175,441],[175,435,181,435],[393,435],[416,435,433,418],[450,401,450,377]]],
+        sC                         : ["HFG4 HFF¥H$Fa G§F>GTF> D,F> CÃF>CÃF2 CÃBV CÃA6C,A6 B6A6B6BV B6L* B6L_BWL¡ ByLÁC%LÁ GTLÁ G¡LÁGÂL¡ H@L_H@L2 H@K4G%K4 D,K4 CÃK4CÃK( CÃH4 CÃH(D,H( GTH( G¥H(H#G© HFGeHFG4"],
         xMin                       : 58,
         xMax                       : 450,
         yMin                       : -6,
@@ -134,8 +134,8 @@ define(
         width                      : 854
       };
       hpb["P"]                     = {
-        shapeCmds                  : [[[115,-4],[91,-4,74.5,13.5],[58,31,58,55],[58,673],[58,706,77.5,728],[97,750,129,750],[256,750],[351,750,412.5,685.5],[474,621,474,525],[474,428,412.5,361.5],[351,295,256,295],[180,295],[174,295,174,289],[174,55],[174,30,157,13],[140,-4,115,-4]]],
-        holeCmds                   : [[[[174,626],[174,417],[174,411,182,411],[244,411],[304,411,331,446.5],[358,482,358,525],[358,566,331,600],[304,634,244,634],[182,634],[174,634,174,626]]]],
+        sC                         : ["C(A: ByA:BWA^ B6A£B6B0 B6K§ B6LFB^Ls B§LÁCDLÁ EBLÁ F£LÁG|KÀ HwJ¿HwI] HwG½G|F¸ F£E³EBE³ D*E³ CÁE³CÁE§ CÁB0 CÁA¡C}A] CZA:C(A:"],
+        hC                         : [["CÁK% CÁG§ CÁGyD.Gy E*Gy F!GyFXH? F±H©F±I] F±J.FXJs F!K6E*K6 D.K6 CÁK6CÁK%"]],
         xMin                       : 58,
         xMax                       : 474,
         yMin                       : -4,
@@ -152,8 +152,8 @@ define(
         width                      : 854
       };
       hpb["R"]                     = {
-        shapeCmds                  : [[[495,5],[478,-5,461,-5],[440,-5,427,7.5],[414,20,399,47],[262,290],[259,296,252,296],[180,296],[174,296,174,290],[174,75],[174,-4,114,-4],[57,-4,57,76],[57,673],[57,706,76.5,728],[96,750,127,750],[257,750],[368,750,433,690],[498,630,498,522],[498,386,385,315],[382,314,382,311],[382,310,382,310],[383,308],[516,76],[522,64,522,52],[522,21,495,5]]],
-        holeCmds                   : [[[[174,626],[174,411],[174,404,181,404],[265,404],[383,404,383,522],[383,568,356,601],[329,634,265,634],[181,634],[174,634,174,626]]]],
+        sC                         : ["HÃAL H¡A8H]A8 H2A8G»AQ G¡AkGaAÃ ENE© EHEµE:Eµ D*Eµ CÁEµCÁE© CÁBX CÁA:C%A: B4A:B4BZ B4K§ B4LFB[Ls B¥LÁC@LÁ EDLÁ G!LÁH#L% I%K.I%IV I%GFGDF8 G>F6G>F0 G>F.G>F. G@F* IJBZ IVBBIVB* IVAmHÃAL"],
+        hC                         : [["CÁK% CÁGy CÁGkD,Gk ETGk G@GkG@IV G@J2F­Ju FTK6ETK6 D,K6 CÁK6CÁK%"]],
         xMin                       : 57,
         xMax                       : 522,
         yMin                       : -5,
@@ -169,7 +169,7 @@ define(
         width                      : 505
       };
       hpb["T"]                     = {
-        shapeCmds                  : [[[498,731],[519,712,519,690],[519,668,502,650.5],[485,633,463,633],[345,633],[338,633,338,624],[338,50],[338,27,321,11.5],[304,-4,280,-4],[255,-4,238,11],[221,26,221,50],[221,627],[221,633,215,633],[98,633],[76,633,59,650.5],[42,668,42,690],[42,710,59.5,730],[77,750,98,750],[463,750],[477,750,498,731]]],
+        sC                         : ["I%Ly IPLRIPL% IPK{I.KW H¯K4HaK4 FuK4 FgK4FgK! FgB% FgAyFDAY F!A:EsA: E@A:DÁAX D}AwD}B% D}K( D}K4DqK4 B©K4 BZK4B8KW A¹K{A¹L% A¹LNB9Lw B]LÁB©LÁ HaLÁ H}LÁI%Ly"],
         xMin                       : 42,
         xMax                       : 519,
         yMin                       : -4,
@@ -177,7 +177,7 @@ define(
         width                      : 556
       };
       hpb["U"]                     = {
-        shapeCmds                  : [[[55,213],[55,697],[55,721,72,737.5],[89,754,114,754],[139,754,155.5,738],[172,722,172,697],[172,228],[172,178,207.5,144],[243,110,292,110],[340,110,374.5,143.5],[409,177,409,225],[409,697],[409,721,426,737.5],[443,754,468,754],[493,754,509.5,738],[526,722,526,697],[526,212],[526,120,456.5,57],[387,-6,292,-6],[196,-6,125.5,57.5],[55,121,55,213]]],
+        sC                         : ["B0Dm B0L4 B0LeBRL¨ BuM%C%M% CXM%CzL© C½LgC½L4 C½D­ C½D%DbCc E(BÁE­BÁ FkBÁG/Cb GuD#GuD§ GuL4 GuLeG¹L¨ H8M%HkM% H¿M%I=L© I_LgI_L4 I_Dk I_C2HSB4 GHA6E­A6 DJA6C=B5 B0C4B0Dm"],
         xMin                       : 56,
         xMax                       : 526,
         yMin                       : -6,
@@ -223,8 +223,8 @@ define(
         width                      : 563
       };
       hpb["a"]                     = {
-        shapeCmds                  : [[[447,456],[453,471,456,476.5],[459,482,471.5,489.5],[484,497,504,497],[552,497,552,415],[552,84],[552,1,505,1],[481,1,469,10.5],[457,20,447,43],[378,-8,294,-8],[187,-8,111,67.5],[35,143,35,250],[35,357,111,432.5],[187,508,294,508],[377,508,447,456]]],
-        holeCmds                   : [[[[189,355],[146,312,146,250],[146,188,189,145],[232,102,294,102],[356,102,398.5,145],[441,188,441,250],[441,312,398.5,355],[356,398,294,398],[232,398,189,355]]]],
+        sC                         : ['H@HR HLHqHRH| HXH©HrH¸ H­I#I2I# IµI#IµG£ IµBk IµADI4AD H§ADHmAW HTAkH@A» G6A2E±A2 D8A2BÃBI A«CaA«E6 A«F¯BÃH" D8I:E±I: G4I:H@HR'],
+        hC                         : [['D<F« CgF2CgE6 CgD:D<Ce DµB±E±B± F­B±G`Ce H4D:H4E6 H4F2G`F« F­G_E±G_ DµG_D<F«']],
         xMin                       : 35,
         xMax                       : 552,
         yMin                       : -8,
@@ -232,8 +232,8 @@ define(
         width                      : 584
       };
       hpb["b"]                     = {
-        shapeCmds                  : [[[156,43],[143,-4,106,-4],[82,-3,66.5,14],[51,31,51,57],[51,642],[51,670,66,687],[81,704,106,704],[130,704,145.5,687.5],[161,671,161,642],[161,642],[161,459],[228,508,309,508],[416,508,492,432.5],[568,357,568,250],[568,143,492,67.5],[416,-8,309,-8],[223,-8,156,43]]],
-        holeCmds                   : [[[[414,145],[457,188,457,250],[457,312,414,355],[371,398,309,398],[247,398,204.5,355],[162,312,162,250],[162,188,204.5,145],[247,102,309,102],[371,102,414,145]]]],
+        sC                         : ['C{A» CaA:B¹A: BgA<BGA_ B(A£B(B4 B(KF B(K¡BFKÃ BeLBB¹LB CFLBCfKÄ C§K£C§KF C§KF C§HX D­I:F,I: G¥I:H½H" J2F¯J2E6 J2CaH½BI G¥A2F,A2 D£A2C{A»'],
+        hC                         : [['G¡Ce HTD:HTE6 HTF2G¡F« G(G_F,G_ E0G_D[F« C©F2C©E6 C©D:D[Ce E0B±F,B± G(B±G¡Ce']],
         xMin                       : 51,
         xMax                       : 568,
         yMin                       : -8,
@@ -639,7 +639,7 @@ define(
         width                      : 553
       };
       hpb["+"]                     = {
-        shapeCmds                  : [[[101,298],[243,298],[243,439],[243,476,253.5,490],[264,504,287,504],[310,504,320.5,489.5],[331,475,331,439],[331,298],[471,298],[537,298,537,254],[537,210,471,210],[331,210],[331,70],[331,33,320.5,18.5],[310,4,287,4],[264,4,253.5,18.5],[243,33,243,70],[243,210],[102,210],[37,210,37,254],[37,280,53.5,289],[70,298,101,298]]],
+        sC                         : ["B¯E¹ E(E¹ E(H0 E(H{E=H¹ ERI2E£I2 F.I2FCH¸ FXHyFXH0 FXE¹ HqE¹ IuE¹IuE> IuDgHqDg FXDg FXBN FXA§FCAh F.AJE£AJ ERAJE=Ah E(A§E(BN E(Dg B±Dg A¯DgA¯E> A¯EsB-E§ BNE¹B¯E¹"],
         xMin                       : 37,
         xMax                       : 537,
         yMin                       : 4,
@@ -656,7 +656,6 @@ define(
         width                      : 180
       };
       hpb["."]                     = {
-        fullPath                   : "M 66 10.5 Q 51 25 51 45 Q 51 65 66.5 80.5 Q 82 96 103 96 Q 122 96 137 80.5 Q 152 65 152 45 Q 152 25 137.5 10.5 Q 123 -4 103 -4 Q 81 -4 66 10.5 Z",
         shapeCmds                  : [[[66,10.5],[51,25,51,45],[51,65,66.5,80.5],[82,96,103,96],[122,96,137,80.5],[152,65,152,45],[152,25,137.5,10.5],[123,-4,103,-4],[81,-4,66,10.5]]],
         xMin                       : 51,
         xMax                       : 152,
@@ -1662,8 +1661,8 @@ define(
         width                      : 630
       };
       csn["a"]                     = {
-        shapeCmds                  : [[[460,-33],[450.5,-33,425.5,-11],[403,9.5,392,25.5],[344,-0.5,307.5,-14],[271,-27,246.5,-27],[129.5,-27,76,39],[25.5,101,25.5,229],[25.5,350,108.5,436],[192,522,307.5,522],[351,522,405,499.5],[473,471.5,473,432],[473,418.5,463,408],[458,389,455,345.5],[452.5,302,452,234],[451.5,172,460.5,136],[465.5,114,492,48],[495.5,39,503.5,21.5],[506.5,13],[506.5,-7,492.5,-20],[478.5,-33,460,-33]]],
-        holeCmds                   : [[[[356,314.5],[356,336,358.5,361],[361.5,386.5,367,415],[348.5,424.5,335,429],[322,433.5,314,433.5],[236.5,433.5,180,370],[124,307,124,224.5],[124,142.5,153,101.5],[182,60.5,240,60.5],[288,60.5,321.5,78],[339.5,87.5,372,116],[356,248.5,356,314.5]]]],
+        sC                         : ["HZ@£ HG@£G¸A, GiAUGRAv FsAAF)A% Ea@¯E/@¯ CE@¯BZA³ AvB¯AvD¯ AvF¡B¾H* DBIVF)IV F£IVGmI) HuHrHuH! HuGªHaGs HVGLHPFv HKEÁHJD¹ HIC½H[CR HfC%H½B! HÄA³I1An I7A] I7A4H¾@½ H¢@£HZ@£"],
+        hC                         : [["F­F7 F­FcF²F· F¸GGFÃG£ F|G¶FaG¿ FFH$F6H$ D¾H$D*G% C:F(C:D¦ C:C`CuB° D.B;E!B; E¥B;FEB_ FjBrG*C* F­E3F­F7"]],
         xMin                       : 25,
         xMax                       : 506,
         yMin                       : -33,
@@ -2367,190 +2366,190 @@ define(
 
     return function(codeList){
 
-      var hnm={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
-      hnm["A"]                     = {
+      var wgd={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
+      wgd["A"]                     = {
         xMin                       : -7,
         xMax                       : 675,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 667
       };
-      hnm["B"]                     = {
+      wgd["B"]                     = {
         xMin                       : 76,
         xMax                       : 667,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 704
       };
-      hnm["C"]                     = {
+      wgd["C"]                     = {
         xMin                       : 38,
         xMax                       : 684,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 722
       };
-      hnm["D"]                     = {
+      wgd["D"]                     = {
         xMin                       : 76,
         xMax                       : 687,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["E"]                     = {
+      wgd["E"]                     = {
         xMin                       : 76,
         xMax                       : 597,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 630
       };
-      hnm["F"]                     = {
+      wgd["F"]                     = {
         xMin                       : 76,
         xMax                       : 569,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 593
       };
-      hnm["G"]                     = {
+      wgd["G"]                     = {
         xMin                       : 43,
         xMax                       : 699,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 759
       };
-      hnm["H"]                     = {
+      wgd["H"]                     = {
         xMin                       : 73,
         xMax                       : 648,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["I"]                     = {
+      wgd["I"]                     = {
         xMin                       : 76,
         xMax                       : 201,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 278
       };
-      hnm["J"]                     = {
+      wgd["J"]                     = {
         xMin                       : 13,
         xMax                       : 461,
         yMin                       : -17,
         yMax                       : 714,
         width                      : 537
       };
-      hnm["K"]                     = {
+      wgd["K"]                     = {
         xMin                       : 76,
         xMax                       : 693,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 685
       };
-      hnm["L"]                     = {
+      wgd["L"]                     = {
         xMin                       : 76,
         xMax                       : 564,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 574
       };
-      hnm["M"]                     = {
+      wgd["M"]                     = {
         xMin                       : 48,
         xMax                       : 815,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 889
       };
-      hnm["N"]                     = {
+      wgd["N"]                     = {
         xMin                       : 71,
         xMax                       : 650,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["O"]                     = {
+      wgd["O"]                     = {
         xMin                       : 38,
         xMax                       : 722,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 760
       };
-      hnm["P"]                     = {
+      wgd["P"]                     = {
         xMin                       : 76,
         xMax                       : 634,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 667
       };
-      hnm["Q"]                     = {
+      wgd["Q"]                     = {
         xMin                       : 38,
         xMax                       : 722,
         yMin                       : -65,
         yMax                       : 731,
         width                      : 760
       };
-      hnm["R"]                     = {
+      wgd["R"]                     = {
         xMin                       : 76,
         xMax                       : 680,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 704
       };
-      hnm["S"]                     = {
+      wgd["S"]                     = {
         xMin                       : 33,
         xMax                       : 615,
         yMin                       : -17,
         yMax                       : 731,
         width                      : 648
       };
-      hnm["T"]                     = {
+      wgd["T"]                     = {
         xMin                       : 8,
         xMax                       : 586,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 593
       };
-      hnm["U"]                     = {
+      wgd["U"]                     = {
         xMin                       : 68,
         xMax                       : 654,
         yMin                       : -17,
         yMax                       : 714,
         width                      : 722
       };
-      hnm["V"]                     = {
+      wgd["V"]                     = {
         xMin                       : -5,
         xMax                       : 616,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["W"]                     = {
+      wgd["W"]                     = {
         xMin                       : 6,
         xMax                       : 938,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 944
       };
-      hnm["X"]                     = {
+      wgd["X"]                     = {
         xMin                       : -3,
         xMax                       : 651,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 648
       };
-      hnm["Y"]                     = {
+      wgd["Y"]                     = {
         xMin                       : -6,
         xMax                       : 654,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 648
       };
-      hnm["Z"]                     = {
+      wgd["Z"]                     = {
         xMin                       : 23,
         xMax                       : 608,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 630
       };
-      hnm["a"]                     = {
+      wgd["a"]                     = {
         shapeCmds                  : [
                                         [
                                           [0,0],
@@ -2606,16 +2605,17 @@ define(
                                      ],
         reverseShape               : false,
         reverseHole                : false,
-        xFactor                    : 8,
-        yFactor                    : -8,         // 6.78      - 6.77
-       // xAdjust                    : 
-        xMin                       : -340,
+        xFactor                    : 7,
+        yFactor                    : -7,
+        xShift                     : 350,          // These values are not calibrated
+        xMin                       : -340,         // Refer to the next symbol for an example
         xMax                       : 340,
         yMin                       : 47,
         yMax                       : 806,
-        width                      : 700
+        width                      : 700,
+        show                       : true
       };
-      hnm["á"]                     = {
+      wgd["á"]                     = {
         shapeCmds                  : [
                                         [
                                           [0,0],
@@ -2689,249 +2689,251 @@ define(
                                      ],
         reverseShape               : false,
         reverseHole                : false,
-        xFactor                    : 8,
-        yFactor                    : -8,         // 6.78      - 6.77
-       // xAdjust                    : 
-        xMin                       : -340,
-        xMax                       : 340,
-        yMin                       : 47,
-        yMax                       : 806,
-        width                      : 700
+        xFactor                    : 7,
+        yFactor                    : -7,
+        xShift                     : 475,
+        yShift                     : -312.6,                // The middle is at the bottom reference -- a kludge
+        xMin                       : 20,
+        xMax                       : 950,
+        yMin                       : -145.6,
+        yMax                       : 894.4,
+        width                      : 950,
+        show                       : true
       };
-      hnm["b"]                     = {
+      wgd["b"]                     = {
         xMin                       : 63,
         xMax                       : 575,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["c"]                     = {
+      wgd["c"]                     = {
         xMin                       : 35,
         xMax                       : 523,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 556
       };
-      hnm["d"]                     = {
+      wgd["d"]                     = {
         xMin                       : 35,
         xMax                       : 547,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 611
       };
-      hnm["e"]                     = {
+      wgd["e"]                     = {
         xMin                       : 35,
         xMax                       : 531,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 556
       };
-      hnm["f"]                     = {
+      wgd["f"]                     = {
         xMin                       : 9,
         xMax                       : 317,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 315
       };
-      hnm["g"]                     = {
+      wgd["g"]                     = {
         xMin                       : 35,
         xMax                       : 538,
         yMin                       : -205,
         yMax                       : 531,
         width                      : 593
       };
-      hnm["h"]                     = {
+      wgd["h"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 574
       };
-      hnm["i"]                     = {
+      wgd["i"]                     = {
         xMin                       : 48,
         xMax                       : 159,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["í"]                     = {
+      wgd["í"]                     = {
         xMin                       : 45,
         xMax                       : 270,
         yMin                       : 0,
         yMax                       : 731,
         width                      : 241
       };
-      hnm["j"]                     = {
+      wgd["j"]                     = {
         xMin                       : -22,
         xMax                       : 177,
         yMin                       : -205,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["k"]                     = {
+      wgd["k"]                     = {
         xMin                       : 63,
         xMax                       : 542,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 537
       };
-      hnm["l"]                     = {
+      wgd["l"]                     = {
         xMin                       : 63,
         xMax                       : 177,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 241
       };
-      hnm["m"]                     = {
+      wgd["m"]                     = {
         xMin                       : 60,
         xMax                       : 810,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 870
       };
-      hnm["n"]                     = {
+      wgd["n"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 574
       };
-      hnm["o"]                     = {
+      wgd["o"]                     = {
         xMin                       : 36,
         xMax                       : 558,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 593
       };
-      hnm["p"]                     = {
+      wgd["p"]                     = {
         xMin                       : 63,
         xMax                       : 575,
         yMin                       : -191,
         yMax                       : 531,
         width                      : 611
       };
-      hnm["q"]                     = {
+      wgd["q"]                     = {
         xMin                       : 35,
         xMax                       : 547,
         yMin                       : -191,
         yMax                       : 531,
         width                      : 611
       };
-      hnm["r"]                     = {
+      wgd["r"]                     = {
         xMin                       : 60,
         xMax                       : 363,
         yMin                       : 0,
         yMax                       : 531,
         width                      : 352
       };
-      hnm["s"]                     = {
+      wgd["s"]                     = {
         xMin                       : 32,
         xMax                       : 492,
         yMin                       : -14,
         yMax                       : 531,
         width                      : 519
       };
-      hnm["t"]                     = {
+      wgd["t"]                     = {
         xMin                       : 8,
         xMax                       : 311,
         yMin                       : -5,
         yMax                       : 672,
         width                      : 333
       };
-      hnm["u"]                     = {
+      wgd["u"]                     = {
         xMin                       : 60,
         xMax                       : 514,
         yMin                       : -14,
         yMax                       : 517,
         width                      : 574
       };
-      hnm["v"]                     = {
+      wgd["v"]                     = {
         xMin                       : 9,
         xMax                       : 510,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 519
       };
-      hnm["w"]                     = {
+      wgd["w"]                     = {
         xMin                       : 13,
         xMax                       : 765,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 778
       };
-      hnm["x"]                     = {
+      wgd["x"]                     = {
         xMin                       : 4,
         xMax                       : 533,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 537
       };
-      hnm["y"]                     = {
+      wgd["y"]                     = {
         xMin                       : 3,
         xMax                       : 515,
         yMin                       : -205,
         yMax                       : 517,
         width                      : 519
       };
-      hnm["z"]                     = {
+      wgd["z"]                     = {
         xMin                       : 22,
         xMax                       : 477,
         yMin                       : 0,
         yMax                       : 517,
         width                      : 500
       };
-      hnm["0"]                     = { 
+      wgd["0"]                     = { 
         xMin                       : 36,
         xMax                       : 520,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["1"]                     = {
+      wgd["1"]                     = {
         xMin                       : 53,
         xMax                       : 350,
         yMin                       : 0,
         yMax                       : 700,
         width                      : 556
       };
-      hnm["2"]                     = {
+      wgd["2"]                     = {
         xMin                       : 39,
         xMax                       : 518,
         yMin                       : 0,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["3"]                     = {
+      wgd["3"]                     = {
         xMin                       : 31,
         xMax                       : 525,
         yMin                       : -14,
         yMax                       : 714,
         width                      : 556
       };
-      hnm["4"]                     = {
+      wgd["4"]                     = {
         xMin                       : 24,
         xMax                       : 522,
         yMin                       : 0,
         yMax                       : 700,
         width                      : 556
       };
-      hnm["5"]                     = { 
+      wgd["5"]                     = { 
         xMin                       : 34,
         xMax                       : 522,
         yMin                       : -14,
         yMax                       : 700,
         width                      : 556
       };
-      hnm[nbsp]                    = {
+      wgd[nbsp]                    = {
         xMin                       : 31,
         xMax                       : 400,
         yMin                       : -4,
         yMax                       : 644,
         width                      : 278
       };
-      hnm[" "]                     = hnm[nbsp];
+      wgd[" "]                     = wgd[nbsp];
 
-      return hnm;
+      return wgd;
     }
   }
 );
@@ -2952,7 +2954,7 @@ define(
 
   function(HPB,HNM,CSN,JUR,WGD){
 
-    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd;
+    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd,debug;
     var b128back=new Uint8Array(256),b128digits=new Array(128);
     prepArray();
     hpb                          = HPB(codeList);
@@ -2994,6 +2996,7 @@ define(
       defaultFont                = NNO(FONTS[preferences.defaultFont]) ? preferences.defaultFont : "HelveticaNeue-Medium";
       meshOrigin                 = preferences.meshOrigin==="fontOrigin" ? preferences.meshOrigin : "letterCenter";
       scale                      = tyN(preferences.scale)?preferences.scale:1;
+      debug                      = tyB(preferences.debug)?preferences.debug:false;
 
       // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
       //  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR
@@ -3028,6 +3031,7 @@ define(
             offsetX              = anchor==="right" ? (0-meshesAndBoxes.xWidth) : ( anchor==="center" ? (0-meshesAndBoxes.xWidth/2) : 0 ),
             meshes               = meshesAndBoxes[0],
             lettersBoxes         = meshesAndBoxes[1],
+            lettersOrigins       = meshesAndBoxes[2],
             combo                = makeSPS(scene, meshesAndBoxes, material),
             sps                  = combo[0],
             mesh                 = combo[1];
@@ -3041,6 +3045,7 @@ define(
         this.getMaterial         = function()  {return material};
         this.getOffsetX          = function()  {return offsetX};
         this.getLettersBoxes     = function()  {return lettersBoxes};
+        this.getLettersOrigins   = function()  {return lettersOrigins};
         this.color               = function(c) {return NES(c)?color=c:color};
         this.alpha               = function(o) {return Amp(o)?opac=o:opac};
         this.clearall            = function()  {sps=null;mesh=null;material=null};
@@ -3125,7 +3130,7 @@ define(
           lettersOrigins         = new Array(letters.length),
           lettersBoxes           = new Array(letters.length),
           lettersMeshes          = new Array(letters.length),
-          ix                     = 0,letter,letterSpec,i,j,lists,shapesList,holesList,shape,holes,letterMesh,letterMeshes,letterBoxes,letterOrigins,meshesAndBoxes;
+          ix                     = 0, letter, letterSpec, lists, shapesList, holesList, shape, holes, letterMesh, letterMeshes, letterBox, letterOrigins, meshesAndBoxes, i, j;
 
       for(i=0;i<letters.length;i++){
         letter                   = letters[i];
@@ -3148,7 +3153,7 @@ define(
           if(letterMeshes.length){
             lettersMeshes[ix]    = merge(letterMeshes);
             lettersOrigins[ix]   = letterOrigins;
-            lettersBoxes[ix]     = letterBoxes;
+            lettersBoxes[ix]     = letterBox;
             ix++
           }
         }
@@ -3176,18 +3181,34 @@ define(
             centerZ              = (spec.yMin+spec.yMax)/2,
             xFactor              = tyN(spec.xFactor)?spec.xFactor:1,
             zFactor              = tyN(spec.yFactor)?spec.yFactor:1,
+            xShift               = tyN(spec.xShift)?spec.xShift:0,
+            zShift               = tyN(spec.yShift)?spec.yShift:0,
             reverseShape         = tyB(spec.reverseShape)?spec.reverseShape:reverseShapes,
             reverseHole          = tyB(spec.reverseHole)?spec.reverseHole:reverseHoles,
             offX                 = xOffset-(balanced?centerX:0),
             offZ                 = zOffset-(balanced?centerZ:0),
             shapeCmdsLists       = tyA(spec.shapeCmds) ? spec.shapeCmds : [],
-            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ;
+            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ, minX=NaN, maxX=NaN, minZ=NaN, maxZ=NaN, minXadj=NaN, maxXadj=NaN, minZadj=NaN, maxZadj=NaN, combo,
+            //  ~  ~  ~  ~  ~  ~  ~  
+            // To accomodate letter-by-letter scaling and shifts, we have several adjust functions
+            adjX                 = makeAdjust(letterScale,xFactor,offX,0,false,true),                     // no shift
+            adjZ                 = makeAdjust(letterScale,zFactor,offZ,0,false,false),
+            adjXfix              = makeAdjust(letterScale,xFactor,offX,xShift,false,true),                // shifted / fixed
+            adjZfix              = makeAdjust(letterScale,zFactor,offZ,zShift,false,false),
+            adjXrel              = makeAdjust(letterScale,xFactor,offX,xShift,true,true),                 // shifted / relative
+            adjZrel              = makeAdjust(letterScale,zFactor,offZ,zShift,true,false);
 
-        letterBoxes              = [ adjustX(spec.xMin), adjustX(spec.xMax), adjustZ(spec.yMin), adjustZ(spec.yMax) ];
-        letterOrigins            = [ round(letterOffsetX), -1*adjustX(0), -1*adjustZ(0) ];
+        letterBox                = [ adjX(spec.xMin), adjX(spec.xMax), adjZ(spec.yMin), adjZ(spec.yMax) ];
+        letterOrigins            = [ round(letterOffsetX), -1*adjX(0), -1*adjZ(0) ];
         letterOffsetX            = letterOffsetX+spec.width*letterScale;
+        combo                    = [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
 
-        return [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
+        if(debug&&spec.show){
+          console.log([minX,maxX,minZ,maxZ]);
+          console.log([minXadj,maxXadj,minZadj,maxZadj])
+        }
+
+        return combo;
 
         function meshesFromCmdsListArray(cmdsListArray){
           return cmdsListArray.map(makeMeshFromCmdsList(reverseHole))
@@ -3195,48 +3216,39 @@ define(
         function makeMeshFromCmdsList(reverse){
           return function meshFromCmdsList(cmdsList){
             var cmd              = getCmd(cmdsList,0),
-                path             = new BABYLON.Path2(adjustX(cmd[0]), adjustZ(cmd[1])), array, meshBuilder, mesh, j;
+                path             = new BABYLON.Path2(adjXfix(cmd[0]), adjZfix(cmd[1])), array, meshBuilder, mesh, j;
 
             for(j=1;j<cmdsList.length;j++){
               cmd                = getCmd(cmdsList,j);
               if(cmd.length===2){
-                path.addLineTo(adjustX(cmd[0],false), adjustZ(cmd[1]),false) 
+                path.addLineTo(adjXfix(cmd[0]),adjZfix(cmd[1])) 
               }
               if(cmd.length===3){
-                path.addLineTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true)]);
+                path.addLineTo(adjXrel(cmd[1]),adjZrel(cmd[2]));
               }
               if(cmd.length===4){
-                path.addQuadraticCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false))
+                path.addQuadraticCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]))
               }
               if(cmd.length===5){
-                path.addQuadraticCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true)])
+                path.addQuadraticCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]));
               }
               if(cmd.length===6){
-                path.addCubicCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false), adjustX(cmd[4],false), adjustZ(cmd[5],false))
+                path.addCubicCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]),adjXfix(cmd[4]),adjZfix(cmd[5]))
               }
               if(cmd.length===7){
-                path.addCubicCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true));
-                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true)])
+                path.addCubicCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]),adjXrel(cmd[5]),adjZrel(cmd[6]))
               }
             }
             array                = path.getPoints().map(point2Vector);
+
+            // Sometimes redundant coordinates will cause artifacts - delete them!
             if(array[0].x===array[array.length-1].x&&array[0].y===array[array.length-1].y){array=array.slice(1)}
             if(reverse){array.reverse()}
-            window.array         = array.slice();
+
             meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
             mesh                 = meshBuilder.build(true,thickness);
             return mesh;
           }
-        };
-        function adjustX(xVal,relative){
-          var r                  = relative?lastX:0;
-          return round(letterScale*((xVal*xFactor)+r+offX))
-        };
-        function adjustZ(zVal,relative){
-          var r                  = relative?lastZ:0;
-          return round(letterScale*((zVal*zFactor)+r+offZ))
         };
         function getCmd(list,ix){
           var cmd,len;
@@ -3246,7 +3258,26 @@ define(
           len                    = cmd.length;
           thisX                  = len===3||len===5||len===7?round((cmd[len-2]*xFactor)+thisX):round(cmd[len-2]*xFactor);
           thisZ                  = len===3||len===5||len===7?round((cmd[len-1]*zFactor)+thisZ):round(cmd[len-1]*zFactor);
+          minX                   = thisX>minX?minX:thisX;
+          maxX                   = thisX<maxX?maxX:thisX;
+          minXadj                = thisX+xShift>minXadj?minXadj:thisX+xShift;
+          maxXadj                = thisX+xShift<maxXadj?maxXadj:thisX+xShift;
+          minZ                   = thisZ>minZ?minZ:thisZ;
+          maxZ                   = thisZ<maxZ?maxZ:thisZ;
+          minZadj                = thisZ+zShift>minZadj?minZadj:thisZ+zShift;
+          maxZadj                = thisZ+zShift<maxZadj?maxZadj:thisZ+zShift;
           return cmd
+        };
+        function makeAdjust(letterScale,factor,off,shift,relative,xAxis){
+          if(relative){
+            if(xAxis){
+              return function(val){return round(letterScale*((val*factor)+shift+lastX+off))}
+            }else{
+              return function(val){return round(letterScale*((val*factor)+shift+lastZ+off))}
+            }
+          }else{
+            return function(val){return round(letterScale*((val*factor)+shift+off))}
+          }
         }
       };
 
@@ -3323,9 +3354,10 @@ define(
         if(p["default-font"]){prefs.defaultFont=p["default-font"]}else{if(p.defaultFont){prefs.defaultFont=p.defaultFont}}
         if(p["mesh-origin"]){prefs.meshOrigin=p["mesh-origin"]}else{if(p.meshOrigin){prefs.meshOrigin=p.meshOrigin}}
         if(p.scale){prefs.scale=p.scale}
+        if(tyB(p.debug)){prefs.debug=p.debug}
         return prefs
       }else{
-        return { defaultFont: args[2] , scale: args[1] }
+        return { defaultFont: args[2] , scale: args[1] , debug: false }
       }
     };
     function makeLetterSpec(fontSpec,letter){
