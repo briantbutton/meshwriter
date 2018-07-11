@@ -6,22 +6,23 @@
  */
 
 define(
-  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium'],
+  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium','./fonts/webgl-dings'],
 
   // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
   // This function loads the specific type-faces and returns the superconstructor
   // If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
   // Otherwise it assigns it to global variable 'BABYLONTYPE'
 
-  function(HPB,HNM,CSN,JUR){
+  function(HPB,HNM,CSN,JUR,WGD){
 
-    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur;
+    var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd;
     var b128back=new Uint8Array(256),b128digits=new Array(128);
     prepArray();
     hpb                          = HPB(codeList);
     hnm                          = HNM(codeList);
     csn                          = CSN(codeList);
     jur                          = JUR(codeList);
+    wgd                          = WGD(codeList);
     FONTS                        = {};
     FONTS["HirukoPro-Book"]      = hpb;
     FONTS["HelveticaNeue-Medium"]= hnm;
@@ -33,6 +34,8 @@ define(
     FONTS["ComicSans"]           = csn;
     FONTS["Jura"]                = jur;
     FONTS["jura"]                = jur;
+    FONTS["WebGL-Dings"]         = wgd;
+    FONTS["Web-dings"]           = wgd;
     defaultColor                 = "#808080";
     defaultOpac                  = 1;
     curveSampleSize              = 6;
@@ -185,7 +188,7 @@ define(
           lettersOrigins         = new Array(letters.length),
           lettersBoxes           = new Array(letters.length),
           lettersMeshes          = new Array(letters.length),
-          ix                     = 0,letter,letterSpec,i,j,lists,shapesList,holesList,shape,holes,csgShape,letterMesh,letterMeshes,letterBoxes,letterOrigins,meshesAndBoxes;
+          ix                     = 0,letter,letterSpec,i,j,lists,shapesList,holesList,shape,holes,letterMesh,letterMeshes,letterBoxes,letterOrigins,meshesAndBoxes;
 
       for(i=0;i<letters.length;i++){
         letter                   = letters[i];
@@ -234,40 +237,80 @@ define(
         var balanced             = meshOrigin === "letterCenter",
             centerX              = (spec.xMin+spec.xMax)/2,
             centerZ              = (spec.yMin+spec.yMax)/2,
+            xFactor              = tyN(spec.xFactor)?spec.xFactor:1,
+            zFactor              = tyN(spec.yFactor)?spec.yFactor:1,
+            reverseShape         = tyB(spec.reverseShape)?spec.reverseShape:reverseShapes,
+            reverseHole          = tyB(spec.reverseHole)?spec.reverseHole:reverseHoles,
             offX                 = xOffset-(balanced?centerX:0),
             offZ                 = zOffset-(balanced?centerZ:0),
             shapeCmdsLists       = tyA(spec.shapeCmds) ? spec.shapeCmds : [],
-            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [];
+            holeCmdsListsArray   = tyA(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ;
 
         letterBoxes              = [ adjustX(spec.xMin), adjustX(spec.xMax), adjustZ(spec.yMin), adjustZ(spec.yMax) ];
         letterOrigins            = [ round(letterOffsetX), -1*adjustX(0), -1*adjustZ(0) ];
         letterOffsetX            = letterOffsetX+spec.width*letterScale;
 
-        return [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShapes)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
+        return [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
 
         function meshesFromCmdsListArray(cmdsListArray){
-          return cmdsListArray.map(makeMeshFromCmdsList(reverseHoles))
+          return cmdsListArray.map(makeMeshFromCmdsList(reverseHole))
         };
         function makeMeshFromCmdsList(reverse){
           return function meshFromCmdsList(cmdsList){
-            var path             = new BABYLON.Path2(adjustX(cmdsList[0][0]), adjustZ(cmdsList[0][1])), cmd, array, meshBuilder, mesh, j;
+            var cmd              = getCmd(cmdsList,0),
+                path             = new BABYLON.Path2(adjustX(cmd[0]), adjustZ(cmd[1])), array, meshBuilder, mesh, j;
 
             for(j=1;j<cmdsList.length;j++){
-              cmd                = cmdsList[j];
-              if(cmd.length===2){ path.addLineTo(adjustX(cmd[0]), adjustZ(cmd[1])) }
-              if(cmd.length===4){ path.addQuadraticCurveTo(adjustX(cmd[0]), adjustZ(cmd[1]), adjustX(cmd[2]), adjustZ(cmd[3])) }
-              if(cmd.length===6){ path.addCubicCurveTo(adjustX(cmd[0]), adjustZ(cmd[1]), adjustX(cmd[2]), adjustZ(cmd[3]), adjustX(cmd[4]), adjustZ(cmd[5])) }
+              cmd                = getCmd(cmdsList,j);
+              if(cmd.length===2){
+                path.addLineTo(adjustX(cmd[0],false), adjustZ(cmd[1]),false) 
+              }
+              if(cmd.length===3){
+                path.addLineTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true));
+                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true)]);
+              }
+              if(cmd.length===4){
+                path.addQuadraticCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false))
+              }
+              if(cmd.length===5){
+                path.addQuadraticCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true));
+                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true)])
+              }
+              if(cmd.length===6){
+                path.addCubicCurveTo(adjustX(cmd[0],false), adjustZ(cmd[1],false), adjustX(cmd[2],false), adjustZ(cmd[3],false), adjustX(cmd[4],false), adjustZ(cmd[5],false))
+              }
+              if(cmd.length===7){
+                path.addCubicCurveTo(adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true));
+                // console.log([adjustX(cmd[1],true),  adjustZ(cmd[2],true),  adjustX(cmd[3],true),  adjustZ(cmd[4],true),  adjustX(cmd[5],true),  adjustZ(cmd[6],true)])
+              }
             }
             array                = path.getPoints().map(point2Vector);
             if(array[0].x===array[array.length-1].x&&array[0].y===array[array.length-1].y){array=array.slice(1)}
             if(reverse){array.reverse()}
+            window.array         = array.slice();
             meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
             mesh                 = meshBuilder.build(true,thickness);
             return mesh;
           }
         };
-        function adjustX(xVal){return round(letterScale*(xVal+offX))};
-        function adjustZ(zVal){return round(letterScale*(zVal+offZ))}
+        function adjustX(xVal,relative){
+          var r                  = relative?lastX:0;
+          return round(letterScale*((xVal*xFactor)+r+offX))
+        };
+        function adjustZ(zVal,relative){
+          var r                  = relative?lastZ:0;
+          return round(letterScale*((zVal*zFactor)+r+offZ))
+        };
+        function getCmd(list,ix){
+          var cmd,len;
+          lastX                  = thisX;
+          lastZ                  = thisZ;
+          cmd                    = list[ix];
+          len                    = cmd.length;
+          thisX                  = len===3||len===5||len===7?round((cmd[len-2]*xFactor)+thisX):round(cmd[len-2]*xFactor);
+          thisZ                  = len===3||len===5||len===7?round((cmd[len-1]*zFactor)+thisZ):round(cmd[len-1]*zFactor);
+          return cmd
+        }
       };
 
       // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -349,7 +392,7 @@ define(
       }
     };
     function makeLetterSpec(fontSpec,letter){
-      var letterSpec             = fontSpec[letter],shapeCmds=[];
+      var letterSpec             = fontSpec[letter];
       if(NNO(letterSpec)){
         if(!tyA(letterSpec.shapeCmds)&&tyA(letterSpec.sC)){
           letterSpec.shapeCmds   = letterSpec.sC.map(function(cmds){return decodeList(cmds)})
@@ -429,6 +472,7 @@ define(
     // Boolean test functions
     function PN(mn)   { return typeof mn === "number" && !isNaN(mn) ? 0 < mn : false } ;
     function tyN(mn)  { return typeof mn === "number" } ;
+    function tyB(mn)  { return typeof mn === "boolean" } ;
     function Amp(ma)  { return typeof ma === "number" && !isNaN(ma) ? 0 <= ma && ma <= 1 : false } ;
     function NNO(mo)  { return mo != null && typeof mo === "object" || typeof mo === "function" } ;
     function tyA(ma)  { return ma != null && typeof ma === "object" && ma.constructor === Array } ; 
