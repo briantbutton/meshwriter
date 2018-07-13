@@ -435,25 +435,32 @@ define(
       jur[" "]                     = jur[nbsp];
   /*  
 // https://opentype.js.org/glyph-inspector.html
-function coordinates(cmd){
-  if(cmd.x2){
-    return " "+(Math.floor(10*cmd.x1)/10)+" "+(Math.floor(0-10*cmd.y1)/10)+" "+(Math.floor(10*cmd.x2)/10)+" "+(Math.floor(0-10*cmd.y2)/10)+" "+(Math.floor(10*cmd.x)/10)+" "+(Math.floor(0-10*cmd.y)/10)
-  }else{
-    if(cmd.x1){
-      return " "+(Math.floor(10*cmd.x1)/10)+" "+(Math.floor(0-10*cmd.y1)/10)+" "+(Math.floor(10*cmd.x)/10)+" "+(Math.floor(0-10*cmd.y)/10)
+function makeD(path){
+  var d  = "",lastX=NaN;lastY=NaN;
+  path.commands.forEach(function(cmd){d+=" "+cmd.type+coordinates(cmd)});
+  return d.slice(1)
+  function coordinates(cmd){
+    if(cmd.x2){
+      lastX  = cmd.x;
+      lastY  = cmd.y;
+      return " "+(Math.floor(2*cmd.x1)/2)+" "+(Math.floor(0-2*cmd.y1)/2)+" "+(Math.floor(2*cmd.x2)/2)+" "+(Math.floor(0-2*cmd.y2)/2)+" "+(Math.floor(2*cmd.x)/2)+" "+(Math.floor(0-2*cmd.y)/2)
     }else{
-      if(cmd.x){
-        return " "+(Math.floor(10*cmd.x)/10)+" "+(Math.floor(0-10*cmd.y)/10)
+      if(cmd.x1){
+        lastX  = cmd.x;
+        lastY  = cmd.y;
+        return " "+(Math.floor(2*cmd.x1)/2)+" "+(Math.floor(0-2*cmd.y1)/2)+" "+(Math.floor(2*cmd.x)/2)+" "+(Math.floor(0-2*cmd.y)/2)
       }else{
-        return ""
+        if(cmd.x&&(lastX!==cmd.x||lastY!==cmd.y)){
+          lastX  = cmd.x;
+          lastY  = cmd.y;
+          return " "+(Math.floor(2*cmd.x)/2)+" "+(Math.floor(0-2*cmd.y)/2)
+        }else{
+          return ""
+        }
       }
     }
   }
 };
-function makeD(path){
-  var d  = "";
-  path.commands.forEach(function(cmd){d+=" "+cmd.type+coordinates(cmd)});
-  return d.slice(1)
 }
  */
 
