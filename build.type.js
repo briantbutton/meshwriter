@@ -6,10 +6,10 @@
  * 
  *  ON LOCAL
  *
- *   1) Duplicate 'babylontype' into 'babylontypebuild' using finder
+ *   1) Duplicate 'meshwriter' into 'meshwriterbuild' using finder
  * 
  *   3) Run r.js
- *      $ cd babylontypebuild 
+ *      $ cd meshwriterbuild 
  *      $ node r.js -o build.type.js
  *
  */

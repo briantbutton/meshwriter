@@ -1,4 +1,4 @@
-# Mesh Writer
+# So you want to build a 3-D font, eh?
 
 Generate letters in BABYLON meshes.
 
