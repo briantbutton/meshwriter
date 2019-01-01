@@ -68,7 +68,7 @@ define(
 
       function MeshWriter(lttrs,opt){
 
-        var material,meshesAndBoxes,offsetX,meshes,lettersBoxes,lettersOrigins,combo,sps,mesh;
+        var material,meshesAndBoxes,offsetX,meshes,lettersBoxes,lettersOrigins,combo,sps,mesh,xWidth;
 
         //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
         // Here we set *all* parameters with incoming value or a default
@@ -94,20 +94,30 @@ define(
             thickness            = round(scale*rawThickness),
             letters              = isString(lttrs) ? lttrs : "" ;
 
-        // Create material
+        //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
+        // Now all the parameters are set, let's get to business
+        // First create the material
         material                 = makeMaterial(scene, letters, emissive, ambient, specular, diffuse, opac);
 
+        //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
+        // Next, create the meshes
         // This creates an array of meshes, one for each letter
-        // It also creates two other arrays of the same length, which are used for letter positioning
+        // It also creates two other arrays, which are used for letter positioning
         meshesAndBoxes           = constructLetterPolygons(letters, fontSpec, 0, 0, 0, letterScale, thickness, material, meshOrigin);
         meshes                   = meshesAndBoxes[0];
         lettersBoxes             = meshesAndBoxes[1];
         lettersOrigins           = meshesAndBoxes[2];
+        xWidth                   = meshesAndBoxes.xWidth;           
+
+        //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
+        // The meshes are converted into particles of an SPS
         combo                    = makeSPS(scene, meshesAndBoxes, material);
         sps                      = combo[0];
         mesh                     = combo[1];
 
-        offsetX                  = anchor==="right" ? (0-meshesAndBoxes.xWidth) : ( anchor==="center" ? (0-meshesAndBoxes.xWidth/2) : 0 );
+        //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
+        // Set the final SPS-mesh position according to parameters
+        offsetX                  = anchor==="right" ? (0-xWidth) : ( anchor==="center" ? (0-xWidth/2) : 0 );
         mesh.position.x          = scale*x+offsetX;
         mesh.position.y          = scale*y;
         mesh.position.z          = scale*z;
@@ -195,7 +205,7 @@ define(
       }
     };
 
-    //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
+    //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
     // Takes specifications and returns an array with three elements, each of which
     // is an array (length of all arrays to match the number of incoming characters)
     //   ~ the meshes (not offset by position)
@@ -206,7 +216,7 @@ define(
           lettersOrigins         = new Array(letters.length),
           lettersBoxes           = new Array(letters.length),
           lettersMeshes          = new Array(letters.length),
-          ix                     = 0, letter, letterSpec, lists, shapesList, holesList, shape, holes, letterMesh, letterMeshes, letterBox, letterOrigins, meshesAndBoxes, i, j;
+          ix                     = 0, letter, letterSpec, lists, shapesList, holesList, letterMeshes, letterBox, letterOrigins, meshesAndBoxes, i;
 
       for(i=0;i<letters.length;i++){
         letter                   = letters[i];
@@ -215,17 +225,14 @@ define(
           lists                  = buildLetterMeshes(letter, i, letterSpec, fontSpec.reverseShapes, fontSpec.reverseHoles);
           shapesList             = lists[0];
           holesList              = lists[1];
-          letterMeshes           = [];
-          for(j=0;j<shapesList.length;j++){
-            shape                = shapesList[j];
-            holes                = holesList[j];
-            if(isArray(holes)&&holes.length){
-              letterMesh         = punchHolesInShape(shape, holes, letter, i)
-            }else{
-              letterMesh         = shape
-            }
-            letterMeshes.push(letterMesh);
-          }
+          letterBox              = lists[2];
+          letterOrigins          = lists[3];
+
+          // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+          // This subtracts the holes, if any, from the shapes and merges the shapes
+          // (Many glyphs - 'i', '%' - have multiple shapes)
+          // At the end, there is one mesh per glyph, as God intended
+          letterMeshes           = punchHolesInShapes(shapesList,holesList);
           if(letterMeshes.length){
             lettersMeshes[ix]    = merge(letterMeshes);
             lettersOrigins[ix]   = letterOrigins;
@@ -239,19 +246,32 @@ define(
       meshesAndBoxes.count       = ix;
       return meshesAndBoxes;
 
-      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
       // A letter may have one or more shapes and zero or more holes
       // The shapeCmds is an array of shapes
-      // The holeCmds is an array of array of holes (since one shape 'B' may have multiple holes)
-      // The arrays must line up so holes have the same index as the shape they subtract from
-      // '%' is the best example since it has three shapes and two holes
+      // The holeCmds is an array of array of holes, the outer array lining up with
+      // the shapes array and the inner array permitting more than one hole per shape
+      // (Think of the letter 'B', with one shape and two holes, or the symbol
+      // '%' which has three shapes and two holes)
       // 
       // For mystifying reasons, the holeCmds (provided by the font) must be reversed
       // from the original order and the shapeCmds must *not* be reversed
-      // UNLESS the font is Jura, in which case the holeCmds are inverted from above instructions
-      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      // UNLESS the font is Jura, in which case the holeCmds are not reversed
+      // (Possibly because the Jura source is .otf, and the others are .ttf)
+      //
+      // *WARNING*                                                         *WARNING*
+      // buildLetterMeshes performs a lot of arithmetic for offsets to support
+      // symbol reference points, BABYLON idiocyncracies, font idiocyncracies,
+      // symbol size normalization, the way curves are specified and "relative"
+      // coordinates.  (Fonts use fixed coordinates but many other SVG-style
+      // symbols use relative coordinates)
+      // *WARNING*                                                         *WARNING*
+      //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
 
       function buildLetterMeshes(letter, index, spec, reverseShapes, reverseHoles){
+
+        // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+        // A large number of offsets are created, per warning
         var balanced             = meshOrigin === "letterCenter",
             centerX              = (spec.xMin+spec.xMax)/2,
             centerZ              = (spec.yMin+spec.yMax)/2,
@@ -264,50 +284,69 @@ define(
             offX                 = xOffset-(balanced?centerX:0),
             offZ                 = zOffset-(balanced?centerZ:0),
             shapeCmdsLists       = isArray(spec.shapeCmds) ? spec.shapeCmds : [],
-            holeCmdsListsArray   = isArray(spec.holeCmds) ? spec.holeCmds : [], thisX, lastX, thisZ, lastZ, minX=NaN, maxX=NaN, minZ=NaN, maxZ=NaN, minXadj=NaN, maxXadj=NaN, minZadj=NaN, maxZadj=NaN, combo,
-            //  ~  ~  ~  ~  ~  ~  ~  
-            // To accomodate letter-by-letter scaling and shifts, we have several adjust functions
-            adjX                 = makeAdjust(letterScale,xFactor,offX,0,false,true),                     // no shift
+            holeCmdsListsArray   = isArray(spec.holeCmds) ? spec.holeCmds : [] , letterBox, letterOrigins;
+
+        // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+        // Several scaling functions are created too, per warning
+        var adjX                 = makeAdjust(letterScale,xFactor,offX,0,false,true),                     // no shift
             adjZ                 = makeAdjust(letterScale,zFactor,offZ,0,false,false),
             adjXfix              = makeAdjust(letterScale,xFactor,offX,xShift,false,true),                // shifted / fixed
             adjZfix              = makeAdjust(letterScale,zFactor,offZ,zShift,false,false),
             adjXrel              = makeAdjust(letterScale,xFactor,offX,xShift,true,true),                 // shifted / relative
-            adjZrel              = makeAdjust(letterScale,zFactor,offZ,zShift,true,false);
+            adjZrel              = makeAdjust(letterScale,zFactor,offZ,zShift,true,false),
+            thisX, lastX, thisZ, lastZ, minX=NaN, maxX=NaN, minZ=NaN, maxZ=NaN, minXadj=NaN, maxXadj=NaN, minZadj=NaN, maxZadj=NaN;
 
         letterBox                = [ adjX(spec.xMin), adjX(spec.xMax), adjZ(spec.yMin), adjZ(spec.yMax) ];
         letterOrigins            = [ round(letterOffsetX), -1*adjX(0), -1*adjZ(0) ];
+
+        // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+        // Scope warning:  letterOffsetX belongs to an outer closure
+        // and persists through multiple characters
         letterOffsetX            = letterOffsetX+spec.width*letterScale;
-        combo                    = [shapeCmdsLists.map(makeMeshFromCmdsList(reverseShape)),holeCmdsListsArray.map(meshesFromCmdsListArray)];
 
         if(debug&&spec.show){
           console.log([minX,maxX,minZ,maxZ]);
           console.log([minXadj,maxXadj,minZadj,maxZadj])
         }
 
-        return combo;
+        return [ shapeCmdsLists.map(makeCmdsToMesh(reverseShape)) , holeCmdsListsArray.map(meshesFromCmdsListArray)  letterBox , letterOrigins ] ;
 
         function meshesFromCmdsListArray(cmdsListArray){
-          return cmdsListArray.map(makeMeshFromCmdsList(reverseHole))
+          return cmdsListArray.map(makeCmdsToMesh(reverseHole))
         };
-        function makeMeshFromCmdsList(reverse){
-          return function meshFromCmdsList(cmdsList){
+        function makeCmdsToMesh(reverse){
+          return function cmdsToMesh(cmdsList){
             var cmd              = getCmd(cmdsList,0),
-                path             = new BABYLON.Path2(adjXfix(cmd[0]), adjZfix(cmd[1])), array, meshBuilder, mesh, j;
+                path             = new BABYLON.Path2(adjXfix(cmd[0]), adjZfix(cmd[1])), array, meshBuilder, j, last, first = 0;
 
+            // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+            // Array length is used to determine curve type in the 'TheLeftover Font Format'  (TLFF)
+            // 
+            // IDIOCYNCRACY:  Odd-length arrays indicate relative coordinates; the first digit is discarded
+            
             for(j=1;j<cmdsList.length;j++){
               cmd                = getCmd(cmdsList,j);
+
+              // ~  ~  ~  ~  ~  ~  ~  ~
+              // Line
               if(cmd.length===2){
                 path.addLineTo(adjXfix(cmd[0]),adjZfix(cmd[1])) 
               }
               if(cmd.length===3){
                 path.addLineTo(adjXrel(cmd[1]),adjZrel(cmd[2]));
               }
+
+              // ~  ~  ~  ~  ~  ~  ~  ~
+              // Quadratic curve
               if(cmd.length===4){
                 path.addQuadraticCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]))
               }
               if(cmd.length===5){
                 path.addQuadraticCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]));
               }
+
+              // ~  ~  ~  ~  ~  ~  ~  ~
+              // Cubic curve
               if(cmd.length===6){
                 path.addCubicCurveTo(adjXfix(cmd[0]),adjZfix(cmd[1]),adjXfix(cmd[2]),adjZfix(cmd[3]),adjXfix(cmd[4]),adjZfix(cmd[5]))
               }
@@ -315,15 +354,17 @@ define(
                 path.addCubicCurveTo(adjXrel(cmd[1]),adjZrel(cmd[2]),adjXrel(cmd[3]),adjZrel(cmd[4]),adjXrel(cmd[5]),adjZrel(cmd[6]))
               }
             }
+            // Having created a Path2 instance with BABYLON utilities,
+            // we turn it into an array and discard it
             array                = path.getPoints().map(point2Vector);
 
             // Sometimes redundant coordinates will cause artifacts - delete them!
-            if(array[0].x===array[array.length-1].x&&array[0].y===array[array.length-1].y){array=array.slice(1)}
-            if(reverse){array.reverse()}
+            last                 = array.length - 1 ;
+            if ( array[first].x===array[last].x && array[first].y===array[last].y ) { array = array.slice(1) }
+            if ( reverse ) { array.reverse() }
 
             meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
-            mesh                 = meshBuilder.build(true,thickness);
-            return mesh;
+            return meshBuilder.build(true,thickness)
           }
         };
         function getCmd(list,ix){
@@ -357,7 +398,20 @@ define(
         }
       };
 
-      // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+      // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+      function punchHolesInShapes(shapesList,holesList){
+        var letterMeshes         = [],shape,holes,j;
+        for(j=0;j<shapesList.length;j++){
+          shape                  = shapesList[j];
+          holes                  = holesList[j];
+          if(isArray(holes)&&holes.length){
+            letterMeshes.push ( punchHolesInShape(shape,holes,letter,i) )
+          }else{
+            letterMeshes.push ( shape )
+          }
+        }
+        return letterMeshes
+      };
       function punchHolesInShape(shape,holes,letter,i){
         var csgShape             = BABYLON.CSG.FromMesh(shape);
         for(var k=0; k<holes.length; k++){
@@ -379,7 +433,7 @@ define(
       return cm0
     };
 
-    // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+    // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
     // These add two functions to Path2, which are needed for making font curves
     // 
     // Thanks Gijs, wherever you are
