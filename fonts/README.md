@@ -77,13 +77,35 @@ The '%', shown just below, is a classic example.
 	  [[[172,515],[172,381,248,381],[326,381,326,515],[326,649,248,649],[172,649,172,515]]]
 	]
 
+**Key** **Point** Hole commands are always one array level deeper than shape commands.&nbsp;
+This is necessary because a single shape may have multiple holes, like 'B'.
+
+### Tuning A, lining up holes
+
 The hole commands must line up with the shape commands and, AFAIK, this must be done manually.&nbsp;
 I seriously spend some time eyeballing shapes and holes and then organize them for correct results.&nbsp;
 Fonts do not seem to need to do this at all.&nbsp;
-The holes might be in any order and may come before or after the shapes.
+They might list the holes in any order and they may come before or after the shapes.
 
-**Key** **Point** Hole commands are always one array level deeper than shape commands.&nbsp;
-This is necessary because a single shape may have multiple holes, like 'B'.
+### Tuning B, rotation
+
+Fonts may specify a Shape clockwise or counter-clockwise.&nbsp;
+They may specify a Hole clockwise or counter-clockwise.&nbsp;
+Any given font might pick any pair of directions.&nbsp;
+Luckily, they seem to stick with it through all the symbols.
+
+My experience is the Babylon is only happy with one direction; I forget which.&nbsp;
+So, the output of the Glyph Inspector might need reversal for Babylon.&nbsp;
+I put some font-level flags in place to handle this.&nbsp;
+You will find them at the top of each font file.&nbsp; 
+My scientific method is to try all combinations until I find the one that looks good.
+
+	Declarations for each current font
+	(helvetica neue) { reverseHoles : false , reverseShapes : true  };
+	(comic)          { reverseHoles : false , reverseShapes : true  };
+	(jura)           { reverseHoles : true  , reverseShapes : false };
+
+
 
 
 Boogety
