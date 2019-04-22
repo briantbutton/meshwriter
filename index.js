@@ -71,8 +71,9 @@ define(
         var material,meshesAndBoxes,offsetX,meshes,lettersBoxes,lettersOrigins,combo,sps,mesh,xWidth;
 
         //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
-        // Here we set *all* parameters with incoming value or a default
-        // See documentation on setOption below
+        // Here we set ALL parameters with incoming value or a default
+        // setOption:  applies a test to potential incoming parameters
+        //             if the test passes, the parameters are used, else the default is used
         var options              = isObject(opt) ? opt : { } ,
             position             = setOption ( options,  "position", isObject, {} ) ,
             colors               = setOption ( options,  "colors",   isObject, {} ) ,
@@ -207,7 +208,7 @@ define(
 
     //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
     // Takes specifications and returns an array with three elements, each of which
-    // is an array (length of all arrays to match the number of incoming characters)
+    // is an array (length of each array === the number of incoming characters)
     //   ~ the meshes (not offset by position)
     //   ~ the boxes (to help with positions features) 
     //   ~ the letter origins (providing offset for each letter)
@@ -583,7 +584,7 @@ define(
 
     //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
     // Applies a test to potential incoming parameters
-    // It the test passes, the parameters are used, otherwise the default is used
+    // If the test passes, the parameters are used, otherwise the default is used
     function setOption(opts, field, tst, defalt) { return tst(opts[field]) ? opts[field] : defalt };
 
     //     PARAMETER QUALIFYING AND DEFAULTING     PARAMETER QUALIFYING AND DEFAULTING 
