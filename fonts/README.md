@@ -6,13 +6,13 @@ Here is the basic road map.
 
 ### The curves
 
-The curves follow SVG-style rules, supporting SVG commands.  These include:
-  ~ 'M' move to, only at the beginning
-  ~ 'L' line, never at the beginning
-  ~ 'l' line
-  ~ 'Q' quadratic curve
-  ~ 'q' quadratic curve
-  ~ 'C' cubic curve
+The curves follow SVG-style rules, supporting SVG commands.  These include:&nbsp;   
+  ~ 'M' move to, only at the beginning   
+  ~ 'L' line, never at the beginning   
+  ~ 'l' line   
+  ~ 'Q' quadratic curve   
+  ~ 'q' quadratic curve   
+  ~ 'C' cubic curve   
   ~ 'c' cubic curve
 
 Just below is an example from Comic (a knarly font) showing the letter 'j' in SVG and in MeshWriter.&nbsp;
