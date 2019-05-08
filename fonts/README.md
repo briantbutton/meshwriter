@@ -65,7 +65,7 @@ The basic task here is that fonts need not line up the hole to the shape it is c
 For MeshWriter, we must.&nbsp;
 The '%', shown just below, is a classic example.
 
-	Commands for Percent '%', with three shapes and two holes
+	Commands for Percent '%', with three shapes and two holes 
 	shapeCmds : [
 	  [[338,-24],[260,-24],[649,724],[725,724],[338,-24]],
 	  [[751,-14],[665,-14,622,45],[584,96,584,185],[584,272,624,325],[668,384,751,384],[834,384,878,325],[918,272,918,185],[918,96,880,45],[837,-14,751,-14]],
