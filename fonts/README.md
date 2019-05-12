@@ -112,7 +112,7 @@ So let's start with a simple letter, C.&nbsp;
 Because we believe life should be easy, we will use 'HelveticaNeue-Medium.ttf'.&nbsp;
 This is a modern font and its files are pretty well-behaved.&nbsp;
 
-![alt text](https://raw.githubusercontent.com/briantbutton/meshwriter/master/fonts/Figure1.jpg "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/briantbutton/meshwriter/master/fonts/Figure1.png "Logo Title Text 1")
 
 
 
