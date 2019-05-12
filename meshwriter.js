@@ -1,12 +1,20 @@
-//  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK 
-//
-//
+/*!
+ * Babylon MeshWriter
+ * https://github.com/briantbutton/meshwriter/blob/master/meshwriter.js
+ * (c) 2018-2020 Brian Todd Button
+ * Released under the MIT license
+ */
 
-define(
-  'fonts/hirukopro-book',[],
-  function(){
+(function(){
 
-    return function(codeList){
+  const root                     = this;
+
+  var HPB,HNM,CSN,JUR,WGD;
+
+  //  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK  HIRUKOPRO-BOOK 
+  //
+  //
+  HPB                            = function(codeList){
 
       var hpb={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
       // Letters seems to go from about -250 to 850
@@ -696,6 +704,8 @@ define(
       };
       hpb[" "]                     = hpb[nbsp];
 
+      return hpb;
+  };
   /*
 // https://opentype.js.org/glyph-inspector.html
 function coordinates(cmd){
@@ -716,19 +726,10 @@ function makeD(path){
 }
 */
 
-      return hpb;
-    }
-  }
-);
-//  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM 
-//
-//
-
-define(
-  'fonts/helveticaneue-medium',[],
-  function(){
-
-    return function(codeList){
+  //  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM  HELVETICANEUE-MEDIUM 
+  //
+  //
+  HNM                            = function(codeList){
 
       var hnm={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
       hnm["A"]                     = {
@@ -1525,26 +1526,6 @@ define(
       };
       hnm[" "]                     = hnm[nbsp];
 
-
-  /*
-// https://opentype.js.org/glyph-inspector.html
-function coordinates(cmd){
-  if(cmd.x1){
-    return " "+cmd.x1+" "+(0-cmd.y1)+" "+cmd.x+" "+(0-cmd.y)
-  }else{
-    if(cmd.x){
-      return " "+cmd.x+" "+(0-cmd.y)
-    }else{
-      return ""
-    }
-  }
-};
-function makeD(path){
-  var d  = "";
-  path.commands.forEach(function(cmd){d+=" "+cmd.type+coordinates(cmd)});
-  return d.slice(1)
-}
-*/
       return hnm;
 
       //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
@@ -1594,18 +1575,32 @@ function makeD(path){
       function dotlessiCoded(){
         return codeList(dotlessiRaw(dx,dy))
       };
+  };
+
+  /*
+// https://opentype.js.org/glyph-inspector.html
+function coordinates(cmd){
+  if(cmd.x1){
+    return " "+cmd.x1+" "+(0-cmd.y1)+" "+cmd.x+" "+(0-cmd.y)
+  }else{
+    if(cmd.x){
+      return " "+cmd.x+" "+(0-cmd.y)
+    }else{
+      return ""
     }
   }
-);
-//  COMICSANS-NORMAL  COMICSANS-NORMAL  COMICSANS-NORMAL  COMICSANS-NORMAL 
-//
-//
+};
+function makeD(path){
+  var d  = "";
+  path.commands.forEach(function(cmd){d+=" "+cmd.type+coordinates(cmd)});
+  return d.slice(1)
+}
+*/
 
-define(
-  'fonts/comicsans-normal',[],
-  function(){
-
-    return function(codeList){
+  //  COMICSANS-NORMAL  COMICSANS-NORMAL  COMICSANS-NORMAL  COMICSANS-NORMAL 
+  //
+  //
+  CSN                            = function(codeList){
 
       var csn={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
       csn["A"]                     = {
@@ -1930,6 +1925,9 @@ define(
         width                      : 425
       };
       csn[" "]                     = csn[nbsp];
+
+      return csn;
+  };
   /* 
 // https://opentype.js.org/glyph-inspector.html
 
@@ -1964,19 +1962,11 @@ function makeD(path){
 };
  */
 
-      return csn;
-    }
-  }
-);
-//  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM 
-//
-//
 
-define(
-  'fonts/jura-medium',[],
-  function(){
-
-    return function(codeList){
+  //  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM  JURA-MEDIUM 
+  //
+  //
+  JUR                            = function(codeList){
 
       var jur={reverseHoles:true,reverseShapes:false},nbsp="\u00A0";
       jur["A"]                     = {
@@ -2514,6 +2504,8 @@ define(
         width                      : 425
       };
       jur[" "]                     = jur[nbsp];
+      return jur;
+  };
   /*  
 // https://opentype.js.org/glyph-inspector.html
 function makeD(path){
@@ -2545,19 +2537,13 @@ function makeD(path){
 }
  */
 
-      return jur;
-    }
-  }
-);
-//  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS 
-//
-//
 
-define(
-  'fonts/webgl-dings',[],
-  function(){
 
-    return function(codeList){
+
+  //  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS  WEBGL-DINGS 
+  //
+  //
+  WGD                            = function(codeList){
 
       var wgd={reverseHoles:false,reverseShapes:true},nbsp="\u00A0";
       wgd["A"]                     = {
@@ -3127,9 +3113,8 @@ define(
       wgd[" "]                     = wgd[nbsp];
 
       return wgd;
-    }
-  }
-);
+  };
+
 /*!
  * Babylon MeshWriter
  * https://github.com/BabylonJS/Babylon.js
@@ -3137,15 +3122,14 @@ define(
  * Released under the MIT license
  */
 
-define(
-  'index',['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium','./fonts/webgl-dings'],
-
   // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
   // This function loads the specific type-faces and returns the superconstructor
   // If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
   // Otherwise it assigns it to global variable 'BABYLONTYPE'
 
-  function(HPB,HNM,CSN,JUR,WGD){
+  var Wrapper                    = (function(HPB,HNM,CSN,JUR,WGD){
+
+    supplementBABYLONCurveFunctions();
 
     var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd,debug;
     var b128back,b128digits;
@@ -3179,7 +3163,7 @@ define(
     //   ~ scene
     //   ~ preferences
 
-    var Wrapper                  = function(){
+    return function(){
 
       var proto,defaultFont,scale,meshOrigin,preferences;
 
@@ -3294,12 +3278,6 @@ define(
       return MeshWriter;
 
     };
-    window.TYPE                  = Wrapper;
-    if ( typeof BABYLON === "object" ) {
-      BABYLON.MeshWriter         = Wrapper;
-      supplementCurveFunctions();
-    };
-    return Wrapper;
 
     //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
     // MakeSPS turns the output of constructLetterPolygons into an SPS
@@ -3516,36 +3494,37 @@ define(
     // 
     // Thanks Gijs, wherever you are
     // 
-    function supplementCurveFunctions(){
-
-      if ( !BABYLON.Path2.prototype.addQuadraticCurveTo ) {
-        BABYLON.Path2.prototype.addQuadraticCurveTo = function(redX, redY, blueX, blueY){
-          var points             = this.getPoints();
-          var lastPoint          = points[points.length - 1];
-          var origin             = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
-          var control            = new BABYLON.Vector3(redX, redY, 0);
-          var destination        = new BABYLON.Vector3(blueX, blueY, 0);
-          var nb_of_points       = curveSampleSize;
-          var curve              = BABYLON.Curve3.CreateQuadraticBezier(origin, control, destination, nb_of_points);
-          var curvePoints        = curve.getPoints();
-          for(var i=1; i<curvePoints.length; i++){
-            this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+    function supplementBABYLONCurveFunctions(){
+      if ( typeof BABYLON === "object" ) {
+        if ( !BABYLON.Path2.prototype.addQuadraticCurveTo ) {
+          BABYLON.Path2.prototype.addQuadraticCurveTo = function(redX, redY, blueX, blueY){
+            var points           = this.getPoints();
+            var lastPoint        = points[points.length - 1];
+            var origin           = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
+            var control          = new BABYLON.Vector3(redX, redY, 0);
+            var destination      = new BABYLON.Vector3(blueX, blueY, 0);
+            var nb_of_points     = curveSampleSize;
+            var curve            = BABYLON.Curve3.CreateQuadraticBezier(origin, control, destination, nb_of_points);
+            var curvePoints      = curve.getPoints();
+            for(var i=1; i<curvePoints.length; i++){
+              this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+            }
           }
         }
-      }
-      if ( !BABYLON.Path2.prototype.addCubicCurveTo ) {
-        BABYLON.Path2.prototype.addCubicCurveTo = function(redX, redY, greenX, greenY, blueX, blueY){
-          var points             = this.getPoints();
-          var lastPoint          = points[points.length - 1];
-          var origin             = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
-          var control1           = new BABYLON.Vector3(redX, redY, 0);
-          var control2           = new BABYLON.Vector3(greenX, greenY, 0);
-          var destination        = new BABYLON.Vector3(blueX, blueY, 0);
-          var nb_of_points       = Math.floor(0.3+curveSampleSize*1.5);
-          var curve              = BABYLON.Curve3.CreateCubicBezier(origin, control1, control2, destination, nb_of_points);
-          var curvePoints        = curve.getPoints();
-          for(var i=1; i<curvePoints.length; i++){
-            this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+        if ( !BABYLON.Path2.prototype.addCubicCurveTo ) {
+          BABYLON.Path2.prototype.addCubicCurveTo = function(redX, redY, greenX, greenY, blueX, blueY){
+            var points           = this.getPoints();
+            var lastPoint        = points[points.length - 1];
+            var origin           = new BABYLON.Vector3(lastPoint.x, lastPoint.y, 0);
+            var control1         = new BABYLON.Vector3(redX, redY, 0);
+            var control2         = new BABYLON.Vector3(greenX, greenY, 0);
+            var destination      = new BABYLON.Vector3(blueX, blueY, 0);
+            var nb_of_points     = Math.floor(0.3+curveSampleSize*1.5);
+            var curve            = BABYLON.Curve3.CreateCubicBezier(origin, control1, control2, destination, nb_of_points);
+            var curvePoints      = curve.getPoints();
+            for(var i=1; i<curvePoints.length; i++){
+              this.addLineTo(curvePoints[i].x, curvePoints[i].y);
+            }
           }
         }
       }
@@ -3694,5 +3673,25 @@ define(
     function isSupportedAnchor(a) { return a==="left"||a==="right"||a==="center" } ;
     function weeid()              { return Math.floor(Math.random()*1000000) } ;
     function round(n)             { return Γ(0.3+n*1000000)/1000000 }
+
+  })(HPB,HNM,CSN,JUR,WGD);
+
+  root.TYPE                      = Wrapper;                      // This will keep some of the existing playgrounds running
+
+  if ( typeof BABYLON === "object" ) {
+    BABYLON.MeshWriter           = Wrapper
+  }else{
+    if ( typeof module === 'object' && module.exports ) {
+      module.exports             = Wrapper;
+    } else {
+      if ( typeof define === 'function' && define.amd ) {
+        define ( 'MeshWriter' , [], function() { return Wrapper } )
+      } else {
+        root.MeshWriter          = Wrapper
+      }
+    }
   }
-);
+  return Wrapper;
+
+
+}).call(this);

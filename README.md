@@ -2,6 +2,8 @@
 
 Generate letters in BABYLON meshes.
 
+## Usage Javascript Calls And Parameters
+
 ### Basic-Usage
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});

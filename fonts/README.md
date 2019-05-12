@@ -19,7 +19,7 @@ Meshwriter curves follow SVG-style rules.  These include:&nbsp;
 
 Just below is an example from Comic (a knarly font) showing the letter 'j' in SVG and in MeshWriter.&nbsp;
 In MeshWriter, the commands are placed in arrays.&nbsp;
-The length of the array indicates the command type.&nbsp;   
+The length of the array indicates the command type.&nbsp;
   ~ 2: M or L   
   ~ 3: l   
   ~ 4: Q   
@@ -54,7 +54,7 @@ I usually encode stable symbols after a while.
 My approach has been to visit https://opentype.js.org/glyph-inspector.html, upload my font and then acquire glyphs in semi-SVG form.&nbsp; 
 
 I have not been able to use the output of Glyph Inspector without review and, often, tuning.&nbsp;
-More on that later.
+More on that below.
 
 ### Holes
 
@@ -83,9 +83,9 @@ This is necessary because a single shape may have multiple holes, like 'B'.
 ### Tuning A, lining up holes
 
 The hole commands must line up with the shape commands and, AFAIK, this must be done manually.&nbsp;
-I seriously spend some time eyeballing shapes and holes and then organize them for correct results.&nbsp;
 Fonts do not seem to need to do this at all.&nbsp;
-They might list the holes in any order and they may come before or after the shapes.
+They might list the holes in any order and they may come before or after the shapes.&nbsp;
+I seriously spend some time eyeballing shapes and holes and then organize them for correct results.
 
 ### Tuning B, rotation
 
@@ -104,6 +104,11 @@ My scientific method is to try all combinations until I find the one that looks 
 	(helvetica neue) { reverseHoles : false , reverseShapes : true  };
 	(comic)          { reverseHoles : false , reverseShapes : true  };
 	(jura)           { reverseHoles : true  , reverseShapes : false };
+
+
+## 'C' is for Cat
+
+So let's start with a simple letter, C.&nbsp;
 
 
 
