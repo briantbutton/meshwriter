@@ -17,7 +17,7 @@ Meshwriter curves follow SVG-style rules.  These include:&nbsp;
   ~ 'C' cubic curve   
   ~ 'c' cubic curve
 
-Just below is an example from Comic (a knarly font) showing the letter 'j' in SVG and in MeshWriter.&nbsp;
+Just below is an example from Comic (a gnarly font) showing the letter 'j' in SVG and in MeshWriter.&nbsp;
 In MeshWriter, the commands are placed in arrays.&nbsp;
 The length of the array indicates the command type.&nbsp;
   ~ 2: M or L   
@@ -109,6 +109,8 @@ My scientific method is to try all combinations until I find the one that looks 
 ## 'C' is for Cat
 
 So let's start with a simple letter, C.&nbsp;
+Because we believe life should be easy, we will use 'HelveticaNeue-Medium.ttf'.&nbsp;
+This is a modern font, recently created and its files are pretty well-behaved.&nbsp;
 
 
 
