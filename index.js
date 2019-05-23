@@ -169,6 +169,7 @@ define(
         this.clearall()
       };
       MeshWriter.codeList        = codeList;
+      MeshWriter.decodeList      = decodeList;
 
       return MeshWriter;
 
@@ -310,7 +311,7 @@ define(
           console.log([minXadj,maxXadj,minZadj,maxZadj])
         }
 
-        return [ shapeCmdsLists.map(makeCmdsToMesh(reverseShape)) , holeCmdsListsArray.map(meshesFromCmdsListArray)  letterBox , letterOrigins ] ;
+        return [ shapeCmdsLists.map(makeCmdsToMesh(reverseShape)) , holeCmdsListsArray.map(meshesFromCmdsListArray) , letterBox , letterOrigins ] ;
 
         function meshesFromCmdsListArray(cmdsListArray){
           return cmdsListArray.map(makeCmdsToMesh(reverseHole))
@@ -483,29 +484,32 @@ define(
     // The compressed versions are placed in "sC" and "hC"
     // The *first* time a letter is used, if it was compressed, it is decompressed
     function makeLetterSpec(fontSpec,letter){
-      var letterSpec             = fontSpec[letter];
+      var letterSpec             = fontSpec[letter],
+          singleMap              = function(cmds){return decodeList(cmds)},
+          doubleMap              = function(cmdslists){return isArray(cmdslists)?cmdslists.map(singleMap):cmdslists};
+
       if(isObject(letterSpec)){
         if(!isArray(letterSpec.shapeCmds)&&isArray(letterSpec.sC)){
-          letterSpec.shapeCmds   = letterSpec.sC.map(function(cmds){return decodeList(cmds)})
+          letterSpec.shapeCmds   = letterSpec.sC.map(singleMap)
           letterSpec.sC          = null;
         }
         if(!isArray(letterSpec.holeCmds)&&isArray(letterSpec.hC)){
-          letterSpec.holeCmds    = letterSpec.hC.map(function(cmdslists){if(isArray(cmdslists)){return cmdslists.map(function(cmds){return decodeList(cmds)})}else{return cmdslists}});
+          letterSpec.holeCmds    = letterSpec.hC.map(doubleMap);
           letterSpec.hC          = null;
         }
       }
       return letterSpec;
+    };
 
-      function decodeList(str){
-        var split  = str.split(" "),
-            list   = [];
-        split.forEach(function(cmds){
-          if(cmds.length===12){list.push(decode6(cmds))}
-          if(cmds.length===8) {list.push(decode4(cmds))}
-          if(cmds.length===4) {list.push(decode2(cmds))}
-        });
-        return list
-      };
+    function decodeList(str){
+      var split    = str.split(" "),
+          list     = [];
+      split.forEach(function(cmds){
+        if(cmds.length===12){list.push(decode6(cmds))}
+        if(cmds.length===8) {list.push(decode4(cmds))}
+        if(cmds.length===4) {list.push(decode2(cmds))}
+      });
+      return list
       function decode6(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8)),decode1(s.substring(8,10)),decode1(s.substring(10,12))]};
       function decode4(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8))]};
       function decode2(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4))]};
