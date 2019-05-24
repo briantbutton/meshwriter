@@ -123,14 +123,14 @@ define(
         mesh.position.y          = scale*y;
         mesh.position.z          = scale*z;
 
-        this.getSPS              = function()  {return sps};
-        this.getMesh             = function()  {return mesh};
-        this.getMaterial         = function()  {return material};
-        this.getOffsetX          = function()  {return offsetX};
-        this.getLettersBoxes     = function()  {return lettersBoxes};
-        this.getLettersOrigins   = function()  {return lettersOrigins};
-        this.color               = function(c) {return isString(c)?color=c:color};
-        this.alpha               = function(o) {return isAmplitude(o)?opac=o:opac};
+        this.getSPS              = ()  => sps;
+        this.getMesh             = ()  => mesh;
+        this.getMaterial         = ()  => material;
+        this.getOffsetX          = ()  => offsetX;
+        this.getLettersBoxes     = ()  => lettersBoxes;
+        this.getLettersOrigins   = ()  => lettersOrigins;
+        this.color               = c   => isString(c)?color=c:color;
+        this.alpha               = o   => isAmplitude(o)?opac=o:opac;
         this.clearall            = function()  {sps=null;mesh=null;material=null};
       };
 
@@ -485,8 +485,8 @@ define(
     // The *first* time a letter is used, if it was compressed, it is decompressed
     function makeLetterSpec(fontSpec,letter){
       var letterSpec             = fontSpec[letter],
-          singleMap              = function(cmds){return decodeList(cmds)},
-          doubleMap              = function(cmdslists){return isArray(cmdslists)?cmdslists.map(singleMap):cmdslists};
+          singleMap              = cmds      => decodeList(cmds),
+          doubleMap              = cmdslists => isArray(cmdslists)?cmdslists.map(singleMap):cmdslists;
 
       if(isObject(letterSpec)){
         if(!isArray(letterSpec.shapeCmds)&&isArray(letterSpec.sC)){
