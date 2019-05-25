@@ -1,8 +1,9 @@
 # So you want to build a 3-D font, eh?
 
-A committed individual can transform an SVG-style path into something that MeshWriter will use.&nbsp;
-An extremely committed individual can make a whole alphabet.&nbsp;
-Here is the basic road map.
+3-D font conversion is now an automatic process.&nbsp;
+The documentation below is not needed (although you are welcome to read it).&nbsp;
+Instead, go to https://github.com/briantbutton/meshwriter-font for a package that will wholesale convert full font files.
+
 
 ## How shapes are specified
 

@@ -56,8 +56,8 @@ define(
 
       defaultFont                = isObject(FONTS[preferences.defaultFont]) ? preferences.defaultFont : "HelveticaNeue-Medium";
       meshOrigin                 = preferences.meshOrigin==="fontOrigin" ? preferences.meshOrigin : "letterCenter";
-      scale                      = isNumber(preferences.scale)?preferences.scale:1;
-      debug                      = isBoolean(preferences.debug)?preferences.debug:false;
+      scale                      = isNumber(preferences.scale) ? preferences.scale : 1;
+      debug                      = isBoolean(preferences.debug) ? preferences.debug : false;
 
       // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
       //  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR
@@ -133,6 +133,8 @@ define(
         this.alpha               = o   => isAmplitude(o)?opac=o:opac;
         this.clearall            = function()  {sps=null;mesh=null;material=null};
       };
+      //  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR  CONSTRUCTOR
+      // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
 
       proto                      = MeshWriter.prototype;
 
@@ -174,7 +176,12 @@ define(
       return MeshWriter;
 
     };
-    window.TYPE                  = Wrapper;
+    if ( typeof window !== "undefined" ) {
+      window.TYPE                = Wrapper
+    }
+    if ( typeof global !== "undefined" ) {
+      global.MeshWriter          = Wrapper
+    }
     if ( typeof BABYLON === "object" ) {
       BABYLON.MeshWriter         = Wrapper;
       supplementCurveFunctions();
@@ -387,15 +394,18 @@ define(
           maxZadj                = thisZ+zShift<maxZadj?maxZadj:thisZ+zShift;
           return cmd
         };
+
+        // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
+        // Returns the a scaling function, based on incoming parameters
         function makeAdjust(letterScale,factor,off,shift,relative,xAxis){
           if(relative){
             if(xAxis){
-              return function(val){return round(letterScale*((val*factor)+shift+lastX+off))}
+              return val => round(letterScale*((val*factor)+shift+lastX+off))
             }else{
-              return function(val){return round(letterScale*((val*factor)+shift+lastZ+off))}
+              return val => round(letterScale*((val*factor)+shift+lastZ+off))
             }
           }else{
-            return function(val){return round(letterScale*((val*factor)+shift+off))}
+            return val => round(letterScale*((val*factor)+shift+off))
           }
         }
       };
@@ -419,7 +429,7 @@ define(
         for(var k=0; k<holes.length; k++){
           csgShape               = csgShape.subtract(BABYLON.CSG.FromMesh(holes[k]))
         }
-        holes.forEach(function(h){h.dispose()});
+        holes.forEach(h=>h.dispose());
         shape.dispose();
         return csgShape.toMesh("Net-"+letter+i+"-"+weeid())
       };
