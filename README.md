@@ -1,4 +1,4 @@
-# Mesh Writer
+# MeshWriter
 
 Generate letters in BABYLON meshes.
 
@@ -106,3 +106,16 @@ If BABYLON is already loaded, then MeshWriter will attach itself to BABYLON, all
 
 Otherwise MeshWriter will attach to window.
 
+### Earcut
+
+Earcut is a simple, stable and small utility that is needed by PolygonMeshBuilder, which MeshWriter calls.&nbsp;
+If you haven't otherwise loaded Earcut, do so.&nbsp;
+The repo is here: https://github.com/mapbox/earcut.&nbsp;
+And there is a recent version in this repo.
+
+
+## Custom font packages
+
+MeshWriter-Font (https://github.com/briantbutton/meshwriter-font) will convert most common font files into MeshWriter compatible font files.&nbsp;
+
+To create a custom build (a new meshwriter.min.js) with your custom fonts, refer to the README in this repo in the 'fonts' directory.

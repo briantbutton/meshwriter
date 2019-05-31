@@ -4,6 +4,19 @@
 The documentation below is not needed (although you are welcome to read it).&nbsp;
 Instead, go to https://github.com/briantbutton/meshwriter-font for a package that will wholesale convert full font files.
 
+Note to self: set up the output file name to lowercase
+
+Go to base of meshwriter-font
+start node
+require("./index")
+convertFontFile({suffix:"ttf",name:"HelveticaNeue-Medium",dir:"fonts",compress:true})
+exit node
+cp font to meshwriter/fonts
+wire stuff up
+npm run build
+cd dist
+terser meshwriter.js -m reserved=['MeshWriter']
+
 
 ## How shapes are specified
 
