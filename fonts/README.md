@@ -1,22 +1,43 @@
 # So you want to build a 3-D font, eh?
 
 3-D font conversion is now an automatic process.&nbsp;
-The documentation below is not needed (although you are welcome to read it).&nbsp;
-Instead, go to https://github.com/briantbutton/meshwriter-font for a package that will wholesale convert full font files.
+The documentation below is no longer needed (although you are welcome to read it).&nbsp;
+Instead, go to https://github.com/briantbutton/meshwriter-font for a package that will convert full font files.&nbsp;
+When you have done that, come back here for further instructions.
 
-Note to self: set up the output file name to lowercase
 
-Go to base of meshwriter-font
-start node
-require("./index")
-convertFontFile({suffix:"ttf",name:"HelveticaNeue-Medium",dir:"fonts",compress:true})
-exit node
-cp font to meshwriter/fonts
-wire stuff up
-npm run build
-cd dist
-terser meshwriter.js -m reserved=['MeshWriter']
+## Creating a custom font set
 
+MeshWriter can build with an arbitrary selection of font files.&nbsp;
+This is all specified in the first 50 lines of /meshwriter/index.js
+
+### Step 1 - reference the font files into variable names
+
+### Step 2 - call each font with 'codelist'
+
+This just passes along the encoding function.&nbsp;
+Sorry if it seems awkward.
+
+### Step 3 - Assign a text name (or two) to each font
+
+This is used to invoke it.
+
+
+## Build a package
+
+In /meshwriter, execute:
+	npm run build
+
+This has placed an unminified version of meshwriter, with all your fonts, in /meshwriter/dist.&nbsp;
+Almost there!&nbsp;
+It only remains to minify it.&nbsp;
+Use any tool you want.  However, save "MeshWriter" as a reserved word.  Here is the command I use:
+	terser meshwriter.js -m reserved=['MeshWriter']
+
+We are now *finished*.&nbsp;
+Back to our regularly scheduled programming, describing in detail how shapes are specified.&nbsp;
+
+You may turn off your television sets now.&nbsp;
 
 ## How shapes are specified
 

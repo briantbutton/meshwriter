@@ -5,25 +5,30 @@
  * Released under the MIT license
  */
 
+
+// *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
+// This function loads the specific type-faces and returns the superconstructor
+// If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
+// Otherwise it assigns it to global variable 'BABYLONTYPE'
+
 define(
+  // >>>>>  STEP 1 <<<<<
   ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium','./fonts/webgl-dings'],
-
-  // *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-* *-*=*  *=*-*
-  // This function loads the specific type-faces and returns the superconstructor
-  // If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
-  // Otherwise it assigns it to global variable 'BABYLONTYPE'
-
   function(HPB,HNM,CSN,JUR,WGD){
+  // >>>>>  STEP 1 <<<<<
 
     var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd,debug;
     var b128back,b128digits;
     prepArray();
+    // >>>>>  STEP 2 <<<<<
     hpb                          = HPB(codeList);
     hnm                          = HNM(codeList);
     csn                          = CSN(codeList);
     jur                          = JUR(codeList);
     wgd                          = WGD(codeList);
+    // >>>>>  STEP 2 <<<<<
     FONTS                        = {};
+    // >>>>>  STEP 3 <<<<<
     FONTS["HirukoPro-Book"]      = hpb;
     FONTS["HelveticaNeue-Medium"]= hnm;
     FONTS["Helvetica"]           = hnm;
@@ -36,6 +41,7 @@ define(
     FONTS["jura"]                = jur;
     FONTS["WebGL-Dings"]         = wgd;
     FONTS["Web-dings"]           = wgd;
+    // >>>>>  STEP 3 <<<<<
     defaultColor                 = "#808080";
     defaultOpac                  = 1;
     curveSampleSize              = 6;
