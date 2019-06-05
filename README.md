@@ -6,8 +6,8 @@ Generate letters in BABYLON meshes.
 
 ### Usage Summary
 
-	Writer    = BABYLON.MeshWriter(scene, {scale:scale});          // Returns re-usable constructor
-	text1     = new Writer(                                        // Inserts text into scene, per options
+	Writer    = BABYLON.MeshWriter(scene, {scale:scale});       // Returns re-usable constructor
+	text1     = new Writer(                                     // Inserts text into scene, per options
 	                   "ABC",
 	                   {
 	                       "anchor": "center",
@@ -18,8 +18,8 @@ Generate letters in BABYLON meshes.
   	                     }
 	                    }
 	             );
-	textMesh  = text1.getMesh()                                    // Returns a regular BABYLON mesh, which can be
-	                                                               // manipulated using standard methods
+	textMesh  = text1.getMesh()                                 // Returns a regular BABYLON mesh, which can
+	                                                            // be manipulated using standard methods
 
 &#9679; See playground example:
 https://www.babylonjs-playground.com/#PL752W#22
@@ -119,7 +119,7 @@ And there is a recent version in this repo.
 ## Custom font packages
 
 MeshWriter comes with only a few fonts.&nbsp;
-Industrious folk with special needs can create a MeshWriter package with their own fonts.&nbsp;
+Industrious folk with specific requirements can create a MeshWriter package with their own fonts.&nbsp;
 Think of this as two steps.
 
 1) Converting standard font files (.ttf or .otf) to MeshWriter font files, and
