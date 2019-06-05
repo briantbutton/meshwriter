@@ -4,10 +4,10 @@ Generate letters in BABYLON meshes.
 
 ## Javascript Calls And Parameters
 
-### Basic Usage
+### Usage Summary
 
-	Writer = BABYLON.MeshWriter(scene, {scale:scale});
-	text1  = new Writer( 
+	Writer = BABYLON.MeshWriter(scene, {scale:scale});           // Returns re-usable constructor
+	text1  = new Writer(                                         // Inserts text into scene, per options
 	                "ABC",
 	                {
 	                    "anchor": "center",
@@ -24,7 +24,7 @@ https://www.babylonjs-playground.com/#PL752W#22
 
 ### Superconstructor - BABYLON.MeshWriter()
 
-After this module is loaded, BABYLON.MeshWriter is defined.  It is called with one or two parameters.
+After MeshWriter is loaded (see below), BABYLON.MeshWriter is defined.  It is called with one or two parameters.
 - **scene** &nbsp; required
 - **preferences** &nbsp; optional &nbsp; The preferences object may specify up to three values
 
@@ -109,7 +109,7 @@ Otherwise MeshWriter will attach to window.
 ### Earcut
 
 Earcut is a simple, stable and small utility that is needed by PolygonMeshBuilder, which MeshWriter calls.&nbsp;
-If you haven't otherwise loaded Earcut, do so.&nbsp;
+If you haven't otherwise loaded Earcut, do so; it is _not_ included in meshwriter.min.js.&nbsp;
 The repo is here: https://github.com/mapbox/earcut.&nbsp;
 And there is a recent version in this repo.
 

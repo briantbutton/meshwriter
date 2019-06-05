@@ -333,7 +333,7 @@ define(
             // 
             // IDIOCYNCRACY:  Odd-length arrays indicate relative coordinates; the first digit is discarded
             
-            for(j=1;j<cmdsList.length;j++){
+            for ( j=1 ; j<cmdsList.length ; j++ ) {
               cmd                = getCmd(cmdsList,j);
 
               // ~  ~  ~  ~  ~  ~  ~  ~
@@ -382,8 +382,8 @@ define(
           lastZ                  = thisZ;
           cmd                    = list[ix];
           len                    = cmd.length;
-          thisX                  = len===3||len===5||len===7?round((cmd[len-2]*xFactor)+thisX):round(cmd[len-2]*xFactor);
-          thisZ                  = len===3||len===5||len===7?round((cmd[len-1]*zFactor)+thisZ):round(cmd[len-1]*zFactor);
+          thisX                  = isRelativeLength(len) ? round((cmd[len-2]*xFactor)+thisX) : round(cmd[len-2]*xFactor);
+          thisZ                  = isRelativeLength(len) ? round((cmd[len-1]*zFactor)+thisZ) : round(cmd[len-1]*zFactor);
           minX                   = thisX>minX?minX:thisX;
           maxX                   = thisX<maxX?maxX:thisX;
           minXadj                = thisX+xShift>minXadj?minXadj:thisX+xShift;
@@ -412,10 +412,10 @@ define(
 
       // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
       function punchHolesInShapes(shapesList,holesList){
-        var letterMeshes         = [],shape,holes,j;
-        for(j=0;j<shapesList.length;j++){
-          shape                  = shapesList[j];
-          holes                  = holesList[j];
+        var letterMeshes         = [],j;
+        for ( j=0 ; j<shapesList.length ; j++ ) {
+          let shape              = shapesList[j];
+          let holes              = holesList[j];
           if(isArray(holes)&&holes.length){
             letterMeshes.push ( punchHolesInShape(shape,holes,letter,i) )
           }else{
@@ -425,8 +425,8 @@ define(
         return letterMeshes
       };
       function punchHolesInShape(shape,holes,letter,i){
-        var csgShape             = BABYLON.CSG.FromMesh(shape);
-        for(var k=0; k<holes.length; k++){
+        var csgShape             = BABYLON.CSG.FromMesh(shape),k;
+        for ( k=0; k<holes.length ; k++ ) {
           csgShape               = csgShape.subtract(BABYLON.CSG.FromMesh(holes[k]))
         }
         holes.forEach(h=>h.dispose());
@@ -436,7 +436,7 @@ define(
     };
 
     function makeMaterial(scene,letters,emissive,ambient,specular,diffuse,opac){
-      var cm0                    = new BABYLON.StandardMaterial("mw-matl-"+letters+"-"+weeid(),scene);
+      var cm0                    = new BABYLON.StandardMaterial("mw-matl-"+letters+"-"+weeid(), scene);
       cm0.diffuseColor           = rgb2Bcolor3(diffuse);
       cm0.specularColor          = rgb2Bcolor3(specular);
       cm0.ambientColor           = rgb2Bcolor3(ambient);
@@ -520,10 +520,10 @@ define(
         if(cmds.length===4) {list.push(decode2(cmds))}
       });
       return list
-      function decode6(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8)),decode1(s.substring(8,10)),decode1(s.substring(10,12))]};
-      function decode4(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4)),decode1(s.substring(4,6)),decode1(s.substring(6,8))]};
-      function decode2(s){return [decode1(s.substring(0,2)),decode1(s.substring(2,4))]};
-      function decode1(s){return (frB128(s)-4000)/2};
+      function decode6(s){return [decode1(s,0,2),decode1(s,2,4),decode1(s,4,6),decode1(s,6,8),decode1(s,8,10),decode1(s,10,12)]};
+      function decode4(s){return [decode1(s,0,2),decode1(s,2,4),decode1(s,4,6),decode1(s,6,8)]};
+      function decode2(s){return [decode1(s,0,2),decode1(s,2,4)]};
+      function decode1(s,start,end){return (frB128(s.substring(start,end))-4000)/2};
     };
     function codeList(list){
       var str   = "",
@@ -629,6 +629,7 @@ define(
     function isString(ms)         { return typeof ms === "string" ? ms.length>0 : false }  ;
     function isSupportedFont(ff)  { return isObject(FONTS[ff]) } ;
     function isSupportedAnchor(a) { return a==="left"||a==="right"||a==="center" } ;
+    function isRelativeLength(l)  { return l===3||l===5||l===7 } ;
     function weeid()              { return Math.floor(Math.random()*1000000) } ;
     function round(n)             { return Γ(0.3+n*1000000)/1000000 }
   }
