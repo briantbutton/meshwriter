@@ -29,7 +29,9 @@ This is used to invoke it.
 
 ## Build a package
 
-In /meshwriter, execute:
+On your dev machine (set up as described in meshwriter-font) do to the /meshwriter repo.&nbsp;
+Type:
+
 	npm run build
 
 This has placed an unminified version of meshwriter, with all your fonts, in /meshwriter/dist.&nbsp;
