@@ -1,15 +1,19 @@
 # So you want to build a 3-D font, eh?
 
 3-D font conversion is now an automatic process.&nbsp;
-The documentation below is no longer needed (although you are welcome to read it).&nbsp;
+The documentation further below is no longer needed (although you are welcome to read it).&nbsp;
 Instead, go to https://github.com/briantbutton/meshwriter-font for a package that will convert full font files.&nbsp;
 When you have done that, come back here for further instructions.
 
 
-## Creating a custom font set
+## Building MeshWriter with a customized font set
 
 MeshWriter can build with an arbitrary selection of font files.&nbsp;
-This is all specified in the first 50 lines of /meshwriter/index.js
+All font files should be converted into MeshWriter form and placed in this directory.&nbsp;
+Linking the font files into your build is done with a require statement.&nbsp;
+Easy.&nbsp;
+Open /meshwriter/index.js and take a look at the steps described in the first fifty lines of that file.&nbsp;
+Three steps for each font file.&nbsp;
 
 ### Step 1 - reference the font files into variable names
 
@@ -39,7 +43,9 @@ Back to our regularly scheduled programming, describing in detail how shapes are
 
 You may turn off your television sets now.&nbsp;
 
-## How shapes are specified
+Stop reading.&nbsp;
+
+## Background information:  How shapes are specified
 
 ### Basic shapes
 
