@@ -38,6 +38,7 @@ This has placed an unminified version of meshwriter, with all your fonts, in /me
 Almost there!&nbsp;
 It only remains to minify it.&nbsp;
 Use any tool you want.  However, save "MeshWriter" as a reserved word.  Here is the command I use:
+
 	terser meshwriter.js -m reserved=['MeshWriter']
 
 We are now *finished*.&nbsp;
