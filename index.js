@@ -10,6 +10,9 @@
 // This function loads the specific type-faces and returns the superconstructor
 // If BABYLON is loaded, it assigns the superconstructor to BABYLON.MeshWriter
 // Otherwise it assigns it to global variable 'BABYLONTYPE'
+// 
+// Note to developers:  Helvetica Neue Medium is assumed, by the code, to be present
+//                      Do NOT remove it during customization
 
 define(
   // >>>>>  STEP 1 <<<<<
@@ -22,7 +25,7 @@ define(
     prepArray();
     // >>>>>  STEP 2 <<<<<
     hpb                          = HPB(codeList);
-    hnm                          = HNM(codeList);
+    hnm                          = HNM(codeList);                         // Do not remove
     csn                          = CSN(codeList);
     jur                          = JUR(codeList);
     wgd                          = WGD(codeList);
@@ -30,7 +33,7 @@ define(
     FONTS                        = {};
     // >>>>>  STEP 3 <<<<<
     FONTS["HirukoPro-Book"]      = hpb;
-    FONTS["HelveticaNeue-Medium"]= hnm;
+    FONTS["HelveticaNeue-Medium"]= hnm;                                   // Do not remove
     FONTS["Helvetica"]           = hnm;
     FONTS["Arial"]               = hnm;
     FONTS["sans-serif"]          = hnm;
