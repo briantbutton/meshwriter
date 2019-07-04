@@ -91,6 +91,8 @@ There are four font families available, 'Helvetica', 'HirukoPro-Book', 'Jura', '
 The default font, Helvetica, is probably the one you want.&nbsp;
 If it is, no font family need be specified.&nbsp;
 Also, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp;
+&#9679; See playground example:&nbsp; https://www.babylonjs-playground.com/#PL752W#45
+
 Jura was added because the author likes it for numbers.
 
 **Important:** Comic and Web-Dings are really just placeholders as of this writing, with only a few glyphs.

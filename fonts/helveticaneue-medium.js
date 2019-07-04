@@ -137,14 +137,23 @@ define(
         yMax           : 531,
         width          : 556
       };
-      font["á"]        = {
-        sC             : [acuteCoded(158,0),font.a.sC[0]],
-        hC             : [[],font.a.hC[0]],
+      font["á"]        = supplement(font.a,"acute",0,158);
+      font["à"]        = supplement(font.a,"grave",0,158);
+      font["ä"]        = supplement(font.a,"dieresis",0,158);
+      font["â"]        = supplement(font.a,"circumflex",0,158);
+      font["å"]        = supplement(font.a,"ring",0,158);
+      font["æ"]        = {
+        sC             : [
+                           'LµC« NwC« NJBeMLA¨ LNA%K!A% HµA%H%Be G%A%DyA% CVA%BqAs A¥BBA¥CT A¥D£B¥EL CPE{D³E¹ F]F4FcF6 G:FPG:G( G:H4EqH4 C½H4C¯F³ B(F³ B4HHCBHÃ D8IiEyIi GyIiHVH] I@IiJÁIi L¯IiM­HP N£GBN£EL N£E,N¡D¯ H³D¯ H±C¯IPC8 I»BZJÁBZ LTBZLµC«'
+                         ],
+        hC             : [
+                           ['G8D* G8ED F½E(FBD¿ EsD·E!D­ CgDmCgC_ CgBZE6BZ E¿BZFgB³ G8CJG8D*','H³F! L½F! L¿FÁLVGj K³H4J·H4 IÃH4IZGc H»F»H³F!']
+                         ],
         xMin           : 32,
-        xMax           : 548,
+        xMax           : 863,
         yMin           : -14,
-        yMax           : 731,
-        width          : 556
+        yMax           : 531,
+        width          : 889
       };
       font["b"]        = {
         sC             : [
@@ -160,7 +169,7 @@ define(
         width          : 611
       };
       font["c"]        = {
-        sC      : [
+        sC             : [
                            'IXFs GuFs GXH4E«H4 D¹H4DNGo CmF±CmE< CmD*D*CJ DuBZE¡BZ FcBZG"B¼ GeCXGuDF IXDF H¹A%E¡A% CµA%B­B@ A«CPA«E< A«G2B«HH C³IiE©Ii GDIiH@H¯ IHH(IXFs'
                          ],
         xMin           : 35,
@@ -169,6 +178,17 @@ define(
         yMax           : 531,
         width          : 556
       };
+      font["ç"]        = {
+        sC             : [
+                           'GuDF IXDF H½A<F(A* Ec@N Ec@J Es@PF#@P Fg@PF¹@, GN?¥GN?< GN>_F£>. F@=«E]=« DV=«C±>2 D2>¥ Dµ>cE4>c F.>cF.?4 F.?XEµ?m Ew?£ER?£ E%?£D§?m DX?µ EJA* CuA:B}BP A«C_A«E< A«G2B«HH C³IiE©Ii GDIiH@H¯ IHH(IXFs GuFs GXH4E«H4 D¹H4DNGo CmF±CmE< CmD*D*CJ DuBZE¡BZ FcBZG"B¼ GeCXGuDF'
+                         ],
+        xMin           : 35,
+        xMax           : 523,
+        yMin           : -221,
+        yMax           : 531,
+        width          : 556
+      };
+      font["č"]        = supplement(font.c,"caron",0,158);
       font["d"]        = {
         sC             : [
                            'H#LV I«LV I«AB H0AB H0BN H,BN GVA%EmA% C£A%B£BF A«CZA«EN A«GVB·Hi C±IiEHIi G<IiGÃHF H#HF H#LV'
@@ -183,10 +203,10 @@ define(
         width          : 611
       };
       font["e"]        = {
-        sC      : [
+        sC             : [
                            'IeD¯ CmD¯ CmC­D0C6 D{BZE¥BZ GBBZG¡C© IVC© I2BaH1A¦ G0A%E¥A% C·A%B±B< A«CRA«EF A«G*B±HF C¿IiE}Ii GVIiHcHH IiG2IiEX IiE2IeD¯'
                          ],
-        hC       : [
+        hC             : [
                            ['CmF! G£F! G{F·G3Ge FmH4E}H4 D«H4D<Gg CqF»CmF!']
                          ],
         xMin           : 35,
@@ -195,15 +215,10 @@ define(
         yMax           : 531,
         width          : 556
       };
-      font["é"]        = {
-        sC             : [acuteCoded(158,0),font.e.sC[0]],
-        hC             : [[],font.e.hC[0]],
-        xMin           : 35,
-        xMax           : 531,
-        yMin           : -14,
-        yMax           : 731,
-        width          : 556
-      };
+      font["é"]        = supplement(font.e,"acute",0,158);
+      font["è"]        = supplement(font.e,"grave",0,158);
+      font["ë"]        = supplement(font.e,"dieresis",0,158);
+      font["ê"]        = supplement(font.e,"circumflex",0,158);
       font["f"]        = {
         sC      : [
                            'B¡H! ATH! ATIL B¡IL B¡J! B¡KVCVKÃ C»LVD¿LV E­LVF<LH F<J¹ E³K!ERK! DcK!DcJ6 DcIL F#IL F#H! DcH! DcAB B¡AB B¡H!'
@@ -215,10 +230,10 @@ define(
         width          : 315
       };
       font["g"]        = {
-        sC      : [
+        sC             : [
                            'GµIL IwIL IwAy Iw>(E{>( DF>(CL>o B:?BB,@k C³@k D0?RE«?R Gµ?RGµAZ GµBy G±By G(ABEXAB CoABBwBe A«CsA«Ec A«G<B§HN C©IiE]Ii G:IiG±H> GµH> GµIL'
                          ],
-        hC       : [
+        hC             : [
                            ['E}Bw F«BwGRCi GµDJGµE_ GµFqGRGL F«H4E}H4 DqH4D(G@ CmFaCmEL CmD@D,Cc DwBwE}Bw']
                          ],
         xMin           : 35,
@@ -228,7 +243,7 @@ define(
         width          : 593
       };
       font["h"]        = {
-        sC      : [
+        sC             : [
                            'CÁAB B:AB B:LV CÁLV CÁHD D!HD DNH¯DÄI: EuIiFXIi G§IiHfH± IFH4IFF« IFAB GcAB GcFL GcH4E»H4 E(H4DdGg CÁF»CÁF# CÁAB'
                          ],
         xMin           : 60,
@@ -238,7 +253,7 @@ define(
         width          : 574
       };
       font["i"]        = {
-        sC      : [
+        sC             : [
                            'D#J¡ B@J¡ B@LV D#LV D#J¡',
                            'D#AB B@AB B@IL D#IL D#AB'
                          ],
@@ -248,14 +263,20 @@ define(
         yMax           : 714,
         width          : 241
       };
-      font["í"]        = {
-        sC             : [acuteCoded(0,0),dotlessiCoded()],
-        xMin           : 45,
-        xMax           : 270,
+      font["ı"]        = {
+        sC             : [
+                           'D#AB B@AB B@IL D#IL D#AB'
+                         ],
+        xMin           : 63,
+        xMax           : 177,
         yMin           : 0,
-        yMax           : 731,
+        yMax           : 500,
         width          : 241
       };
+      font["í"]        = supplement(font["ı"],"acute",0,0);
+      font["ì"]        = supplement(font["ı"],"grave",0,0);
+      font["ï"]        = supplement(font["ı"],"dieresis",0,0);
+      font["î"]        = supplement(font["ı"],"circumflex",0,0);
       font["j"]        = {
         sC      : [
                            'D#J¡ B@J¡ B@LV D#LV D#J¡',
@@ -307,14 +328,8 @@ define(
         yMax           : 531,
         width          : 574
       };
-      font["ñ"]        = {
-        sC             : [tildeCoded(167,0),font.n.sC[0]],
-        xMin           : 60,
-        xMax           : 514,
-        yMin           : 0,
-        yMax           : 531,
-        width          : 574
-      };
+      font["ñ"]        = supplement(font.n,"tilde",0,167);
+      font["ń"]        = supplement(font.n,"acute",0,167);
       font["o"]        = {
         sC             : [
                            'E·A% CÃA%BµB@ A­CTA­EH A­G:B¸HQ CÃIiE·Ii G«IiH¹HN IÁG:IÁEH IÁCTH¹B@ G«A%E·A%'
@@ -328,33 +343,10 @@ define(
         yMax           : 531,
         width          : 593
       };
-      font["ô"]        = {
-        sC             : [circumflexCoded(176,0),font.o.sC[0]],
-        hC             : [[],font.o.hC[0]],
-        xMin           : 36,
-        xMax           : 558,
-        yMin           : -14,
-        yMax           : 731,
-        width          : 593
-      };               
-      font["ö"]        = {
-        sC             : [dieresisLeftCoded(176,0),dieresisRightCoded(176,0),font.o.sC[0]],
-        hC             : [[],[],font.o.hC[0]],
-        xMin           : 36,
-        xMax           : 558,
-        yMin           : -14,
-        yMax           : 707,
-        width          : 593
-      };                
-      font["ó"]        = {
-        sC             : [acuteCoded(176,0),font.o.sC[0]],
-        hC             : [[],font.o.hC[0]],
-        xMin           : 36,
-        xMax           : 558,
-        yMin           : -14,
-        yMax           : 731,
-        width          : 593
-      };
+      font["ô"]        = supplement(font.o,"circumflex",0,176);
+      font["ò"]        = supplement(font.o,"grave",0,176);
+      font["ó"]        = supplement(font.o,"acute",0,176);
+      font["ö"]        = supplement(font.o,"dieresis",0,176);
       font["p"]        = {
         sC             : [
                            'D#>D B@>D B@IL C»IL C»H@ C¿H@ DyIiF]Ii HFIiIHHF J@G2J@EB J@CaITBL HZA%F¥A% D±A%D(BH D#BH D#>D'
@@ -402,7 +394,7 @@ define(
         width          : 519
       };
       font["t"]        = {
-        sC      : [
+        sC             : [
                            'B¡H! ARH! ARIL B¡IL B¡K¥ DcK¥ DcIL F0IL F0H! DcH! DcC{ DcC*DsB³ D«BmEPBm E³BmF0Bu F0AD D½A8D¿A8 CuA8C4A} B¡B4B¡C@ B¡H!'
                          ],
         xMin           : 8,
@@ -412,7 +404,7 @@ define(
         width          : 333
       };
       font["u"]        = {
-        sC      : [
+        sC             : [
                            'GcIL IFIL IFAB GgAB GgBR GcBR G8A©FfAV EµA%E<A% B:A%B:D< B:IL CÁIL CÁDR CÁBZEeBZ GcBZGcDu GcIL'
                          ],
         xMin           : 60,
@@ -421,6 +413,10 @@ define(
         yMax           : 517,
         width          : 574
       };
+      font["ú"]        = supplement(font.u,"acute",0,167);
+      font["ù"]        = supplement(font.u,"grave",0,167);
+      font["ü"]        = supplement(font.u,"dieresis",0,167);
+      font["û"]        = supplement(font.u,"circumflex",0,167);
       font["v"]        = {
         sC      : [
                            'FLAB DLAB ATIL CLIL ERC2 EVC2 GRIL I>IL FLAB'
@@ -461,6 +457,7 @@ define(
         yMax           : 517,
         width          : 519
       };
+      font["ÿ"]        = supplement(font.y,"dieresis",0,139);
       font["z"]        = {
         sC      : [
                            'F*G» A¹G» A¹IL H_IL H_H, C±Bw H}Bw H}AB AoAB AoBc F*G»'
@@ -483,6 +480,25 @@ define(
         yMin           : 0,
         yMax           : 714,
         width          : 667
+      };
+      font["Á"]        = supplement(font.A,"acute",213,197);
+      font["À"]        = supplement(font.A,"grave",213,197);
+      font["Ã"]        = supplement(font.A,"tilde",213,197);
+      font["Â"]        = supplement(font.A,"circumflex",213,197);
+      font["Ä"]        = supplement(font.A,"dieresis",213,197);
+      font["Å"]        = supplement(font.A,"ring",213,197);
+      font["Æ"]        = {
+        sC             : [
+                           'CJAB A4AB F{LV O{LV O{J¡ JBJ¡ JBG« ONG« ONF< JBF< JBB½ O©B½ O©AB HTAB HTD0 DwD0 CJAB'
+                         ],
+        hC             : [
+                           ['HTJ¡ G¯J¡ EREo HTEo HTJ¡']
+                         ],
+        xMin           : -7,
+        xMax           : 930,
+        yMin           : 0,
+        yMax           : 714,
+        width          : 963
       };
       font["B"]        = {
         sC      : [
@@ -530,6 +546,10 @@ define(
         yMax           : 714,
         width          : 630
       };
+      font["É"]        = supplement(font.E,"acute",195,197);
+      font["È"]        = supplement(font.E,"grave",195,197);
+      font["Ê"]        = supplement(font.E,"circumflex",195,197);
+      font["Ë"]        = supplement(font.E,"dieresis",195,197);
       font["F"]        = {
         sC      : [
                            'DTAB BZAB BZLV J4LV J4J¡ DTJ¡ DTG« IZG« IZF< DTF< DTAB'
@@ -601,7 +621,7 @@ define(
         width          : 574
       };
       font["M"]        = {
-        sC      : [
+        sC             : [
                            'DDAB BVAB BVLV E6LV H@Cy HDCy KDLV MÃLV MÃAB L2AB L2I³ L.I³ I!AB GTAB DHI³ DDI³ DDAB'
                          ],
         xMin           : 74,
@@ -611,7 +631,7 @@ define(
         width          : 889
       };
       font["N"]        = {
-        sC      : [
+        sC             : [
                            'D>AB BPAB BPLV DXLV IeD: IiD: IiLV KVLV KVAB INAB DDI] D>I] D>AB'
                          ],
         xMin           : 71,
@@ -620,11 +640,12 @@ define(
         yMax           : 714,
         width          : 722
       };
+      font["Ñ"]        = supplement(font.N,"tilde",241,197);
       font["O"]        = {
-        sC      : [
+        sC             : [
                            'G:Ly IsLyK0J¿ LgIHLgF¯ LgDPK0B¡ Is@ÃG:@Ã D¥@ÃCDB¡ A±DPA±F¯ A±IHCDJ¿ D¥LyG:Ly'
                          ],
-        hC       : [
+        hC             : [
                            ['G:K, EeK,DoI¥ C«HoC«F¯ C«E*DoC¹ EeBmG:Bm H³BmI©C¹ JmE*JmF¯ JmHoI©I¥ H³K,G:K,']
                          ],
         xMin           : 38,
@@ -633,11 +654,16 @@ define(
         yMax           : 731,
         width          : 760
       };
+      font["Ó"]        = supplement(font.O,"acute",260,197);
+      font["Ò"]        = supplement(font.O,"grave",260,197);
+      font["Ô"]        = supplement(font.O,"circumflex",260,197);
+      font["Ö"]        = supplement(font.O,"dieresis",260,197);
+      font["Õ"]        = supplement(font.O,"tilde",260,197);
       font["P"]        = {
-        sC      : [
+        sC             : [
                            'DTAB BZAB BZLV GPLV IaLVJ]K< K6JLK6H¿ K6GoJ]F£ IaEgGPEg DTEg DTAB'
                          ],
-        hC       : [
+        hC             : [
                            ['GFJ­ DTJ­ DTG2 GBG2 H%G2HkGe I<H!I<HÁ I<J­GFJ­']
                          ],
         xMin           : 76,
@@ -647,10 +673,10 @@ define(
         width          : 667
       };
       font["Q"]        = {
-        sC      : [
+        sC             : [
                            'J¿Bi LTAH KZ@@ I­Aw Hs@ÃG:@Ã D¥@ÃCDB¡ A±DPA±F¯ A±IHCDJ¿ D¥LyG:Ly IsLyK0J¿ LgIHLgF¯ LgD*J¿Bi'
                          ],
-        hC       : [
+        hC             : [
                            ['HZB± GJC¯ HBD¹ IqC¡ JmDµJmF¯ JmHoI©I¥ H³K,G:K, EeK,DoI¥ C«HoC«F¯ C«E*DoC¹ EeBmG:Bm G·BmHZB±']
                          ],
         xMin           : 38,
@@ -660,10 +686,10 @@ define(
         width          : 760
       };
       font["R"]        = {
-        sC      : [
+        sC             : [
                            'DTAB BZAB BZLV G§LV ImLVJeKr K]J¯K]IT K]G>IqFm IqFi KDFJKDD: KDA¹KµAB I©AB IaA£IaB· IaDcI(E4 HkE±GDE± DTE± DTAB'
                          ],
-        hC       : [
+        hC             : [
                            ['GkJ­ DTJ­ DTGL GoGL IcGLIcI0 IcJ­GkJ­']
                          ],
         xMin           : 76,
@@ -673,7 +699,7 @@ define(
         width          : 704
       };
       font["S"]        = {
-        sC      : [
+        sC             : [
                            'A§DÁ C¡DÁ C¡C¥DiC2 EFBmFiBm G¥BmHRC0 H¹CkH¹DD H¹EHGÃEu G³E{DwFk B:G@B:IT B:JÁC_Kµ DqLyFDLy H.LyIFK§ JiJ©JiI0 HoI0 H_K,F:K, ERK,D¯J© D4JTD4Is D4HiE_H; F«G±H{GL I£G#JLF8 J³EVJ³Da J³B£I_A« HD@ÃFX@Ã DT@ÃC6A½ A«BÃA§DÁ'
                          ],
         xMin           : 33,
@@ -683,7 +709,7 @@ define(
         width          : 648
       };
       font["T"]        = {
-        sC      : [
+        sC             : [
                            'D¹J¡ ARJ¡ ARLV JVLV JVJ¡ F³J¡ F³AB D¹AB D¹J¡'
                          ],
         xMin           : 8,
@@ -693,7 +719,7 @@ define(
         width          : 593
       };
       font["U"]        = {
-        sC      : [
+        sC             : [
                            'BJED BJLV DDLV DDE¹ DDDTDsC£ E<ByF·By HmByI6C£ IeDTIeE¹ IeLV K_LV K_ED K_C8J>B( I#@ÃF·@Ã D§@ÃCmB( BJC8BJED'
                          ],
         xMin           : 68,
@@ -702,8 +728,12 @@ define(
         yMax           : 714,
         width          : 722
       };
+      font["Ú"]        = supplement(font.U,"acute",260,197);
+      font["Ù"]        = supplement(font.U,"grave",260,197);
+      font["Û"]        = supplement(font.U,"circumflex",260,197);
+      font["Ü"]        = supplement(font.U,"dieresis",260,197);
       font["V"]        = {
-        sC      : [
+        sC             : [
                            'G*AB D·AB A8LV C<LV F!Cm F%Cm H·LV JµLV G*AB'
                          ],
         xMin           : -5,
@@ -713,7 +743,7 @@ define(
         width          : 611
       };
       font["W"]        = {
-        sC      : [
+        sC             : [
                            'FHAB DFAB ANLV CLLV ENCµ ERCµ GsLV IsLV K­Cµ K±Cµ M»LV O¹LV L¯AB J±AB HqI© HmI© FHAB'
                          ],
         xMin           : 6,
@@ -723,7 +753,7 @@ define(
         width          : 944
       };
       font["X"]        = {
-        sC      : [
+        sC             : [
                            'A<AB E6G% A_LV C«LV FLH_ HÁLV K6LV G_G% KXAB I(AB FDEe CZAB A<AB'
                          ],
         xMin           : -3,
@@ -733,7 +763,7 @@ define(
         width          : 648
       };
       font["Y"]        = {
-        sC      : [
+        sC             : [
                            'GHAB ENAB ENEs A6LV CXLV FRGV IFLV K_LV GHEs GHAB'
                          ],
         xMin           : -6,
@@ -743,7 +773,7 @@ define(
         width          : 648
       };
       font["Z"]        = {
-        sC      : [
+        sC             : [
                            'H0J¡ B0J¡ B0LV JoLV JoJ» D.B½ J¥B½ J¥AB AqAB AqB± H0J¡'
                          ],
         xMin           : 23,
@@ -752,8 +782,19 @@ define(
         yMax           : 714,
         width          : 630
       };
+      font["¡"]        = {
+        sC             : [
+                           'BRIi D_Ii D_Go BRGo BRIi',
+                           'C·FZ DVAm DV>T B]>T B]Am BÁFZ C·FZ'
+                         ],
+        xMin           : 72,
+        xMax           : 206,
+        yMin           : -183,
+        yMax           : 531,
+        width          : 278
+      };
       font["!"]        = {
-        sC      : [
+        sC             : [
                            'D_AB BRAB BRC< D_C< D_AB',
                            'BÁDP B]I: B]LV DVLV DVI: C·DP BÁDP'
                          ],
@@ -764,7 +805,7 @@ define(
         width          : 278
       };
       font["|"]        = {
-        sC      : [
+        sC             : [
                            'C©@Ã B:@Ã B:Ly C©Ly C©@Ã'
                          ],
         xMin           : 60,
@@ -774,7 +815,7 @@ define(
         width          : 222
       };
       font['"']        = {
-        sC      : [
+        sC             : [
                            'F·H! EHH! EHLV F·LV F·H!',
                            'D4H! BiH! BiLV D4LV D4H!'
                          ],
@@ -785,7 +826,7 @@ define(
         width          : 444
       };
       font["'"]        = {
-        sC      : [
+        sC             : [
                            'D>H! BsH! BsLV D>LV D>H!'
                          ],
         xMin           : 88,
@@ -795,10 +836,10 @@ define(
         width          : 278
       };
       font["#"]        = {
-        sC      : [
+        sC             : [
                            'GwE} HÃE} HÃDg GcDg G%AB E©AB F@Dg DeDg D(AB B«AB CBDg A©Dg A©E} CXE} C}G£ B@G£ B@H¹ C³H¹ DJL: EmL: E0H¹ F±H¹ GHL: HkL: H.H¹ IZH¹ IZG£ G½G£ GwE}'
                          ],
-        hC       : [
+        hC             : [
                            ['FVE} F{G£ D¿G£ DyE} FVE}']
                          ],
         xMin           : 34,
@@ -808,10 +849,10 @@ define(
         width          : 556
       };
       font["$"]        = {
-        sC      : [
+        sC             : [
                            'AeDu CHDu CDB]EHBT EHF8 CwFsB·G> A¥H,A¥Iq A¥K%B¯K· C¯LyEHLy EHM· EÁM· EÁLy G]LyHTK» ITK0ITIs GqIs GgKDEÁKD EÁGÁ G¡GcHgF· IyF%IyDc IyB¯HoA¹ GsA*EÁ@Ã EÁ?§ EH?§ EH@Ã CkA#BgAÂ AcB½AeDu'
                          ],
-        hC       : [
+        hC             : [
                            ['EÁF% EÁBT G·BgG·DB G·E(GHEa FµE«EÁF%','EHH4 EHKD CgKDCgI£ CgHmEHH4']
                          ],
         xMin           : 17,
@@ -821,12 +862,12 @@ define(
         width          : 556
       };
       font["%"]        = {
-        sC      : [
+        sC             : [
                            'E4F: C«F:C2G0 BgG¹BgIH BgJwC6Ka C±LVE4LV FZLVG2Ka G¥JwG¥IH G¥G¹G6G0 FaF:E4F:',
                            'LÃA% KuA%JÁA¿ JRB¥JRD4 JREcK!FL K{GBLÃGB NFGBNÁFL OoEcOoD4 OoB¥O!A¿ NLA%LÃA%',
                            'Fg@µ EJ@µ KTLk LmLk Fg@µ'
                          ],
-        hC       : [
+        hC             : [
                            ['C½IH C½G<E2G< FNG<FNIH FNKTE2KT C½KTC½IH'],
                            ['K©D4 K©B(LÁB( N:B(N:D4 N:F@LÁF@ K©F@K©D4'],
                            []
@@ -838,10 +879,10 @@ define(
         width          : 1000
       };
       font["&"]        = {
-        sC      : [
+        sC             : [
                            'KoAB IVAB HTBc G:A%EDA% C}A%B¢Aº A¥B«A¥DN A¥FDDJGm C:I!C:J# C:K<CÂK½ D§LyE»Ly G,LyG³L! H}KDH}J! H}HBF{G8 HXE, HyE©H§Fm JLFm J4D»I]C± KoAB'
                          ],
-        hC       : [
+        hC             : [
                            ['GZC{ EBFV D<E§D4E} CgE8CgDJ CgCZD%B½ DgBZELBZ F8BZF£B· FÃC,GZC{','EÁKN E_KNE2K! D©JwD©J0 D©IuE4I0 E_H{E«HB FZH{F}I! G0I_G0J* G0JsF«JÃ FaKNEÁKN']
                          ],
         xMin           : 32,
@@ -850,8 +891,28 @@ define(
         yMax           : 731,
         width          : 648
       };
+      font["{"]        = {
+        sC             : [
+                           'A:D§ A:F8 AyF8B.FV BwF¡BwGJ BwJg BwKeCVL6 D#LyDwLy F,Ly F,KD E>KD DNKDDNJ8 DNG2 DNFHC¡E³ CHEkB¡Ea B¡E] DNEHDNC¡ DN@§ DN?yE>?y F,?y F,>D Dw>D D#>DCV>© Bw?XBw@V BwCc BwD8B.De AyD§A:D§'
+                         ],
+        xMin           : -4,
+        xMax           : 309,
+        yMin           : -191,
+        yMax           : 731,
+        width          : 296
+      };
+      font["}"]        = {
+        sC             : [
+                           'E½F8 E½D§ E]D§E(Dg D_D>D_Cs D_@V D_?XC¡>© C0>DB_>D A(>D A(?y A¹?y B©?yB©@§ B©C­ B©DuCVE, C¯ERDVE] DVEa B©EuB©G> B©J8 B©KDA¹KD A(KD A(Ly B_Ly C0LyC¡L6 D_KeD_Jg D_GZ D_F§E(FX E]F8E½F8'
+                         ],
+        xMin           : -13,
+        xMax           : 300,
+        yMin           : -191,
+        yMax           : 731,
+        width          : 296
+      };
       font["("]        = {
-        sC      : [
+        sC             : [
                            'E¡>D DD>D B#A±B#E_ B#I<DDLy E¡Ly C«I@C«E_ C«AeE¡>D'
                          ],
         xMin           : 49,
@@ -861,7 +922,7 @@ define(
         width          : 278
       };
       font[")"]        = {
-        sC      : [
+        sC             : [
                            'A2Ly BmLy D¯I,D¯E] D¯A}Bm>D A2>D C(AyC(E] C(IVA2Ly'
                          ],
         xMin           : -8,
@@ -871,7 +932,7 @@ define(
         width          : 278
       };
       font["*"]        = {
-        sC      : [
+        sC             : [
                            'B:H2 CFIo AiJ: A·K< CqJg CqLV DyLV DyJg FRK< F¥J: DÁIo F*H2 E@Ge D2I( C*Ge B:H2'
                          ],
         xMin           : 19,
@@ -881,7 +942,7 @@ define(
         width          : 370
       };
       font["+"]        = {
-        sC      : [
+        sC             : [
                            'B!F! E4F! E4I6 F£I6 F£F! IµF! IµDV F£DV F£AB E4AB E4DV B!DV B!F!'
                          ],
         xMin           : 48,
@@ -891,7 +952,7 @@ define(
         width          : 600
       };
       font[","]        = {
-        sC      : [
+        sC             : [
                            'CVAB BLAB BLCP DcCP DcAB Dc@HCº?t CL>ÁBT>© BT?£ B·?³C6@G CX@¡CVAB'
                          ],
         xMin           : 69,
@@ -901,7 +962,7 @@ define(
         width          : 278
       };
       font["-"]        = {
-        sC      : [
+        sC             : [
                            'FkDw B#Dw B#FN FkFN FkDw'
                          ],
         xMin           : 49,
@@ -911,7 +972,7 @@ define(
         width          : 389
       };
       font["."]        = {
-        sC      : [
+        sC             : [
                            'DcAB BLAB BLCP DcCP DcAB'
                          ],
         xMin           : 69,
@@ -921,7 +982,7 @@ define(
         width          : 278
       };
       font["/"]        = {
-        sC      : [
+        sC             : [
                            'Bq@Ã @¹@Ã ETLy G.Ly Bq@Ã'
                          ],
         xMin           : -22,
@@ -931,7 +992,7 @@ define(
         width          : 352
       };
       font[":"]        = {
-        sC      : [
+        sC             : [
                            'DcAB BLAB BLCP DcCP DcAB',
                            'DcG( BLG( BLI6 DcI6 DcG('
                          ],
@@ -942,7 +1003,7 @@ define(
         width          : 278
       };
       font[";"]        = {
-        sC      : [
+        sC             : [
                            'DcG( BLG( BLI6 DcI6 DcG(',
                            'CVAB BLAB BLCP DcCP DcAB Dc@HCº?t CL>ÁBT>© BT?£ B·?³C6@G CX@¡CVAB'
                          ],
@@ -953,7 +1014,7 @@ define(
         width          : 278
       };
       font["<"]        = {
-        sC      : [
+        sC             : [
                            'D*E< I¹B¡ I¹A2 AÁDu AÁE§ I¹IF I¹G{ D*E<'
                          ],
         xMin           : 46,
@@ -963,7 +1024,7 @@ define(
         width          : 600
       };
       font["="]        = {
-        sC      : [
+        sC             : [
                            'B!DX IµDX IµB¯ B!B¯ B!DX',
                            'B!Gm IµGm IµEÃ B!EÃ B!Gm'
                          ],
@@ -974,7 +1035,7 @@ define(
         width          : 600
       };
       font[">"]        = {
-        sC      : [
+        sC             : [
                            'AÁA2 AÁB¡ G­E< AÁG{ AÁIF I¹E§ I¹Du AÁA2'
                          ],
         xMin           : 46,
@@ -983,8 +1044,19 @@ define(
         yMax           : 514,
         width          : 600
       };
+      font["¿"]        = {
+        sC             : [
+                           'DgGo DgIi FsIi FsGo DgGo',
+                           'GTA³ I8A³ I:@:H7?6 G4>2EX>2 C¿>2BÃ>¿ B#?©B#A< B#B8B]B¯ B{C<CWC­ D4DXDRD­ D§EXD§FZ F]FZ F]E4F6DZ E¹C±E@CD DcBsDNBZ CÁA¿CÁAD CÁ@_Dg?Ã DÁ?qEc?q FZ?qFº@> GT@¯GTA³'
+                         ],
+        xMin           : 49,
+        xMax           : 507,
+        yMin           : -200,
+        yMax           : 531,
+        width          : 556
+      };
       font["?"]        = {
-        sC      : [
+        sC             : [
                            'FoAB DcAB DcC< FoC< FoAB',
                            'C«H³ B#H³ B!JoC$Kt D(LyE§Ly GBLyH=K¯ I8JÃI8Ie I8HiH£G· HcGeG«F» G(FHF­E¹ FXEHFXDF D£DF D£EmE%FF EFFµE¿G] F{H.F±HF G>H§G>I] G>JJFyJ« F>K:E{K: C«K:C«H³'
                          ],
@@ -1047,8 +1119,86 @@ define(
         yMax           : -75,
         width          : 500
       };
+      font[" "]        = {
+        sC      : [
+                         ],
+        xMin           : 0,
+        xMax           : 500,
+        yMin           : -125,
+        yMax           : -75,
+        width          : 278
+      };
+      font[" "]        = {
+        sC      : [
+                         ],
+        xMin           : 0,
+        xMax           : 500,
+        yMin           : -125,
+        yMax           : -75,
+        width          : 278
+      };
 
       return font;
+
+
+      function supplement(basis,extra,offsetX,offsetY){
+        var glyph      = {
+              xMin     : basis.xMin,
+              xMax     : basis.xMax,
+              yMin     : basis.yMin,
+              yMax     : basis.yMax,
+              width    : basis.width
+            },
+            shapes     = basis.sC.map(shape=>shape),
+            holes      = typeof basis.hC === "object" ? basis.hC.map(hole=>hole) : undefined ,
+            extraShapes= extra === "dieresis" ? 2 : 1 , 
+            extraHoles = extra === "ring" ? 1 : 0 ;
+
+        if ( extraShapes === 2 ) {
+          if ( holes ) { holes.unshift([]) }
+          if ( extra === "dieresis" ) { shapes.unshift(dieresisRightCoded(offsetY,offsetX)) }
+        }
+        if ( extraHoles ) {
+          if ( typeof holes !== "object" ) {
+            holes      = basis.sC.map(shape=>[])
+          }
+          if ( extra === "ring" ) {
+            holes.unshift(ringHoleCoded(offsetY,offsetX)) 
+          }
+        } else {
+          if ( holes ) { holes.unshift([]) }
+        }
+
+        if ( extra === "dieresis" )   { 
+          glyph.yMax   = dieresisYmax(offsetY);
+          shapes.unshift(dieresisLeftCoded(offsetY,offsetX))
+        }
+        if ( extra === "circumflex" ) {
+          glyph.yMax   = circumflexYmax(offsetY);
+          shapes.unshift(circumflexCoded(offsetY,offsetX)) 
+        }
+        if ( extra === "acute" )      { 
+          glyph.yMax   = acuteYmax(offsetY);
+          shapes.unshift(acuteCoded(offsetY,offsetX)) 
+        }
+        if ( extra === "grave" )      { 
+          glyph.yMax   = graveYmax(offsetY);
+          shapes.unshift(graveCoded(offsetY,offsetX)) 
+        }
+        if ( extra === "tilde" )      { 
+          glyph.yMax   = tildeYmax(offsetY);
+          shapes.unshift(tildeCoded(offsetY,offsetX))
+        }
+        if ( extra === "ring" )       { 
+          glyph.yMax   = ringYmax(offsetY);
+          shapes.unshift(ringCoded(offsetY,offsetX))
+        }
+        glyph.sC       = shapes;
+        if ( holes ) {
+          glyph.hC     = holes
+        }
+        return glyph     
+      };
 
       //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
       // To support non-english letters, we need a variety of new symbols: acute, dieresis, etc.
@@ -1061,12 +1211,32 @@ define(
       function acuteCoded(dx,dy){
         return codeList(acuteRaw(dx,dy))
       };
+      function acuteYmax(y){return 731+y};
+
+      function graveRaw(dx,dy){
+        return [[113+dx,588+dy],[-29+dx,731+dy],[105+dx,731+dy],[196+dx,588+dy]]
+      };
+      function graveCoded(dx,dy){
+        return codeList(graveRaw(dx,dy))
+      };
+      function graveYmax(y){return 731+y};
+
       function circumflexRaw(dx,dy){
         return [[120+dx,678+dy],[50+dx,588+dy],[-42+dx,588+dy],[65+dx,731+dy],[176+dx,731+dy],[284+dx,588+dy],[191+dx,588+dy]]
       };
       function circumflexCoded(dx,dy){
         return codeList(circumflexRaw(dx,dy))
       };
+      function circumflexYmax(y){return 731+y};
+
+      function caronRaw(dx,dy){
+        return [[284+dx,731+dy],[176+dx,588+dy],[65+dx,588+dy],[-42+dx,731+dy],[50+dx,731+dy],[120+dx,642+dy],[191+dx,731+dy]]
+      };
+      function caronCoded(dx,dy){
+        return codeList(caronRaw(dx,dy))
+      };
+      function caronYmax(y){return 731+y};
+
       function dieresisLeftRaw(dx,dy){
         return [[92+dx,599+dy],[-22+dx,599+dy],[-22+dx,707+dy],[92+dx,707+dy]]
       };
@@ -1079,18 +1249,33 @@ define(
       function dieresisRightCoded(dx,dy){
         return codeList(dieresisRightRaw(dx,dy))
       };
-      function graveRaw(dx,dy){
-        return [[113+dx,588+dy],[-29+dx,731+dy],[105+dx,731+dy],[196+dx,588+dy]]
-      };
-      function graveCoded(dx,dy){
-        return codeList(graveRaw(dx,dy))
-      };
+      function dieresisYmax(y){return 707+y};
+
       function tildeRaw(dx,dy){
         return [[297+dx,714+dy],[279+dx,599+dy,186+dx,599+dy],[163+dx,599+dy,113.5+dx,617.5+dy],[64+dx,636+dy,43+dx,636+dy],[26+dx,636+dy,13.5+dx,623+dy],[1+dx,610+dy,1+dx,595+dy],[-56+dx,595+dy],[-49+dx,639+dy,-24+dx,671+dy],[6+dx,708+dy,48+dx,708+dy],[81+dx,708+dy,127.5+dx,689+dy],[174+dx,670+dy,191+dx,670+dy],[229+dx,670+dy,241+dx,714+dy]]
       };
       function tildeCoded(dx,dy){
         return codeList(tildeRaw(dx,dy))
       };
+      function tildeYmax(y){return 714+y};
+
+      function ringHoleRaw(dx,dy){
+        return [[
+          [60+dx,652+dy],[60+dx,628+dy,78.5+dx,609.5+dy],[97+dx,591+dy,121+dx,591+dy],[146+dx,591+dy,164+dx,609.5+dy],[182+dx,628+dy,182+dx,652+dy],[182+dx,677+dy,164+dx,695+dy],[146+dx,713+dy,121+dx,713+dy],[97+dx,713+dy,78.5+dx,695+dy],[60+dx,677+dy,60+dx,652+dy]
+        ]]
+      };
+      function ringHoleCoded(dx,dy){
+        return [codeList(ringHoleRaw(dx,dy)[0])]
+      };
+      function ringRaw(dx,dy){
+        return [[121+dx,549+dy],[80+dx,549+dy,49+dx,580+dy],[18+dx,611+dy,18+dx,652+dy],[18+dx,694+dy,49+dx,724.5+dy],[80+dx,755+dy,121+dx,755+dy],[163+dx,755+dy,193.5+dx,724.5+dy],[224+dx,694+dy,224+dx,652+dy],[224+dx,611+dy,193.5+dx,580+dy],[163+dx,549+dy,121+dx,549+dy]]
+      };
+      function ringCoded(dx,dy){
+        return codeList(ringRaw(dx,dy))
+      };
+      function ringYmax(y){return 755+y};
+
+
       function dotlessiRaw(){
         return [[177,517],[177,0],[63,0],[63,517]]
       };

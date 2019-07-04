@@ -16,7 +16,7 @@
 
 define(
   // >>>>>  STEP 1 <<<<<
-  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-medium','./fonts/webgl-dings'],
+  ['./fonts/hirukopro-book','./fonts/helveticaneue-medium','./fonts/comicsans-normal','./fonts/jura-demibold','./fonts/webgl-dings'],
   function(HPB,HNM,CSN,JUR,WGD){
   // >>>>>  STEP 1 <<<<<
 

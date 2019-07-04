@@ -4,4 +4,5 @@
 # This one
 r.js
 node_modules
+.npmignore
 READMECSG.md
