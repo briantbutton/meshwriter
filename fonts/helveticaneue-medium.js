@@ -20,7 +20,7 @@ define(
         xMax           : 520,
         yMin           : -14,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["1"]        = {
         sC      : [
@@ -30,7 +30,7 @@ define(
         xMax           : 350,
         yMin           : 0,
         yMax           : 700,
-        width          : 556
+        wdth           : 556
       };
       font["2"]        = {
         sC      : [
@@ -40,7 +40,7 @@ define(
         xMax           : 518,
         yMin           : 0,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["3"]        = {
         sC      : [
@@ -50,7 +50,7 @@ define(
         xMax           : 525,
         yMin           : -14,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["4"]        = {
         sC      : [
@@ -63,7 +63,7 @@ define(
         xMax           : 522,
         yMin           : 0,
         yMax           : 700,
-        width          : 556
+        wdth           : 556
       };
       font["5"]        = {
         sC      : [
@@ -73,7 +73,7 @@ define(
         xMax           : 522,
         yMin           : -14,
         yMax           : 700,
-        width          : 556
+        wdth           : 556
       };
       font["6"]        = {
         sC      : [
@@ -86,7 +86,7 @@ define(
         xMax           : 522,
         yMin           : -14,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["7"]        = {
         sC      : [
@@ -96,7 +96,7 @@ define(
         xMax           : 514,
         yMin           : 0,
         yMax           : 700,
-        width          : 556
+        wdth           : 556
       };
       font["8"]        = {
         sC             : [
@@ -109,7 +109,7 @@ define(
         xMax           : 525,
         yMin           : -14,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["9"]        = {
         sC             : [
@@ -122,7 +122,7 @@ define(
         xMax           : 522,
         yMin           : -14,
         yMax           : 714,
-        width          : 556
+        wdth           : 556
       };
       font["a"]        = {
         sC             : [
@@ -135,13 +135,13 @@ define(
         xMax           : 548,
         yMin           : -14,
         yMax           : 531,
-        width          : 556
+        wdth           : 556
       };
-      font["á"]        = supplement(font.a,"acute",0,158);
-      font["à"]        = supplement(font.a,"grave",0,158);
-      font["ä"]        = supplement(font.a,"dieresis",0,158);
-      font["â"]        = supplement(font.a,"circumflex",0,158);
-      font["å"]        = supplement(font.a,"ring",0,158);
+      font["á"]        = supplement(font.a,"acute",158,0);
+      font["à"]        = supplement(font.a,"grave",158,0);
+      font["ä"]        = supplement(font.a,"dieresis",158,0);
+      font["â"]        = supplement(font.a,"circumflex",158,0);
+      font["å"]        = supplement(font.a,"ring",158,0);
       font["æ"]        = {
         sC             : [
                            'LµC« NwC« NJBeMLA¨ LNA%K!A% HµA%H%Be G%A%DyA% CVA%BqAs A¥BBA¥CT A¥D£B¥EL CPE{D³E¹ F]F4FcF6 G:FPG:G( G:H4EqH4 C½H4C¯F³ B(F³ B4HHCBHÃ D8IiEyIi GyIiHVH] I@IiJÁIi L¯IiM­HP N£GBN£EL N£E,N¡D¯ H³D¯ H±C¯IPC8 I»BZJÁBZ LTBZLµC«'
@@ -153,7 +153,7 @@ define(
         xMax           : 863,
         yMin           : -14,
         yMax           : 531,
-        width          : 889
+        wdth           : 889
       };
       font["b"]        = {
         sC             : [
@@ -166,7 +166,7 @@ define(
         xMax           : 575,
         yMin           : -14,
         yMax           : 714,
-        width          : 611
+        wdth           : 611
       };
       font["c"]        = {
         sC             : [
@@ -176,7 +176,7 @@ define(
         xMax           : 523,
         yMin           : -14,
         yMax           : 531,
-        width          : 556
+        wdth           : 556
       };
       font["ç"]        = {
         sC             : [
@@ -186,9 +186,9 @@ define(
         xMax           : 523,
         yMin           : -221,
         yMax           : 531,
-        width          : 556
+        wdth           : 556
       };
-      font["č"]        = supplement(font.c,"caron",0,158);
+      font["č"]        = supplement(font.c,"caron",158,0);
       font["d"]        = {
         sC             : [
                            'H#LV I«LV I«AB H0AB H0BN H,BN GVA%EmA% C£A%B£BF A«CZA«EN A«GVB·Hi C±IiEHIi G<IiGÃHF H#HF H#LV'
@@ -200,7 +200,7 @@ define(
         xMax           : 547,
         yMin           : -14,
         yMax           : 714,
-        width          : 611
+        wdth           : 611
       };
       font["e"]        = {
         sC             : [
@@ -213,12 +213,12 @@ define(
         xMax           : 531,
         yMin           : -14,
         yMax           : 531,
-        width          : 556
+        wdth           : 556
       };
-      font["é"]        = supplement(font.e,"acute",0,158);
-      font["è"]        = supplement(font.e,"grave",0,158);
-      font["ë"]        = supplement(font.e,"dieresis",0,158);
-      font["ê"]        = supplement(font.e,"circumflex",0,158);
+      font["é"]        = supplement(font.e,"acute",158,0);
+      font["è"]        = supplement(font.e,"grave",158,0);
+      font["ë"]        = supplement(font.e,"dieresis",158,0);
+      font["ê"]        = supplement(font.e,"circumflex",158,0);
       font["f"]        = {
         sC      : [
                            'B¡H! ATH! ATIL B¡IL B¡J! B¡KVCVKÃ C»LVD¿LV E­LVF<LH F<J¹ E³K!ERK! DcK!DcJ6 DcIL F#IL F#H! DcH! DcAB B¡AB B¡H!'
@@ -227,7 +227,7 @@ define(
         xMax           : 317,
         yMin           : 0,
         yMax           : 714,
-        width          : 315
+        wdth           : 315
       };
       font["g"]        = {
         sC             : [
@@ -240,7 +240,7 @@ define(
         xMax           : 538,
         yMin           : -205,
         yMax           : 531,
-        width          : 593
+        wdth           : 593
       };
       font["h"]        = {
         sC             : [
@@ -250,7 +250,7 @@ define(
         xMax           : 514,
         yMin           : 0,
         yMax           : 714,
-        width          : 574
+        wdth           : 574
       };
       font["i"]        = {
         sC             : [
@@ -261,7 +261,7 @@ define(
         xMax           : 177,
         yMin           : 0,
         yMax           : 714,
-        width          : 241
+        wdth           : 241
       };
       font["ı"]        = {
         sC             : [
@@ -271,7 +271,7 @@ define(
         xMax           : 177,
         yMin           : 0,
         yMax           : 500,
-        width          : 241
+        wdth           : 241
       };
       font["í"]        = supplement(font["ı"],"acute",0,0);
       font["ì"]        = supplement(font["ı"],"grave",0,0);
@@ -286,7 +286,7 @@ define(
         xMax           : 177,
         yMin           : -205,
         yMax           : 714,
-        width          : 241
+        wdth           : 241
       };
       font["k"]        = {
         sC      : [
@@ -296,7 +296,7 @@ define(
         xMax           : 542,
         yMin           : 0,
         yMax           : 714,
-        width          : 537
+        wdth           : 537
       };
       font["l"]        = {
         sC             : [
@@ -306,7 +306,7 @@ define(
         xMax           : 177,
         yMin           : 0,
         yMax           : 714,
-        width          : 241
+        wdth           : 241
       };
       font["m"]        = {
         sC             : [
@@ -316,7 +316,7 @@ define(
         xMax           : 810,
         yMin           : 0,
         yMax           : 531,
-        width          : 870
+        wdth           : 870
       };
       font["n"]        = {
         sC             : [
@@ -326,10 +326,10 @@ define(
         xMax           : 514,
         yMin           : 0,
         yMax           : 531,
-        width          : 574
+        wdth           : 574
       };
-      font["ñ"]        = supplement(font.n,"tilde",0,167);
-      font["ń"]        = supplement(font.n,"acute",0,167);
+      font["ñ"]        = supplement(font.n,"tilde",167,0);
+      font["ń"]        = supplement(font.n,"acute",167,0);
       font["o"]        = {
         sC             : [
                            'E·A% CÃA%BµB@ A­CTA­EH A­G:B¸HQ CÃIiE·Ii G«IiH¹HN IÁG:IÁEH IÁCTH¹B@ G«A%E·A%'
@@ -341,12 +341,12 @@ define(
         xMax           : 558,
         yMin           : -14,
         yMax           : 531,
-        width          : 593
+        wdth           : 593
       };
-      font["ô"]        = supplement(font.o,"circumflex",0,176);
-      font["ò"]        = supplement(font.o,"grave",0,176);
-      font["ó"]        = supplement(font.o,"acute",0,176);
-      font["ö"]        = supplement(font.o,"dieresis",0,176);
+      font["ô"]        = supplement(font.o,"circumflex",176,0);
+      font["ò"]        = supplement(font.o,"grave",176,0);
+      font["ó"]        = supplement(font.o,"acute",176,0);
+      font["ö"]        = supplement(font.o,"dieresis",176,0);
       font["p"]        = {
         sC             : [
                            'D#>D B@>D B@IL C»IL C»H@ C¿H@ DyIiF]Ii HFIiIHHF J@G2J@EB J@CaITBL HZA%F¥A% D±A%D(BH D#BH D#>D'
@@ -358,7 +358,7 @@ define(
         xMax           : 575,
         yMin           : -191,
         yMax           : 531,
-        width          : 611
+        wdth           : 611
       };
       font["q"]        = {
         sC             : [
@@ -371,7 +371,7 @@ define(
         xMax           : 547,
         yMin           : -191,
         yMax           : 531,
-        width          : 611
+        wdth           : 611
       };
       font["r"]        = {
         sC             : [
@@ -381,7 +381,7 @@ define(
         xMax           : 363,
         yMin           : 0,
         yMax           : 531,
-        width          : 352
+        wdth           : 352
       };
       font["s"]        = {
         sC             : [
@@ -391,7 +391,7 @@ define(
         xMax           : 492,
         yMin           : -14,
         yMax           : 531,
-        width          : 519
+        wdth           : 519
       };
       font["t"]        = {
         sC             : [
@@ -401,7 +401,7 @@ define(
         xMax           : 311,
         yMin           : -5,
         yMax           : 672,
-        width          : 333
+        wdth           : 333
       };
       font["u"]        = {
         sC             : [
@@ -411,12 +411,12 @@ define(
         xMax           : 514,
         yMin           : -14,
         yMax           : 517,
-        width          : 574
+        wdth           : 574
       };
-      font["ú"]        = supplement(font.u,"acute",0,167);
-      font["ù"]        = supplement(font.u,"grave",0,167);
-      font["ü"]        = supplement(font.u,"dieresis",0,167);
-      font["û"]        = supplement(font.u,"circumflex",0,167);
+      font["ú"]        = supplement(font.u,"acute",167,0);
+      font["ù"]        = supplement(font.u,"grave",167,0);
+      font["ü"]        = supplement(font.u,"dieresis",167,0);
+      font["û"]        = supplement(font.u,"circumflex",167,0);
       font["v"]        = {
         sC      : [
                            'FLAB DLAB ATIL CLIL ERC2 EVC2 GRIL I>IL FLAB'
@@ -425,7 +425,7 @@ define(
         xMax           : 510,
         yMin           : 0,
         yMax           : 517,
-        width          : 519
+        wdth           : 519
       };
       font["w"]        = {
         sC      : [
@@ -435,7 +435,7 @@ define(
         xMax           : 765,
         yMin           : 0,
         yMax           : 517,
-        width          : 778
+        wdth           : 778
       };
       font["x"]        = {
         sC      : [
@@ -445,7 +445,7 @@ define(
         xMax           : 533,
         yMin           : 0,
         yMax           : 517,
-        width          : 537
+        wdth           : 537
       };
       font["y"]        = {
         sC      : [
@@ -455,9 +455,9 @@ define(
         xMax           : 515,
         yMin           : -205,
         yMax           : 517,
-        width          : 519
+        wdth           : 519
       };
-      font["ÿ"]        = supplement(font.y,"dieresis",0,139);
+      font["ÿ"]        = supplement(font.y,"dieresis",139,0);
       font["z"]        = {
         sC      : [
                            'F*G» A¹G» A¹IL H_IL H_H, C±Bw H}Bw H}AB AoAB AoBc F*G»'
@@ -466,7 +466,7 @@ define(
         xMax           : 477,
         yMin           : 0,
         yMax           : 517,
-        width          : 500
+        wdth           : 500
       };
       font["A"]        = {
         sC      : [
@@ -479,14 +479,14 @@ define(
         xMax           : 675,
         yMin           : 0,
         yMax           : 714,
-        width          : 667
+        wdth           : 667
       };
-      font["Á"]        = supplement(font.A,"acute",213,197);
-      font["À"]        = supplement(font.A,"grave",213,197);
-      font["Ã"]        = supplement(font.A,"tilde",213,197);
-      font["Â"]        = supplement(font.A,"circumflex",213,197);
-      font["Ä"]        = supplement(font.A,"dieresis",213,197);
-      font["Å"]        = supplement(font.A,"ring",213,197);
+      font["Á"]        = supplement(font.A,"acute",197,213);
+      font["À"]        = supplement(font.A,"grave",197,213);
+      font["Ã"]        = supplement(font.A,"tilde",197,213);
+      font["Â"]        = supplement(font.A,"circumflex",197,213);
+      font["Ä"]        = supplement(font.A,"dieresis",197,213);
+      font["Å"]        = supplement(font.A,"ring",197,213);
       font["Æ"]        = {
         sC             : [
                            'CJAB A4AB F{LV O{LV O{J¡ JBJ¡ JBG« ONG« ONF< JBF< JBB½ O©B½ O©AB HTAB HTD0 DwD0 CJAB'
@@ -498,7 +498,7 @@ define(
         xMax           : 930,
         yMin           : 0,
         yMax           : 714,
-        width          : 963
+        wdth           : 963
       };
       font["B"]        = {
         sC      : [
@@ -511,7 +511,7 @@ define(
         xMax           : 667,
         yMin           : 0,
         yMax           : 714,
-        width          : 704
+        wdth           : 704
       };
       font["C"]        = {
         sC      : [
@@ -521,7 +521,7 @@ define(
         xMax           : 684,
         yMin           : -17,
         yMax           : 731,
-        width          : 722
+        wdth           : 722
       };
       font["D"]        = {
         sC      : [
@@ -534,7 +534,7 @@ define(
         xMax           : 687,
         yMin           : 0,
         yMax           : 714,
-        width          : 722
+        wdth           : 722
       };
       font["E"]        = {
         sC      : [
@@ -544,7 +544,7 @@ define(
         xMax           : 597,
         yMin           : 0,
         yMax           : 714,
-        width          : 630
+        wdth           : 630
       };
       font["É"]        = supplement(font.E,"acute",195,197);
       font["È"]        = supplement(font.E,"grave",195,197);
@@ -558,7 +558,7 @@ define(
         xMax           : 569,
         yMin           : 0,
         yMax           : 714,
-        width          : 593
+        wdth           : 593
       };
       font["G"]        = {
         sC      : [
@@ -568,7 +568,7 @@ define(
         xMax           : 699,
         yMin           : -17,
         yMax           : 731,
-        width          : 759
+        wdth           : 759
       };
       font["H"]        = {
         sC      : [
@@ -578,7 +578,7 @@ define(
         xMax           : 648,
         yMin           : 0,
         yMax           : 714,
-        width          : 722
+        wdth           : 722
       };
       font["I"]        = {
         sC      : [
@@ -588,7 +588,7 @@ define(
         xMax           : 201,
         yMin           : 0,
         yMax           : 714,
-        width          : 278
+        wdth           : 278
       };
       font["J"]        = {
         sC      : [
@@ -598,7 +598,7 @@ define(
         xMax           : 461,
         yMin           : -17,
         yMax           : 714,
-        width          : 537
+        wdth           : 537
       };
       font["K"]        = {
         sC      : [
@@ -608,7 +608,7 @@ define(
         xMax           : 693,
         yMin           : 0,
         yMax           : 714,
-        width          : 685
+        wdth           : 685
       };
       font["L"]        = {
         sC      : [
@@ -618,7 +618,7 @@ define(
         xMax           : 564,
         yMin           : 0,
         yMax           : 714,
-        width          : 574
+        wdth           : 574
       };
       font["M"]        = {
         sC             : [
@@ -628,7 +628,7 @@ define(
         xMax           : 815,
         yMin           : 0,
         yMax           : 714,
-        width          : 889
+        wdth           : 889
       };
       font["N"]        = {
         sC             : [
@@ -638,9 +638,9 @@ define(
         xMax           : 650,
         yMin           : 0,
         yMax           : 714,
-        width          : 722
+        wdth           : 722
       };
-      font["Ñ"]        = supplement(font.N,"tilde",241,197);
+      font["Ñ"]        = supplement(font.N,"tilde",197,241);
       font["O"]        = {
         sC             : [
                            'G:Ly IsLyK0J¿ LgIHLgF¯ LgDPK0B¡ Is@ÃG:@Ã D¥@ÃCDB¡ A±DPA±F¯ A±IHCDJ¿ D¥LyG:Ly'
@@ -652,7 +652,7 @@ define(
         xMax           : 722,
         yMin           : -17,
         yMax           : 731,
-        width          : 760
+        wdth           : 760
       };
       font["Ó"]        = supplement(font.O,"acute",260,197);
       font["Ò"]        = supplement(font.O,"grave",260,197);
@@ -670,7 +670,7 @@ define(
         xMax           : 634,
         yMin           : 0,
         yMax           : 714,
-        width          : 667
+        wdth           : 667
       };
       font["Q"]        = {
         sC             : [
@@ -683,7 +683,7 @@ define(
         xMax           : 722,
         yMin           : -65,
         yMax           : 731,
-        width          : 760
+        wdth           : 760
       };
       font["R"]        = {
         sC             : [
@@ -696,7 +696,7 @@ define(
         xMax           : 680,
         yMin           : 0,
         yMax           : 714,
-        width          : 704
+        wdth           : 704
       };
       font["S"]        = {
         sC             : [
@@ -706,7 +706,7 @@ define(
         xMax           : 615,
         yMin           : -17,
         yMax           : 731,
-        width          : 648
+        wdth           : 648
       };
       font["T"]        = {
         sC             : [
@@ -716,7 +716,7 @@ define(
         xMax           : 586,
         yMin           : 0,
         yMax           : 714,
-        width          : 593
+        wdth           : 593
       };
       font["U"]        = {
         sC             : [
@@ -726,12 +726,12 @@ define(
         xMax           : 654,
         yMin           : -17,
         yMax           : 714,
-        width          : 722
+        wdth           : 722
       };
-      font["Ú"]        = supplement(font.U,"acute",260,197);
-      font["Ù"]        = supplement(font.U,"grave",260,197);
-      font["Û"]        = supplement(font.U,"circumflex",260,197);
-      font["Ü"]        = supplement(font.U,"dieresis",260,197);
+      font["Ú"]        = supplement(font.U,"acute",241,197);
+      font["Ù"]        = supplement(font.U,"grave",241,197);
+      font["Û"]        = supplement(font.U,"circumflex",241,197);
+      font["Ü"]        = supplement(font.U,"dieresis",241,197);
       font["V"]        = {
         sC             : [
                            'G*AB D·AB A8LV C<LV F!Cm F%Cm H·LV JµLV G*AB'
@@ -740,7 +740,7 @@ define(
         xMax           : 616,
         yMin           : 0,
         yMax           : 714,
-        width          : 611
+        wdth           : 611
       };
       font["W"]        = {
         sC             : [
@@ -750,7 +750,7 @@ define(
         xMax           : 938,
         yMin           : 0,
         yMax           : 714,
-        width          : 944
+        wdth           : 944
       };
       font["X"]        = {
         sC             : [
@@ -760,7 +760,7 @@ define(
         xMax           : 651,
         yMin           : 0,
         yMax           : 714,
-        width          : 648
+        wdth           : 648
       };
       font["Y"]        = {
         sC             : [
@@ -770,7 +770,7 @@ define(
         xMax           : 654,
         yMin           : 0,
         yMax           : 714,
-        width          : 648
+        wdth           : 648
       };
       font["Z"]        = {
         sC             : [
@@ -780,7 +780,7 @@ define(
         xMax           : 608,
         yMin           : 0,
         yMax           : 714,
-        width          : 630
+        wdth           : 630
       };
       font["¡"]        = {
         sC             : [
@@ -791,7 +791,7 @@ define(
         xMax           : 206,
         yMin           : -183,
         yMax           : 531,
-        width          : 278
+        wdth           : 278
       };
       font["!"]        = {
         sC             : [
@@ -802,7 +802,7 @@ define(
         xMax           : 206,
         yMin           : 0,
         yMax           : 714,
-        width          : 278
+        wdth           : 278
       };
       font["|"]        = {
         sC             : [
@@ -812,7 +812,7 @@ define(
         xMax           : 162,
         yMin           : -17,
         yMax           : 731,
-        width          : 222
+        wdth           : 222
       };
       font['"']        = {
         sC             : [
@@ -823,7 +823,7 @@ define(
         xMax           : 361,
         yMin           : 432,
         yMax           : 714,
-        width          : 444
+        wdth           : 444
       };
       font["'"]        = {
         sC             : [
@@ -833,7 +833,7 @@ define(
         xMax           : 190,
         yMin           : 432,
         yMax           : 714,
-        width          : 278
+        wdth           : 278
       };
       font["#"]        = {
         sC             : [
@@ -846,7 +846,7 @@ define(
         xMax           : 524,
         yMin           : 0,
         yMax           : 700,
-        width          : 556
+        wdth           : 556
       };
       font["$"]        = {
         sC             : [
@@ -859,7 +859,7 @@ define(
         xMax           : 539,
         yMin           : -95,
         yMax           : 809,
-        width          : 556
+        wdth           : 556
       };
       font["%"]        = {
         sC             : [
@@ -876,7 +876,7 @@ define(
         xMax           : 918,
         yMin           : -24,
         yMax           : 724,
-        width          : 1000
+        wdth           : 1000
       };
       font["&"]        = {
         sC             : [
@@ -889,7 +889,7 @@ define(
         xMax           : 662,
         yMin           : -14,
         yMax           : 731,
-        width          : 648
+        wdth           : 648
       };
       font["{"]        = {
         sC             : [
@@ -899,7 +899,7 @@ define(
         xMax           : 309,
         yMin           : -191,
         yMax           : 731,
-        width          : 296
+        wdth           : 296
       };
       font["}"]        = {
         sC             : [
@@ -909,7 +909,7 @@ define(
         xMax           : 300,
         yMin           : -191,
         yMax           : 731,
-        width          : 296
+        wdth           : 296
       };
       font["("]        = {
         sC             : [
@@ -919,7 +919,7 @@ define(
         xMax           : 286,
         yMin           : -191,
         yMax           : 731,
-        width          : 278
+        wdth           : 278
       };
       font[")"]        = {
         sC             : [
@@ -929,7 +929,7 @@ define(
         xMax           : 229,
         yMin           : -191,
         yMax           : 731,
-        width          : 278
+        wdth           : 278
       };
       font["*"]        = {
         sC             : [
@@ -939,7 +939,7 @@ define(
         xMax           : 352,
         yMin           : 401,
         yMax           : 714,
-        width          : 370
+        wdth           : 370
       };
       font["+"]        = {
         sC             : [
@@ -949,7 +949,7 @@ define(
         xMax           : 552,
         yMin           : 0,
         yMax           : 506,
-        width          : 600
+        wdth           : 600
       };
       font[","]        = {
         sC             : [
@@ -959,7 +959,7 @@ define(
         xMax           : 208,
         yMin           : -158,
         yMax           : 135,
-        width          : 278
+        wdth           : 278
       };
       font["-"]        = {
         sC             : [
@@ -969,7 +969,7 @@ define(
         xMax           : 340,
         yMin           : 218,
         yMax           : 326,
-        width          : 389
+        wdth           : 389
       };
       font["."]        = {
         sC             : [
@@ -979,7 +979,7 @@ define(
         xMax           : 208,
         yMin           : 0,
         yMax           : 135,
-        width          : 278
+        wdth           : 278
       };
       font["/"]        = {
         sC             : [
@@ -989,7 +989,7 @@ define(
         xMax           : 374,
         yMin           : -17,
         yMax           : 731,
-        width          : 352
+        wdth           : 352
       };
       font[":"]        = {
         sC             : [
@@ -1000,7 +1000,7 @@ define(
         xMax           : 208,
         yMin           : 0,
         yMax           : 506,
-        width          : 278
+        wdth           : 278
       };
       font[";"]        = {
         sC             : [
@@ -1011,7 +1011,7 @@ define(
         xMax           : 208,
         yMin           : -158,
         yMax           : 506,
-        width          : 278
+        wdth           : 278
       };
       font["<"]        = {
         sC             : [
@@ -1021,7 +1021,7 @@ define(
         xMax           : 554,
         yMin           : -8,
         yMax           : 514,
-        width          : 600
+        wdth           : 600
       };
       font["="]        = {
         sC             : [
@@ -1032,7 +1032,7 @@ define(
         xMax           : 552,
         yMin           : 101,
         yMax           : 405,
-        width          : 600
+        wdth           : 600
       };
       font[">"]        = {
         sC             : [
@@ -1042,7 +1042,7 @@ define(
         xMax           : 554,
         yMin           : -8,
         yMax           : 514,
-        width          : 600
+        wdth           : 600
       };
       font["¿"]        = {
         sC             : [
@@ -1053,7 +1053,7 @@ define(
         xMax           : 507,
         yMin           : -200,
         yMax           : 531,
-        width          : 556
+        wdth           : 556
       };
       font["?"]        = {
         sC             : [
@@ -1064,7 +1064,7 @@ define(
         xMax           : 507,
         yMin           : 0,
         yMax           : 731,
-        width          : 556
+        wdth           : 556
       };
       font["@"]        = {
         sC      : [
@@ -1077,7 +1077,7 @@ define(
         xMax           : 751,
         yMin           : -17,
         yMax           : 731,
-        width          : 800
+        wdth           : 800
       };
       font["["]        = {
         sC      : [
@@ -1087,7 +1087,7 @@ define(
         xMax           : 295,
         yMin           : -191,
         yMax           : 731,
-        width          : 296
+        wdth           : 296
       };
       font["]"]        = {
         sC      : [
@@ -1097,7 +1097,7 @@ define(
         xMax           : 224,
         yMin           : -191,
         yMax           : 731,
-        width          : 296
+        wdth           : 296
       };
       font["^"]        = {
         sC      : [
@@ -1107,7 +1107,7 @@ define(
         xMax           : 516,
         yMin           : 335,
         yMax           : 700,
-        width          : 600
+        wdth           : 600
       };
       font["_"]        = {
         sC      : [
@@ -1117,7 +1117,7 @@ define(
         xMax           : 500,
         yMin           : -125,
         yMax           : -75,
-        width          : 500
+        wdth           : 500
       };
       font[" "]        = {
         sC      : [
@@ -1126,7 +1126,7 @@ define(
         xMax           : 500,
         yMin           : -125,
         yMax           : -75,
-        width          : 278
+        wdth           : 278
       };
       font[" "]        = {
         sC      : [
@@ -1135,7 +1135,7 @@ define(
         xMax           : 500,
         yMin           : -125,
         yMax           : -75,
-        width          : 278
+        wdth           : 278
       };
 
       return font;
@@ -1147,7 +1147,7 @@ define(
               xMax     : basis.xMax,
               yMin     : basis.yMin,
               yMax     : basis.yMax,
-              width    : basis.width
+              wdth     : basis.wdth
             },
             shapes     = basis.sC.map(shape=>shape),
             holes      = typeof basis.hC === "object" ? basis.hC.map(hole=>hole) : undefined ,
@@ -1156,14 +1156,14 @@ define(
 
         if ( extraShapes === 2 ) {
           if ( holes ) { holes.unshift([]) }
-          if ( extra === "dieresis" ) { shapes.unshift(dieresisRightCoded(offsetY,offsetX)) }
+          if ( extra === "dieresis" ) { shapes.unshift(dieresisRightCoded(offsetX,offsetY)) }
         }
         if ( extraHoles ) {
           if ( typeof holes !== "object" ) {
             holes      = basis.sC.map(shape=>[])
           }
           if ( extra === "ring" ) {
-            holes.unshift(ringHoleCoded(offsetY,offsetX)) 
+            holes.unshift(ringHoleCoded(offsetX,offsetY)) 
           }
         } else {
           if ( holes ) { holes.unshift([]) }
@@ -1171,27 +1171,27 @@ define(
 
         if ( extra === "dieresis" )   { 
           glyph.yMax   = dieresisYmax(offsetY);
-          shapes.unshift(dieresisLeftCoded(offsetY,offsetX))
+          shapes.unshift(dieresisLeftCoded(offsetX,offsetY))
         }
         if ( extra === "circumflex" ) {
           glyph.yMax   = circumflexYmax(offsetY);
-          shapes.unshift(circumflexCoded(offsetY,offsetX)) 
+          shapes.unshift(circumflexCoded(offsetX,offsetY)) 
         }
         if ( extra === "acute" )      { 
           glyph.yMax   = acuteYmax(offsetY);
-          shapes.unshift(acuteCoded(offsetY,offsetX)) 
+          shapes.unshift(acuteCoded(offsetX,offsetY)) 
         }
         if ( extra === "grave" )      { 
           glyph.yMax   = graveYmax(offsetY);
-          shapes.unshift(graveCoded(offsetY,offsetX)) 
+          shapes.unshift(graveCoded(offsetX,offsetY)) 
         }
         if ( extra === "tilde" )      { 
           glyph.yMax   = tildeYmax(offsetY);
-          shapes.unshift(tildeCoded(offsetY,offsetX))
+          shapes.unshift(tildeCoded(offsetX,offsetY))
         }
         if ( extra === "ring" )       { 
           glyph.yMax   = ringYmax(offsetY);
-          shapes.unshift(ringCoded(offsetY,offsetX))
+          shapes.unshift(ringCoded(offsetX,offsetY))
         }
         glyph.sC       = shapes;
         if ( holes ) {

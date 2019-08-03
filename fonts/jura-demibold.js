@@ -20,7 +20,7 @@ define(
         xMax           : 510.5,
         yMin           : -7,
         yMax           : 450,
-        width          : 580
+        wdth           : 580
       };
       font["b"]        = {
         sC             : [
@@ -33,7 +33,7 @@ define(
         xMax           : 594.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 654
+        wdth           : 654
       };
       font["c"]        = {
         sC             : [
@@ -43,7 +43,7 @@ define(
         xMax           : 551.5,
         yMin           : 0,
         yMax           : 450,
-        width          : 609
+        wdth           : 609
       };
       font["d"]        = {
         sC             : [
@@ -56,7 +56,7 @@ define(
         xMax           : 581,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 654
+        wdth           : 654
       };
       font["e"]        = {
         sC             : [
@@ -69,7 +69,7 @@ define(
         xMax           : 581,
         yMin           : 0,
         yMax           : 450,
-        width          : 635.5
+        wdth           : 635.5
       };
       font["f"]        = {
         sC             : [
@@ -79,7 +79,7 @@ define(
         xMax           : 340.5,
         yMin           : -7,
         yMax           : 621,
-        width          : 336.5
+        wdth           : 336.5
       };
       font["g"]        = {
         sC             : [
@@ -92,7 +92,7 @@ define(
         xMax           : 581,
         yMin           : -200.5,
         yMax           : 457,
-        width          : 654
+        wdth           : 654
       };
       font["h"]        = {
         sC             : [
@@ -102,7 +102,7 @@ define(
         xMax           : 594.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 663
+        wdth           : 663
       };
       font["i"]        = {
         sC             : [
@@ -113,7 +113,7 @@ define(
         xMax           : 166,
         yMin           : -21.5,
         yMax           : 636.5,
-        width          : 212.5
+        wdth           : 212.5
       };
       font["j"]        = {
         sC             : [
@@ -124,7 +124,7 @@ define(
         xMax           : 167.5,
         yMin           : -171,
         yMax           : 636.5,
-        width          : 216.5
+        wdth           : 216.5
       };
       font["k"]        = {
         sC             : [
@@ -134,7 +134,7 @@ define(
         xMax           : 470.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 484
+        wdth           : 484
       };
       font["l"]        = {
         sC             : [
@@ -144,7 +144,7 @@ define(
         xMax           : 247,
         yMin           : 0,
         yMax           : 627.5,
-        width          : 287
+        wdth           : 287
       };
       font["m"]        = {
         sC             : [
@@ -154,7 +154,7 @@ define(
         xMax           : 780,
         yMin           : -7,
         yMax           : 457,
-        width          : 848.5
+        wdth           : 848.5
       };
       font["n"]        = {
         sC             : [
@@ -164,7 +164,7 @@ define(
         xMax           : 593.5,
         yMin           : -7,
         yMax           : 457,
-        width          : 662
+        wdth           : 662
       };
       font["o"]        = {
         sC             : [
@@ -177,7 +177,7 @@ define(
         xMax           : 581,
         yMin           : 0,
         yMax           : 450,
-        width          : 640.5
+        wdth           : 640.5
       };
       font["p"]        = {
         sC             : [
@@ -190,7 +190,7 @@ define(
         xMax           : 594.5,
         yMin           : -178,
         yMax           : 457,
-        width          : 654
+        wdth           : 654
       };
       font["q"]        = {
         sC             : [
@@ -203,7 +203,7 @@ define(
         xMax           : 581,
         yMin           : -178,
         yMax           : 457,
-        width          : 654
+        wdth           : 654
       };
       font["r"]        = {
         sC             : [
@@ -213,7 +213,7 @@ define(
         xMax           : 378.5,
         yMin           : -7,
         yMax           : 457,
-        width          : 396
+        wdth           : 396
       };
       font["s"]        = {
         sC             : [
@@ -223,7 +223,7 @@ define(
         xMax           : 552.5,
         yMin           : 0,
         yMax           : 450,
-        width          : 610
+        wdth           : 610
       };
       font["t"]        = {
         sC             : [
@@ -233,7 +233,7 @@ define(
         xMax           : 339.5,
         yMin           : 0,
         yMax           : 586.5,
-        width          : 364
+        wdth           : 364
       };
       font["u"]        = {
         sC             : [
@@ -243,7 +243,7 @@ define(
         xMax           : 589.5,
         yMin           : -7,
         yMax           : 457,
-        width          : 662
+        wdth           : 662
       };
       font["v"]        = {
         sC             : [
@@ -253,7 +253,7 @@ define(
         xMax           : 492,
         yMin           : 0,
         yMax           : 471.5,
-        width          : 520.5
+        wdth           : 520.5
       };
       font["w"]        = {
         sC             : [
@@ -263,7 +263,7 @@ define(
         xMax           : 784,
         yMin           : 0,
         yMax           : 461.5,
-        width          : 814
+        wdth           : 814
       };
       font["x"]        = {
         sC             : [
@@ -273,7 +273,7 @@ define(
         xMax           : 502.5,
         yMin           : -11,
         yMax           : 460.5,
-        width          : 544.5
+        wdth           : 544.5
       };
       font["y"]        = {
         sC             : [
@@ -283,7 +283,7 @@ define(
         xMax           : 589.5,
         yMin           : -200.5,
         yMax           : 457,
-        width          : 663
+        wdth           : 663
       };
       font["z"]        = {
         sC             : [
@@ -293,7 +293,7 @@ define(
         xMax           : 529,
         yMin           : 0,
         yMax           : 450,
-        width          : 580
+        wdth           : 580
       };
       font["A"]        = {
         sC             : [
@@ -306,7 +306,7 @@ define(
         xMax           : 572,
         yMin           : -16,
         yMax           : 621,
-        width          : 595.5
+        wdth           : 595.5
       };
       font["B"]        = {
         sC             : [
@@ -319,7 +319,7 @@ define(
         xMax           : 574,
         yMin           : 0,
         yMax           : 621,
-        width          : 628.5
+        wdth           : 628.5
       };
       font["C"]        = {
         sC             : [
@@ -329,7 +329,7 @@ define(
         xMax           : 561.5,
         yMin           : 0,
         yMax           : 621,
-        width          : 616
+        wdth           : 616
       };
       font["D"]        = {
         sC             : [
@@ -342,7 +342,7 @@ define(
         xMax           : 574,
         yMin           : 0,
         yMax           : 621,
-        width          : 643.5
+        wdth           : 643.5
       };
       font["E"]        = {
         sC             : [
@@ -352,7 +352,7 @@ define(
         xMax           : 574,
         yMin           : 0,
         yMax           : 621,
-        width          : 621
+        wdth           : 621
       };
       font["F"]        = {
         sC             : [
@@ -362,7 +362,7 @@ define(
         xMax           : 574,
         yMin           : -7,
         yMax           : 621,
-        width          : 600.5
+        wdth           : 600.5
       };
       font["G"]        = {
         sC             : [
@@ -372,7 +372,7 @@ define(
         xMax           : 561.5,
         yMin           : 0,
         yMax           : 621,
-        width          : 629.5
+        wdth           : 629.5
       };
       font["H"]        = {
         sC             : [
@@ -382,7 +382,7 @@ define(
         xMax           : 574,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 656
+        wdth           : 656
       };
       font["I"]        = {
         sC             : [
@@ -392,7 +392,7 @@ define(
         xMax           : 152,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 234
+        wdth           : 234
       };
       font["J"]        = {
         sC             : [
@@ -402,7 +402,7 @@ define(
         xMax           : 498,
         yMin           : -8,
         yMax           : 627.5,
-        width          : 577
+        wdth           : 577
       };
       font["K"]        = {
         sC             : [
@@ -412,7 +412,7 @@ define(
         xMax           : 541,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 546.5
+        wdth           : 546.5
       };
       font["L"]        = {
         sC             : [
@@ -422,7 +422,7 @@ define(
         xMax           : 519.5,
         yMin           : 0,
         yMax           : 627.5,
-        width          : 541
+        wdth           : 541
       };
       font["M"]        = {
         sC             : [
@@ -432,7 +432,7 @@ define(
         xMax           : 594.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 676.5
+        wdth           : 676.5
       };
       font["N"]        = {
         sC             : [
@@ -442,7 +442,7 @@ define(
         xMax           : 574,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 656
+        wdth           : 656
       };
       font["O"]        = {
         sC             : [
@@ -455,7 +455,7 @@ define(
         xMax           : 554.5,
         yMin           : -9,
         yMax           : 629.5,
-        width          : 617
+        wdth           : 617
       };
       font["P"]        = {
         sC             : [
@@ -468,7 +468,7 @@ define(
         xMax           : 533,
         yMin           : -7,
         yMax           : 625.5,
-        width          : 566
+        wdth           : 566
       };
       font["Q"]        = {
         sC             : [
@@ -481,7 +481,7 @@ define(
         xMax           : 554.5,
         yMin           : -12,
         yMax           : 629.5,
-        width          : 617
+        wdth           : 617
       };
       font["R"]        = {
         sC             : [
@@ -494,7 +494,7 @@ define(
         xMax           : 541,
         yMin           : -7,
         yMax           : 630.5,
-        width          : 594.5
+        wdth           : 594.5
       };
       font["S"]        = {
         sC             : [
@@ -504,7 +504,7 @@ define(
         xMax           : 583,
         yMin           : -8,
         yMax           : 628.5,
-        width          : 642.5
+        wdth           : 642.5
       };
       font["T"]        = {
         sC             : [
@@ -514,7 +514,7 @@ define(
         xMax           : 481,
         yMin           : -7,
         yMax           : 621,
-        width          : 507.5
+        wdth           : 507.5
       };
       font["U"]        = {
         sC             : [
@@ -524,7 +524,7 @@ define(
         xMax           : 567,
         yMin           : -9,
         yMax           : 627.5,
-        width          : 642.5
+        wdth           : 642.5
       };
       font["V"]        = {
         sC             : [
@@ -534,7 +534,7 @@ define(
         xMax           : 572,
         yMin           : 0,
         yMax           : 636.5,
-        width          : 595.5
+        wdth           : 595.5
       };
       font["W"]        = {
         sC             : [
@@ -544,7 +544,7 @@ define(
         xMax           : 906,
         yMin           : 0,
         yMax           : 637.5,
-        width          : 932.5
+        wdth           : 932.5
       };
       font["X"]        = {
         sC             : [
@@ -554,7 +554,7 @@ define(
         xMax           : 552.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 590.5
+        wdth           : 590.5
       };
       font["Y"]        = {
         sC             : [
@@ -564,7 +564,7 @@ define(
         xMax           : 531,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 549.5
+        wdth           : 549.5
       };
       font["Z"]        = {
         sC             : [
@@ -574,7 +574,7 @@ define(
         xMax           : 540,
         yMin           : 0,
         yMax           : 621,
-        width          : 587.5
+        wdth           : 587.5
       };
       font["0"]        = {
         sC             : [
@@ -587,7 +587,7 @@ define(
         xMax           : 566,
         yMin           : -5,
         yMax           : 625.5,
-        width          : 640.5
+        wdth           : 640.5
       };
       font["1"]        = {
         sC             : [
@@ -597,7 +597,7 @@ define(
         xMax           : 183.5,
         yMin           : -7,
         yMax           : 668.5,
-        width          : 269.5
+        wdth           : 269.5
       };
       font["2"]        = {
         sC             : [
@@ -607,7 +607,7 @@ define(
         xMax           : 553.5,
         yMin           : -5,
         yMax           : 625.5,
-        width          : 614
+        wdth           : 614
       };
       font["3"]        = {
         sC             : [
@@ -617,7 +617,7 @@ define(
         xMax           : 552.5,
         yMin           : -5,
         yMax           : 625.5,
-        width          : 621
+        wdth           : 621
       };
       font["4"]        = {
         sC             : [
@@ -630,7 +630,7 @@ define(
         xMax           : 529,
         yMin           : -7,
         yMax           : 625.5,
-        width          : 563
+        wdth           : 563
       };
       font["5"]        = {
         sC             : [
@@ -640,7 +640,7 @@ define(
         xMax           : 543.5,
         yMin           : -9,
         yMax           : 625.5,
-        width          : 593.5
+        wdth           : 593.5
       };
       font["6"]        = {
         sC             : [
@@ -653,7 +653,7 @@ define(
         xMax           : 541,
         yMin           : -9,
         yMax           : 628.5,
-        width          : 580
+        wdth           : 580
       };
       font["7"]        = {
         sC             : [
@@ -663,7 +663,7 @@ define(
         xMax           : 503.5,
         yMin           : -10,
         yMax           : 630.5,
-        width          : 527
+        wdth           : 527
       };
       font["8"]        = {
         sC             : [
@@ -676,7 +676,7 @@ define(
         xMax           : 563,
         yMin           : -5,
         yMax           : 625.5,
-        width          : 634.5
+        wdth           : 634.5
       };
       font["9"]        = {
         sC             : [
@@ -689,7 +689,7 @@ define(
         xMax           : 533,
         yMin           : -16,
         yMax           : 625.5,
-        width          : 581
+        wdth           : 581
       };
       font["!"]        = {
         sC             : [
@@ -700,7 +700,7 @@ define(
         xMax           : 187,
         yMin           : -21.5,
         yMax           : 643.5,
-        width          : 253.5
+        wdth           : 253.5
       };
       font["|"]        = {
         sC             : [
@@ -710,7 +710,7 @@ define(
         xMax           : 149,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 229
+        wdth           : 229
       };
       font['"']        = {
         sC             : [
@@ -721,7 +721,7 @@ define(
         xMax           : 238,
         yMin           : 413,
         yMax           : 642.5,
-        width          : 306.5
+        wdth           : 306.5
       };
       font["'"]        = {
         sC             : [
@@ -731,7 +731,7 @@ define(
         xMax           : 138.5,
         yMin           : 413,
         yMax           : 642.5,
-        width          : 207
+        wdth           : 207
       };
       font["#"]        = {
         sC             : [
@@ -744,7 +744,7 @@ define(
         xMax           : 564,
         yMin           : -4,
         yMax           : 624.5,
-        width          : 607
+        wdth           : 607
       };
       font["$"]        = {
         sC             : [
@@ -757,7 +757,7 @@ define(
         xMax           : 553.5,
         yMin           : -7,
         yMax           : 627.5,
-        width          : 613
+        wdth           : 613
       };
       font["%"]        = {
         sC             : [
@@ -774,7 +774,7 @@ define(
         xMax           : 516.5,
         yMin           : 88.5,
         yMax           : 535,
-        width          : 583
+        wdth           : 583
       };
       font["&"]        = {
         sC             : [
@@ -787,7 +787,7 @@ define(
         xMax           : 490,
         yMin           : -23.5,
         yMax           : 646,
-        width          : 521
+        wdth           : 521
       };
       font["("]        = {
         sC             : [
@@ -797,7 +797,7 @@ define(
         xMax           : 217.5,
         yMin           : -56,
         yMax           : 676.5,
-        width          : 264.5
+        wdth           : 264.5
       };
       font[")"]        = {
         sC             : [
@@ -807,7 +807,7 @@ define(
         xMax           : 193,
         yMin           : -56,
         yMax           : 676.5,
-        width          : 264.5
+        wdth           : 264.5
       };
       font["*"]        = {
         sC             : [
@@ -817,7 +817,7 @@ define(
         xMax           : 342.5,
         yMin           : 323,
         yMax           : 635.5,
-        width          : 405
+        wdth           : 405
       };
       font["+"]        = {
         sC             : [
@@ -827,7 +827,7 @@ define(
         xMax           : 485,
         yMin           : -21.5,
         yMax           : 471.5,
-        width          : 518.5
+        wdth           : 518.5
       };
       font[","]        = {
         sC             : [
@@ -837,7 +837,7 @@ define(
         xMax           : 156,
         yMin           : -93,
         yMax           : 74,
-        width          : 220.5
+        wdth           : 220.5
       };
       font["-"]        = {
         sC             : [
@@ -847,7 +847,7 @@ define(
         xMax           : 393.5,
         yMin           : 189,
         yMax           : 260.5,
-        width          : 464.5
+        wdth           : 464.5
       };
       font["."]        = {
         sC             : [
@@ -857,7 +857,7 @@ define(
         xMax           : 181.5,
         yMin           : -21.5,
         yMax           : 78,
-        width          : 244
+        wdth           : 244
       };
       font["/"]        = {
         sC             : [
@@ -867,7 +867,7 @@ define(
         xMax           : 326,
         yMin           : -22.5,
         yMax           : 644.5,
-        width          : 366
+        wdth           : 366
       };
       font[":"]        = {
         sC             : [
@@ -878,7 +878,7 @@ define(
         xMax           : 190,
         yMin           : 28,
         yMax           : 472.5,
-        width          : 261.5
+        wdth           : 261.5
       };
       font[";"]        = {
         sC             : [
@@ -889,7 +889,7 @@ define(
         xMax           : 190,
         yMin           : -43,
         yMax           : 472.5,
-        width          : 264.5
+        wdth           : 264.5
       };
       font["<"]        = {
         sC             : [
@@ -899,7 +899,7 @@ define(
         xMax           : 468.5,
         yMin           : 77,
         yMax           : 570,
-        width          : 535
+        wdth           : 535
       };
       font["="]        = {
         sC             : [
@@ -910,7 +910,7 @@ define(
         xMax           : 399,
         yMin           : 238,
         yMax           : 410,
-        width          : 476.5
+        wdth           : 476.5
       };
       font[">"]        = {
         sC             : [
@@ -920,7 +920,7 @@ define(
         xMax           : 502.5,
         yMin           : 77,
         yMax           : 570,
-        width          : 535
+        wdth           : 535
       };
       font["?"]        = {
         sC             : [
@@ -931,7 +931,7 @@ define(
         xMax           : 500.5,
         yMin           : -21.5,
         yMax           : 643.5,
-        width          : 540
+        wdth           : 540
       };
       font["@"]        = {
         sC             : [
@@ -944,7 +944,7 @@ define(
         xMax           : 531,
         yMin           : -15,
         yMax           : 635.5,
-        width          : 597.5
+        wdth           : 597.5
       };
       font["["]        = {
         sC             : [
@@ -954,7 +954,7 @@ define(
         xMax           : 225.5,
         yMin           : -56,
         yMax           : 676.5,
-        width          : 272
+        wdth           : 272
       };
       font["]"]        = {
         sC             : [
@@ -964,7 +964,7 @@ define(
         xMax           : 193,
         yMin           : -56,
         yMax           : 676.5,
-        width          : 272
+        wdth           : 272
       };
       font["^"]        = {
         sC             : [
@@ -974,7 +974,7 @@ define(
         xMax           : 364,
         yMin           : 341.5,
         yMax           : 635.5,
-        width          : 432.5
+        wdth           : 432.5
       };
       font["_"]        = {
         sC             : [
@@ -984,7 +984,7 @@ define(
         xMax           : 478.5,
         yMin           : -56,
         yMax           : 14.5,
-        width          : 463.5
+        wdth           : 463.5
       };
       font[" "]        = {
         sC             : [
@@ -993,7 +993,7 @@ define(
         xMax           : -10000,
         yMin           : 10000,
         yMax           : -10000,
-        width          : 253.5
+        wdth           : 253.5
       };
 
       return font;

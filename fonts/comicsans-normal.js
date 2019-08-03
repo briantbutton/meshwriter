@@ -20,7 +20,25 @@ define(
         xMax           : 494.5,
         yMin           : -32.5,
         yMax           : 509.5,
-        width          : 511.5
+        wdth           : 511.5
+      };
+      font["á"]        = supplement(font.a,"acute",100,0);
+      font["à"]        = supplement(font.a,"grave",130,-17);
+      font["ä"]        = supplement(font.a,"dieresis",-24,8);
+      font["â"]        = supplement(font.a,"circumflex",-9,0);
+      font["å"]        = supplement(font.a,"ring",-10,-10);
+      font["æ"]        = {
+        sC             : [
+                           'GUAw G,AOFfA1 E¾@µEa@µ C°@µB©AÄ A¦C-A¦D¦ A¦FiC2G± D^I1FDI1 G)I1H0H¤ HPHxHVG¶ H°HdIpHµ JKI>K,I> LII>M/H­ N3HFN3G8 N3FUMAE§ L¶EdKwD¼ H£Ci IoBEKGBE K¹BELmBa MRB¢MzC3 MÃChNACh NdChN¡CN N»C4N»Bµ N»AÃMbAS LK@¸KG@¸ Ie@¸H}A¦ H£ApH¨AA H¬@»H:@» G©@»GrA2 GeAAGUAw'
+                         ],
+        hC             : [
+                           ['K,G± I=G±HqD¿ J°EÁ L6FoL»G@ LDG±K,G±','GEGk F¤G¯ FoG¶F5G¶ D¾G¶D,F³ CBE·CBDx CBC}C¹B» DpB0EiB0 F*B0FbBI F»BcGEB¶ G/C²G/D8 G/FJGEGk']
+                         ],
+        xMin           : 32.5,
+        xMax           : 875,
+        yMin           : -24,
+        yMax           : 510,
+        wdth           : 911.5
       };
       font["b"]        = {
         sC             : [
@@ -33,7 +51,7 @@ define(
         xMax           : 546,
         yMin           : -21,
         yMax           : 769,
-        width          : 593
+        wdth           : 593
       };
       font["c"]        = {
         sC             : [
@@ -43,7 +61,17 @@ define(
         xMax           : 473,
         yMin           : -31,
         yMax           : 519,
-        width          : 513.5
+        wdth           : 513.5
+      };
+      font["ç"]        = {
+        sC             : [
+                           'G1?¥ G1>¬Fw>L F;=²EE=² Ds=²D(>. CJ>WCJ>Á CJ?SC°?S D0?SD]?; D¬?"E:?" Ek?#E¥?; E¼?QE¼?~ E¼@,Eu@Q EP@wD©@¶ CkA6B°B& B(BÂB(DL B(EµC,Gf D>IPEwIP FVIPGLI" HbHjHbG¹ HbGrHIGT H0G7G¯G7 GqG7G[GH GFGYG2Gk FzG»EwG» DµG»D1Fg CXECCXDL CXCKD0B¤ D¥B<E¦B< F=B<F£B[ GrBº G±C&G¾C& H?C&HYB­ HuBnHuBH HuAeF{@½ F¹@vG#@O G1@)G1?¥'
+                         ],
+        xMin           : 51,
+        xMax           : 473,
+        yMin           : -217.5,
+        yMax           : 519,
+        wdth           : 513.5
       };
       font["d"]        = {
         sC             : [
@@ -56,7 +84,7 @@ define(
         xMax           : 537,
         yMin           : -22.5,
         yMax           : 778,
-        width          : 587
+        wdth           : 587
       };
       font["e"]        = {
         sC             : [
@@ -69,8 +97,12 @@ define(
         xMax           : 528.5,
         yMin           : -22.5,
         yMax           : 510,
-        width          : 547.5
+        wdth           : 547.5
       };
+      font["é"]        = supplement(font.e,"acute",100,0);
+      font["è"]        = supplement(font.e,"grave",130,0);
+      font["ë"]        = supplement(font.e,"dieresis",24,0);
+      font["ê"]        = supplement(font.e,"circumflex",0,0);
       font["f"]        = {
         sC             : [
                            'GYKÂ EnKÂEQIV ENH½ FuI%G$I% H@I%H@HD H@G~GuGp GSGjG%Gl F{GmEEG^ E=E¢ E=EBEADI EECPEEB· EEA[E0@t DÂ@$DU@$ D-@$C³@? Cu@YCu@£ Cu@«Cw@· C®A¶C®C( C«E3 C«GN B±GDBnGD A®GDA®H" A®H¦C6H« C¶H® C¹IBD!IÃ D;KyD²L` EvM[GMM[ HXM[HXL} HXKÂGYKÂ'
@@ -79,7 +111,7 @@ define(
         xMax           : 459,
         yMin           : -78.5,
         yMax           : 780.5,
-        width          : 508
+        wdth           : 508
       };
       font["g"]        = {
         sC             : [
@@ -92,7 +124,7 @@ define(
         xMax           : 493,
         yMin           : -275.5,
         yMax           : 499.5,
-        width          : 530.5
+        wdth           : 530.5
       };
       font["h"]        = {
         sC             : [
@@ -102,7 +134,7 @@ define(
         xMax           : 526,
         yMin           : -30.5,
         yMax           : 782,
-        width          : 577.5
+        wdth           : 577.5
       };
       font["i"]        = {
         sC             : [
@@ -113,8 +145,22 @@ define(
         xMax           : 218,
         yMin           : -2.5,
         yMax           : 731,
-        width          : 280
+        wdth           : 280
       };
+      font["ı"]        = {
+        sC             : [
+                           'D0D~ D0DBD3CN D7BYD7AÁ D7AtC¿AX C¥A=CWA= C-A=BµAX BxAtBxAÁ BxBYBuCN BqDBBqD~ BqEYB{Fc B§GlB§HG B§HtBÂH± C:I)CeI) C±I)D(H± DCHtDCHG DCGlD9Fc D0EYD0D~'
+                         ],
+        xMin           : 87,
+        xMax           : 218,
+        yMin           : -2.5,
+        yMax           : 730,
+        wdth           : 280
+      };
+      font["í"]        = supplement(font["ı"],"acute",-20,0);
+      font["ì"]        = supplement(font["ı"],"grave",-20,0);
+      font["ï"]        = supplement(font["ı"],"dieresis",-120,0);
+      font["î"]        = supplement(font["ı"],"circumflex",-60,0);
       font["j"]        = {
         sC             : [
                            'D¥?` D¦@QDbD( D?HB D?HtD[H¼ DxI?E!I? ECI?EeI& E©H±E«Hv F(DB FB?j FB>bEr=t D¼<{C¾<{ BI<{A<?> A0?XA0?n A0?·AO@0 An@LA¸@L BN@LB°?M B¿?,CC>o Cj>=C¾>= DF>=De>~ D}?.D¥?`',
@@ -124,7 +170,7 @@ define(
         xMax           : 320,
         yMin           : -292,
         yMax           : 730,
-        width          : 403
+        wdth           : 403
       };
       font["k"]        = {
         sC             : [
@@ -134,7 +180,7 @@ define(
         xMax           : 525,
         yMin           : -20.5,
         yMax           : 783,
-        width          : 540
+        wdth           : 540
       };
       font["l"]        = {
         sC             : [
@@ -144,7 +190,7 @@ define(
         xMax           : 196.5,
         yMin           : -21,
         yMax           : 785.5,
-        width          : 273.5
+        wdth           : 273.5
       };
       font["m"]        = {
         sC             : [
@@ -154,7 +200,7 @@ define(
         xMax           : 736.5,
         yMin           : -61,
         yMax           : 541.5,
-        width          : 776.5
+        wdth           : 776.5
       };
       font["n"]        = {
         sC             : [
@@ -164,8 +210,9 @@ define(
         xMax           : 491,
         yMin           : -35,
         yMax           : 533,
-        width          : 523
+        wdth           : 523
       };
+      font["ñ"]        = supplement(font.n,"tilde",-32,0);
       font["o"]        = {
         sC             : [
                            'E7@« C¶@«BÀA¤ A¼B«A¶Dl A°FHB¥Gq C®I6E¢I6 GBI6H&G¦ HxFtHuE( HrCOG¦B6 F©@«E7@«'
@@ -177,8 +224,12 @@ define(
         xMax           : 473,
         yMin           : -29,
         yMax           : 506,
-        width          : 525.5
+        wdth           : 525.5
       };
+      font["ô"]        = supplement(font.o,"circumflex",-32,0);
+      font["ò"]        = supplement(font.o,"grave",120,0);
+      font["ó"]        = supplement(font.o,"acute",90,0);
+      font["ö"]        = supplement(font.o,"dieresis",-40,0);
       font["p"]        = {
         sC             : [
                            'Ei@Â Dª@ÂC´A? C²=m C²=ACv=$ CZ<­C0<­ B©<­Bl=$ BP=ABP=m BS@s BSCy BPENBDF¡ B6HD B6H¬BOI9 BmItC#It CJItCeIX C¡I=C¡H¹ C¡H°C|Hw CwHWCuH> DHHyD¹H¸ EeI1F,I1 GuI1HQG£ H½FtH½D¯ H½C9H)B0 G0@ÂEi@Â'
@@ -190,7 +241,7 @@ define(
         xMax           : 492,
         yMin           : -284,
         yMax           : 536.5,
-        width          : 534.5
+        wdth           : 534.5
       };
       font["q"]        = {
         sC             : [
@@ -203,7 +254,7 @@ define(
         xMax           : 460,
         yMin           : -271.5,
         yMax           : 519,
-        width          : 520
+        wdth           : 520
       };
       font["r"]        = {
         sC             : [
@@ -213,7 +264,7 @@ define(
         xMax           : 448,
         yMin           : -33,
         yMax           : 514.5,
-        width          : 480
+        wdth           : 480
       };
       font["s"]        = {
         sC             : [
@@ -223,7 +274,7 @@ define(
         xMax           : 445,
         yMin           : -29.5,
         yMax           : 557.5,
-        width          : 486.5
+        wdth           : 486.5
       };
       font["t"]        = {
         sC             : [
@@ -233,7 +284,7 @@ define(
         xMax           : 442,
         yMin           : -31.5,
         yMax           : 682,
-        width          : 471
+        wdth           : 471
       };
       font["u"]        = {
         sC             : [
@@ -243,8 +294,12 @@ define(
         xMax           : 475,
         yMin           : -39.5,
         yMax           : 520.5,
-        width          : 520
+        wdth           : 520
       };
+      font["ú"]        = supplement(font.u,"acute",90,0);
+      font["ù"]        = supplement(font.u,"grave",120,0);
+      font["ü"]        = supplement(font.u,"dieresis",-40,0);
+      font["û"]        = supplement(font.u,"circumflex",0,0);
       font["v"]        = {
         sC             : [
                            'GTEA E®Au E¬@½E3@½ Dl@½DKAo C6D| A«H; A¡HUA¡Hi A¡H³A¿I, B;IIBdII BÀIIC7H° E/Cd EyD¢FhG( F¥GwG:H§ GYICG³IC H8ICHVI& HvH­HvHd HvH>GTEA'
@@ -253,7 +308,7 @@ define(
         xMax           : 473.5,
         yMin           : -20,
         yMax           : 515.5,
-        width          : 486
+        wdth           : 486
       };
       font["w"]        = {
         sC             : [
@@ -263,7 +318,7 @@ define(
         xMax           : 657,
         yMin           : -40,
         yMax           : 508,
-        width          : 684
+        wdth           : 684
       };
       font["x"]        = {
         sC             : [
@@ -273,7 +328,7 @@ define(
         xMax           : 562,
         yMin           : -21.5,
         yMax           : 539.5,
-        width          : 590
+        wdth           : 590
       };
       font["y"]        = {
         sC             : [
@@ -283,7 +338,7 @@ define(
         xMax           : 499.5,
         yMin           : -283,
         yMax           : 507.5,
-        width          : 520.5
+        wdth           : 520.5
       };
       font["z"]        = {
         sC             : [
@@ -293,7 +348,7 @@ define(
         xMax           : 507.5,
         yMin           : -38,
         yMax           : 515.5,
-        width          : 538
+        wdth           : 538
       };
       font["A"]        = {
         sC             : [
@@ -306,7 +361,25 @@ define(
         xMax           : 660,
         yMin           : -15,
         yMax           : 721.5,
-        width          : 731
+        wdth           : 731
+      };
+      font["Á"]        = supplement(font.A,"acute",200,200);
+      font["À"]        = supplement(font.A,"grave",300,200);
+      font["Ä"]        = supplement(font.A,"dieresis",160,200);
+      font["Â"]        = supplement(font.A,"circumflex",100,200);
+      font["Å"]        = supplement(font.A,"ring",180,180);
+      font["Æ"]        = {
+        sC             : [
+                           'J%FR I?FOGÀF? E¶F& E>E3C»C/ C!A{ B¥AMBTAM B-AMA±Ak AoAªAoB. AoBHA¤Bg D1FVE²HY G¼K+ IIL¤JNM? JpMNJµMN K;MNKXM2 LMMQM5Mb MÀMrNzMr PzMrQuM8 R6L½R6LZ R6L1Q½Kµ Q¡KuQVKu QJKuQ8Ky O¤L&NzL& N)L&MJK¼ LmK­K¡Km KªK.KªJ© KªI~KxG´ O!H: PXHNP­HN Q6HNQRH1 QoG·QoGi QoF¹P¸F¨ O-Fr KkFG KbE<KbDQ KbBuK£BS K¾B8L½B8 MVB8NPB; OIB>OªB> O¼B>P?BD PgBJPzBJ QbBJQbAg Qb@»P±@¦ P;@oO;@n Mg@o KJ@oJsAM IÁB(IÁDQ IÁE@J%FR'
+                         ],
+        hC             : [
+                           ['HwIi G<G{ I+G´J3G· JDI£JDJ© JDK"J?KI IfJxHwIi']
+                         ],
+        xMin           : 22,
+        xMax           : 1082,
+        yMin           : -42.5,
+        yMax           : 791.5,
+        wdth           : 1086.5
       };
       font["B"]        = {
         sC             : [
@@ -319,7 +392,7 @@ define(
         xMax           : 589.5,
         yMin           : -23.5,
         yMax           : 767,
-        width          : 630
+        wdth           : 630
       };
       font["C"]        = {
         sC             : [
@@ -329,7 +402,17 @@ define(
         xMax           : 587,
         yMin           : -12,
         yMax           : 743.5,
-        width          : 602.5
+        wdth           : 602.5
+      };
+      font["Ç"]        = {
+        sC             : [
+                           'GG@7 GG>¹F>>[ Ed>4D*>4 C+>4C+>£ C+?ICs?I C§?ID)?H DN?FDb?F F4?FF4@7 F4@zEM@Ä D0AX C$B)B`BÀ A¼C´A¼E) A¼GsD/JP E¸LsG¥Ls H0LsHWLn H¡LjH¾L` I=L´IuL´ J9L´JOKÃ JXKoJXJw JXJIJ?J* J#I¬IyI¬ I:I¬H½JR H~J¶HdJÃ HQK)G¥K) FuK)EGIQ C^G-C^E) C^D/D,CS D¡BsEwBs FZBsGBC( GxCCH]C¯ I(DBIBDB IkDBIªD" J$C§J$C] J$B´H£B- GzA[FµA@ GG@¡GG@7'
+                         ],
+        xMin           : 43.5,
+        xMax           : 587,
+        yMin           : -199,
+        yMax           : 743.5,
+        wdth           : 602.5
       };
       font["D"]        = {
         sC             : [
@@ -342,7 +425,7 @@ define(
         xMax           : 671.5,
         yMin           : -48.5,
         yMax           : 759.5,
-        width          : 721.5
+        wdth           : 721.5
       };
       font["E"]        = {
         sC             : [
@@ -352,8 +435,12 @@ define(
         xMax           : 592,
         yMin           : -48.5,
         yMax           : 783.5,
-        width          : 624.5
+        wdth           : 624.5
       };
+      font["É"]        = supplement(font.E,"acute",100,240);
+      font["È"]        = supplement(font.E,"grave",200,240);
+      font["Ê"]        = supplement(font.E,"circumflex",40,240);
+      font["Ë"]        = supplement(font.E,"dieresis",80,240);
       font["F"]        = {
         sC             : [
                            'I{KE IiKEITKM H[KzF·Kz FTKzE~Kq E&KhD;KS D9H- EwH`FUH` GlH`H¯HN IiHDIiGk IiG>ILFÄ I/F¨H¨F¨ HSF¨GnF° FªF¹FUF¹ EµF¹D6F^ D-A> D-@·C´@x Cw@ZCL@Z C!@ZB©@x Bk@·BkA> BkB¡BsE¢ BzH£BzJA BzJmByKB BwK¼BwLD BwLpB´L¯ C,M)CWM) CxM)C³L» D­M-EkM7 FKMBF·MB G§MBH¸LÄ JYLuJYL, JYK¨J@Kh J#KEI{KE'
@@ -362,7 +449,7 @@ define(
         xMax           : 587.5,
         yMin           : -52,
         yMax           : 768,
-        width          : 606.5
+        wdth           : 606.5
       };
       font["G"]        = {
         sC             : [
@@ -372,7 +459,7 @@ define(
         xMax           : 661.5,
         yMin           : -34,
         yMax           : 767,
-        width          : 679.5
+        wdth           : 679.5
       };
       font["H"]        = {
         sC             : [
@@ -382,7 +469,7 @@ define(
         xMax           : 715,
         yMin           : -41,
         yMax           : 758.5,
-        width          : 768
+        wdth           : 768
       };
       font["I"]        = {
         sC             : [
@@ -392,7 +479,7 @@ define(
         xMax           : 517.5,
         yMin           : -18,
         yMax           : 729,
-        width          : 546
+        wdth           : 546
       };
       font["J"]        = {
         sC             : [
@@ -402,7 +489,7 @@ define(
         xMax           : 632.5,
         yMin           : -59,
         yMax           : 739.5,
-        width          : 665
+        wdth           : 665
       };
       font["K"]        = {
         sC             : [
@@ -412,7 +499,7 @@ define(
         xMax           : 606.5,
         yMin           : -54,
         yMax           : 747.5,
-        width          : 610.5
+        wdth           : 610.5
       };
       font["L"]        = {
         sC             : [
@@ -422,7 +509,7 @@ define(
         xMax           : 531.5,
         yMin           : -45.5,
         yMax           : 752.5,
-        width          : 550.5
+        wdth           : 550.5
       };
       font["M"]        = {
         sC             : [
@@ -432,7 +519,7 @@ define(
         xMax           : 845,
         yMin           : -41,
         yMax           : 749,
-        width          : 882.5
+        wdth           : 882.5
       };
       font["N"]        = {
         sC             : [
@@ -442,8 +529,9 @@ define(
         xMax           : 755,
         yMin           : -39,
         yMax           : 757,
-        width          : 796.5
+        wdth           : 796.5
       };
+      font["Ñ"]        = supplement(font.N,"tilde",160,160);
       font["O"]        = {
         sC             : [
                            'GQ@© E=@©C¡B+ B3C[B3Eq B3HBC|JV E[L¬H)L¬ JkL¬K©Ky M)JcM)GÁ M)ELKsC< IÂ@©GQ@©'
@@ -455,7 +543,7 @@ define(
         xMax           : 755.5,
         yMin           : -30,
         yMax           : 739.5,
-        width          : 798
+        wdth           : 798
       };
       font["P"]        = {
         sC             : [
@@ -468,7 +556,7 @@ define(
         xMax           : 490.5,
         yMin           : -12,
         yMax           : 767,
-        width          : 520.5
+        wdth           : 520.5
       };
       font["Q"]        = {
         sC             : [
@@ -481,7 +569,7 @@ define(
         xMax           : 854,
         yMin           : -214,
         yMax           : 739.5,
-        width          : 876
+        wdth           : 876
       };
       font["R"]        = {
         sC             : [
@@ -494,7 +582,7 @@ define(
         xMax           : 599.5,
         yMin           : -17.5,
         yMax           : 749.5,
-        width          : 628
+        wdth           : 628
       };
       font["S"]        = {
         sC             : [
@@ -504,7 +592,7 @@ define(
         xMax           : 645,
         yMin           : -28,
         yMax           : 716,
-        width          : 693
+        wdth           : 693
       };
       font["T"]        = {
         sC             : [
@@ -514,7 +602,7 @@ define(
         xMax           : 714,
         yMin           : -4,
         yMax           : 739.5,
-        width          : 679.5
+        wdth           : 679.5
       };
       font["U"]        = {
         sC             : [
@@ -524,7 +612,7 @@ define(
         xMax           : 678,
         yMin           : -20,
         yMax           : 733.5,
-        width          : 736.5
+        wdth           : 736.5
       };
       font["V"]        = {
         sC             : [
@@ -534,7 +622,7 @@ define(
         xMax           : 647,
         yMin           : -39.5,
         yMax           : 749.5,
-        width          : 649.5
+        wdth           : 649.5
       };
       font["W"]        = {
         sC             : [
@@ -544,7 +632,7 @@ define(
         xMax           : 1023,
         yMin           : -47,
         yMax           : 745,
-        width          : 1039.5
+        wdth           : 1039.5
       };
       font["X"]        = {
         sC             : [
@@ -554,7 +642,7 @@ define(
         xMax           : 686.5,
         yMin           : -41.5,
         yMax           : 742.5,
-        width          : 723.5
+        wdth           : 723.5
       };
       font["Y"]        = {
         sC             : [
@@ -564,7 +652,7 @@ define(
         xMax           : 598,
         yMin           : -34.5,
         yMax           : 742.5,
-        width          : 635
+        wdth           : 635
       };
       font["Z"]        = {
         sC             : [
@@ -574,7 +662,7 @@ define(
         xMax           : 674.5,
         yMin           : -25,
         yMax           : 736.5,
-        width          : 693
+        wdth           : 693
       };
       font["0"]        = {
         sC             : [
@@ -587,7 +675,7 @@ define(
         xMax           : 575.5,
         yMin           : -19.5,
         yMax           : 759,
-        width          : 610
+        wdth           : 610
       };
       font["1"]        = {
         sC             : [
@@ -597,7 +685,7 @@ define(
         xMax           : 391,
         yMin           : -0.5,
         yMax           : 761,
-        width          : 450
+        wdth           : 450
       };
       font["2"]        = {
         sC             : [
@@ -607,7 +695,7 @@ define(
         xMax           : 538,
         yMin           : -1.5,
         yMax           : 749.5,
-        width          : 610
+        wdth           : 610
       };
       font["3"]        = {
         sC             : [
@@ -617,7 +705,7 @@ define(
         xMax           : 528.5,
         yMin           : -22.5,
         yMax           : 745,
-        width          : 610
+        wdth           : 610
       };
       font["4"]        = {
         sC             : [
@@ -630,7 +718,7 @@ define(
         xMax           : 580.5,
         yMin           : -13,
         yMax           : 761.5,
-        width          : 610
+        wdth           : 610
       };
       font["5"]        = {
         sC             : [
@@ -640,7 +728,7 @@ define(
         xMax           : 562.5,
         yMin           : -31,
         yMax           : 753.5,
-        width          : 610
+        wdth           : 610
       };
       font["6"]        = {
         sC             : [
@@ -653,7 +741,7 @@ define(
         xMax           : 541.5,
         yMin           : -35.5,
         yMax           : 759.5,
-        width          : 610
+        wdth           : 610
       };
       font["7"]        = {
         sC             : [
@@ -663,7 +751,7 @@ define(
         xMax           : 592.5,
         yMin           : -32.5,
         yMax           : 736,
-        width          : 610
+        wdth           : 610
       };
       font["8"]        = {
         sC             : [
@@ -676,7 +764,7 @@ define(
         xMax           : 549.5,
         yMin           : -26.5,
         yMax           : 745,
-        width          : 610
+        wdth           : 610
       };
       font["9"]        = {
         sC             : [
@@ -689,7 +777,18 @@ define(
         xMax           : 563.5,
         yMin           : -46.5,
         yMax           : 749.5,
-        width          : 610
+        wdth           : 610
+      };
+      font["¡"]        = {
+        sC             : [
+                           'B7L­ B7M-BSMG BoMbBµMb C9MbCbM. C©L¡C©LV C©L3CkK½ CNK£C+K£ B¨K£B^L3 B7LdB7L­',
+                           'B9AX B9I¹ B9JoB³Jo CgJoCgI¹ CgIpCiHÂ CkHPCkH) CkF¾CiD£ CgBgCgAX Cg@¤B³@¤ B9@¤B9AX'
+                         ],
+        xMin           : 58.5,
+        xMax           : 162,
+        yMin           : -32.5,
+        yMax           : 783.5,
+        wdth           : 237.5
       };
       font["!"]        = {
         sC             : [
@@ -700,7 +799,7 @@ define(
         xMax           : 162,
         yMin           : -32.5,
         yMax           : 783.5,
-        width          : 237.5
+        wdth           : 237.5
       };
       font["|"]        = {
         sC             : [
@@ -710,7 +809,7 @@ define(
         xMax           : 259,
         yMin           : -177,
         yMax           : 837,
-        width          : 421
+        wdth           : 421
       };
       font['"']        = {
         sC             : [
@@ -721,7 +820,7 @@ define(
         xMax           : 335,
         yMin           : 453,
         yMax           : 775,
-        width          : 424
+        wdth           : 424
       };
       font["'"]        = {
         sC             : [
@@ -731,7 +830,7 @@ define(
         xMax           : 230,
         yMin           : 556.5,
         yMax           : 810.5,
-        width          : 388
+        wdth           : 388
       };
       font["#"]        = {
         sC             : [
@@ -744,7 +843,7 @@ define(
         xMax           : 833,
         yMin           : -14,
         yMax           : 769.5,
-        width          : 842.5
+        wdth           : 842.5
       };
       font["$"]        = {
         sC             : [
@@ -757,7 +856,7 @@ define(
         xMax           : 598.5,
         yMin           : -193.5,
         yMax           : 840,
-        width          : 693
+        wdth           : 693
       };
       font["%"]        = {
         sC             : [
@@ -774,7 +873,7 @@ define(
         xMax           : 785.5,
         yMin           : -15,
         yMax           : 801.5,
-        width          : 820
+        wdth           : 820
       };
       font["&"]        = {
         sC             : [
@@ -787,7 +886,7 @@ define(
         xMax           : 619,
         yMin           : -46,
         yMax           : 763.5,
-        width          : 654
+        wdth           : 654
       };
       font["("]        = {
         sC             : [
@@ -797,7 +896,7 @@ define(
         xMax           : 339.5,
         yMin           : -211,
         yMax           : 784,
-        width          : 366
+        wdth           : 366
       };
       font[")"]        = {
         sC             : [
@@ -807,7 +906,7 @@ define(
         xMax           : 339.5,
         yMin           : -211,
         yMax           : 784,
-        width          : 366
+        wdth           : 366
       };
       font["*"]        = {
         sC             : [
@@ -817,7 +916,7 @@ define(
         xMax           : 470,
         yMin           : 381,
         yMax           : 778,
-        width          : 529.5
+        wdth           : 529.5
       };
       font["+"]        = {
         sC             : [
@@ -827,7 +926,7 @@ define(
         xMax           : 445.5,
         yMin           : 113,
         yMax           : 510.5,
-        width          : 480
+        wdth           : 480
       };
       font[","]        = {
         sC             : [
@@ -837,7 +936,7 @@ define(
         xMax           : 243.5,
         yMin           : -168,
         yMax           : 69,
-        width          : 276.5
+        wdth           : 276.5
       };
       font["-"]        = {
         sC             : [
@@ -847,7 +946,7 @@ define(
         xMax           : 370,
         yMin           : 225,
         yMax           : 308,
-        width          : 416.5
+        wdth           : 416.5
       };
       font["."]        = {
         sC             : [
@@ -857,7 +956,7 @@ define(
         xMax           : 190.5,
         yMin           : -45.5,
         yMax           : 75.5,
-        width          : 249
+        wdth           : 249
       };
       font["/"]        = {
         sC             : [
@@ -867,7 +966,7 @@ define(
         xMax           : 474,
         yMin           : -44,
         yMax           : 793.5,
-        width          : 511.5
+        wdth           : 511.5
       };
       font[":"]        = {
         sC             : [
@@ -878,7 +977,7 @@ define(
         xMax           : 202,
         yMin           : 60,
         yMax           : 551,
-        width          : 298.5
+        wdth           : 298.5
       };
       font[";"]        = {
         sC             : [
@@ -889,7 +988,7 @@ define(
         xMax           : 200.5,
         yMin           : -95,
         yMax           : 548.5,
-        width          : 298.5
+        wdth           : 298.5
       };
       font["<"]        = {
         sC             : [
@@ -899,7 +998,7 @@ define(
         xMax           : 306,
         yMin           : 94.5,
         yMax           : 518,
-        width          : 381
+        wdth           : 381
       };
       font["="]        = {
         sC             : [
@@ -910,7 +1009,7 @@ define(
         xMax           : 429.5,
         yMin           : 134.5,
         yMax           : 487.5,
-        width          : 510
+        wdth           : 510
       };
       font[">"]        = {
         sC             : [
@@ -920,7 +1019,18 @@ define(
         xMax           : 359,
         yMin           : 90.5,
         yMax           : 549,
-        width          : 381
+        wdth           : 381
+      };
+      font["¿"]        = {
+        sC             : [
+                           'FkLf F¸LfG8LH GZL+GZK¤ GZKEG:J· F¹J^F^J^ E£J^E£KP E£K©E¼L2 F8LfFkLf',
+                           'F4Ir F]IrF|IS F¼I4F¼H¯ F¼HJE¿Gh D3F6 C5EJC5Dq C5C¢CÂBÂ D©BBEzBB F6BBF¸B¤ GuC@G­C@ H2C@HOBÃ HmB£HmBX HmA®GWA? FQ@|Ez@| D5@|B·A· AuC-AuDq AuE¢BPFn BªG/C¿G½ E1H¨ElII E°IrF4Ir'
+                         ],
+        xMin           : 25,
+        xMax           : 469,
+        yMin           : -35.5,
+        yMax           : 721.5,
+        wdth           : 523.5
       };
       font["?"]        = {
         sC             : [
@@ -931,7 +1041,7 @@ define(
         xMax           : 469,
         yMin           : -35.5,
         yMax           : 721.5,
-        width          : 523.5
+        wdth           : 523.5
       };
       font["@"]        = {
         sC             : [
@@ -941,7 +1051,7 @@ define(
         xMax           : 855.5,
         yMin           : -68.5,
         yMax           : 795.5,
-        width          : 931
+        wdth           : 931
       };
       font["["]        = {
         sC             : [
@@ -951,7 +1061,7 @@ define(
         xMax           : 342.5,
         yMin           : -204,
         yMax           : 742,
-        width          : 376
+        wdth           : 376
       };
       font["]"]        = {
         sC             : [
@@ -961,7 +1071,27 @@ define(
         xMax           : 342.5,
         yMin           : -204,
         yMax           : 742,
-        width          : 376
+        wdth           : 376
+      };
+      font["{"]        = {
+        sC             : [
+                           'C>Er CuE®CÁFY DFG!DFG] DFG©D@I# D9JAD9Jl D9L+EBL: EdL;F$LD FkLSFkL« FkM;F2MZ E¦MuELMu D±MuDKMX B¬L¦B¬JO B±H¯ B´GJ B´G/ BaFÄAºF^ AGE¶AGEa AGE5B#Dt B£D1B£Cb B£CFByB´ BqB[BqB@ Bq@·CA?¡ D">KE@>K E¬>KF&>V FY>lFY?( FY?jF&?z E³?¤E@?¤ D~?¤DM@¨ D&AoD&B@ D&BbD/BÄ D7CcD7C¥ D7D0C®D£ CfEEC>Er'
+                         ],
+        xMin           : 2.5,
+        xMax           : 340,
+        yMin           : -187.5,
+        yMax           : 793,
+        wdth           : 366
+      };
+      font["}"]        = {
+        sC             : [
+                           'DtEr D=E®C¶FY ClG!ClG] ClG©CsI# CyJACyJl CyL+BpL: BNL;A°LD AGLSAGL« AGM;A£MZ B/MuBgMu C"MuCgMX E)L¦E)JO E#H¯ DÄGJ DÄG/ ERFÄE½F^ FkE¶FkEa FkE5E°Dt E1D1E1Cb E1CFE9B´ EAB[EAB@ EA@·Dq?¡ C²>KBr>K B)>KA®>V AY>lAY?( AY?jA®?z AÄ?¤Br?¤ C5?¤Cf@¨ C®AoC®B@ C®BbC¦BÄ C|CcC|C¥ C|D0D&D£ DLEEDtEr'
+                         ],
+        xMin           : 2.5,
+        xMax           : 340,
+        yMin           : -187.5,
+        yMax           : 793,
+        wdth           : 366
       };
       font["^"]        = {
         sC             : [
@@ -971,7 +1101,7 @@ define(
         xMax           : 498.5,
         yMin           : 547.5,
         yMax           : 803.5,
-        width          : 581
+        wdth           : 581
       };
       font["_"]        = {
         sC             : [
@@ -981,7 +1111,7 @@ define(
         xMax           : 645.5,
         yMin           : -168.5,
         yMax           : -77,
-        width          : 626.5
+        wdth           : 626.5
       };
       font[" "]        = {
         sC             : [
@@ -990,7 +1120,7 @@ define(
         xMax           : -10000,
         yMin           : 10000,
         yMax           : -10000,
-        width          : 298.5
+        wdth           : 298.5
       };
       font[" "]        = {
         sC             : [
@@ -999,10 +1129,164 @@ define(
         xMax           : -10000,
         yMin           : 10000,
         yMax           : -10000,
-        width          : 298.5
+        wdth           : 298.5
       };
 
       return font;
+
+
+      function supplement(basis,extra,offsetX,offsetY){
+        var glyph      = {
+              xMin     : basis.xMin,
+              xMax     : basis.xMax,
+              yMin     : basis.yMin,
+              yMax     : basis.yMax,
+              wdth     : basis.wdth
+            },
+            shapes     = basis.sC.map(shape=>shape),
+            holes      = typeof basis.hC === "object" ? basis.hC.map(hole=>hole) : undefined ,
+            extraShapes= extra === "dieresis" ? 2 : 1 , 
+            extraHoles = extra === "ring" ? 1 : 0 ;
+
+        if ( extraShapes === 2 ) {
+          if ( holes ) { holes.unshift([]) }
+          if ( extra === "dieresis" ) { shapes.unshift(dieresisRightCoded(offsetX,offsetY)) }
+        }
+        if ( extraHoles ) {
+          if ( typeof holes !== "object" ) {
+            holes      = basis.sC.map(shape=>[])
+          }
+          if ( extra === "ring" ) {
+            holes.unshift(ringHoleCoded(offsetX,offsetY)) 
+          }
+        } else {
+          if ( holes ) { holes.unshift([]) }
+        }
+
+        if ( extra === "dieresis" )   { 
+          glyph.yMax   = dieresisYmax(offsetY);
+          shapes.unshift(dieresisLeftCoded(offsetX,offsetY))
+        }
+        if ( extra === "circumflex" ) {
+          glyph.yMax   = circumflexYmax(offsetY);
+          shapes.unshift(circumflexCoded(offsetX,offsetY)) 
+        }
+        if ( extra === "acute" )      { 
+          glyph.yMax   = acuteYmax(offsetY);
+          shapes.unshift(acuteCoded(offsetX,offsetY)) 
+        }
+        if ( extra === "grave" )      { 
+          glyph.yMax   = graveYmax(offsetY);
+          shapes.unshift(graveCoded(offsetX,offsetY)) 
+        }
+        if ( extra === "tilde" )      { 
+          glyph.yMax   = tildeYmax(offsetY);
+          shapes.unshift(tildeCoded(offsetX,offsetY))
+        }
+        if ( extra === "ring" )       { 
+          glyph.yMax   = ringYmax(offsetY);
+          shapes.unshift(ringCoded(offsetX,offsetY))
+        }
+        glyph.sC       = shapes;
+        if ( holes ) {
+          glyph.hC     = holes
+        }
+        return glyph     
+      };
+      //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  
+      // To support non-english letters, we need a variety of new symbols: acute, dieresis, etc.
+      // It turns out that these symbols can be re-used, with some placement changes
+      // To save space and code, that's what we do
+      // These functions return the special symbols in compressed or raw forms
+      function acuteRaw(dx,dy){
+        // "M 148 579.5 Q 130.5 579.5 117 593 Q 104 606.5 104 624.5 Q 104 641 119 656 Q 140 676.5 183 733.5 Q 215 775.5 254.5 803.5 Q 268 812.5 280.5 812.5 Q 298 812.5 311.5 799 Q 324.5 785 324.5 767.5 Q 324.5 748 306 733 Q 271.5 706 240 662.5 Q 207 616.5 177 591.5 Q 163.5 579.5 148 579.5 Z"
+        return [[148+dx,579.5+dy],[130.5+dx,579.5+dy,117+dx,593+dy],[104+dx,606.5+dy,104+dx,624.5+dy],[104+dx,641+dy,119+dx,656+dy],[140+dx,676.5+dy,183+dx,733.5+dy],[215+dx,775.5+dy,254.5+dx,803.5+dy],[268+dx,812.5+dy,280.5+dx,812.5+dy],[298+dx,812.5+dy,311.5+dx,799+dy],[324.5+dx,785+dy,324.5+dx,767.5+dy],[324.5+dx,748+dy,306+dx,733+dy],[271.5+dx,706+dy,240+dx,662.5+dy],[207+dx,616.5+dy,177+dx,591.5+dy],[163.5+dx,579.5+dy,148+dx,579.5+dy]]
+      };
+      function acuteCoded(dx,dy){
+        return codeList(acuteRaw(dx,dy))
+      };
+      function acuteYmax(y){return 812+y};
+
+      function graveRaw(dx,dy){
+        // "M 281.5 618.5 Q 281.5 601 267.5 588 Q 253.5 575 236 575 Q 215 575 201 595.5 L 152 668 Q 126 704 91.5 730.5 Q 72.5 745.5 72.5 765.5 Q 72.5 783 85.5 797 Q 98.5 811 116 811 Q 146 811 214.5 729.5 Q 281.5 649.5 281.5 618.5 Z"
+        return [[281.5+dx,618.5+dy],[281.5+dx,601+dy,267.5+dx,588+dy],[253.5+dx,575+dy,236+dx,575+dy],[215+dx,575+dy,201+dx,595.5+dy],[152+dx,668+dy],[126+dx,704+dy,91.5+dx,730.5+dy],[72.5+dx,745.5+dy,72.5+dx,765.5+dy],[72.5+dx,783+dy,85.5+dx,797+dy],[98.5+dx,811+dy,116+dx,811+dy],[146+dx,811+dy,214.5+dx,729.5+dy],[281.5+dx,649.5+dy,281.5+dx,618.5+dy]]
+      };
+      function graveCoded(dx,dy){
+        return codeList(graveRaw(dx,dy))
+      };
+      function graveYmax(y){return 811+y};
+
+      function circumflexRaw(dx,dy){
+        // "M 288 825 Q 314.5 825 352.5 792 Q 364 782 405.5 737.5 L 483 654.5 Q 496 640 496 625 Q 496 607 482.5 593.5 Q 469 580.5 451 580.5 Q 435 580.5 420 594.5 Q 381 638.5 298 721.5 Q 174 569 139 569 Q 121.5 569 108 583 Q 94.5 596.5 94.5 614 Q 94.5 631 109 645.5 Q 136.5 672 258 810 Q 271 825 288 825 Z"
+        return [[288+dx,825+dy],[314.5+dx,825+dy,352.5+dx,792+dy],[364+dx,782+dy,405.5+dx,737.5+dy],[483+dx,654.5+dy],[496+dx,640+dy,496+dx,625+dy],[496+dx,607+dy,482.5+dx,593.5+dy],[469+dx,580.5+dy,451+dx,580.5+dy],[435+dx,580.5+dy,420+dx,594.5+dy],[381+dx,638.5+dy,298+dx,721.5+dy],[174+dx,569+dy,139+dx,569+dy],[121.5+dx,569+dy,108+dx,583+dy],[94.5+dx,596.5+dy,94.5+dx,614+dy],[94.5+dx,631+dy,109+dx,645.5+dy],[136.5+dx,672+dy,258+dx,810+dy],[271+dx,825+dy,288+dx,825+dy]]
+      };
+      function circumflexCoded(dx,dy){
+        return codeList(circumflexRaw(dx,dy))
+      };
+      function circumflexYmax(y){return 825+y};
+
+      function caronRaw(dx,dy){
+        return [[284+dx,731+dy],[176+dx,588+dy],[65+dx,588+dy],[-42+dx,731+dy],[50+dx,731+dy],[120+dx,642+dy],[191+dx,731+dy]]
+      };
+      function caronCoded(dx,dy){
+        return codeList(caronRaw(dx,dy))
+      };
+      function caronYmax(y){return 731+y};
+
+      // "M 162 669.5 Q 226 669.5 226 618.5 Q 226 604 204.5 590 Q 185 578 167.5 578 Q 107.5 578 107.5 628 Q 107.5 642.5 126 656 Q 144.5 669.5 162 669.5 Z M 425 673.5 Q 441.5 673.5 458.5 658 Q 476 643 476 628 Q 476 583 406 583 Q 386 583 370.5 593.5 Q 353 605 353 624.5 Q 353 658 375 667.5 Q 387 673.5 425 673.5 Z"
+      function dieresisLeftRaw(dx,dy){
+        return [[162+dx,669.5+dy],[226+dx,669.5+dy,226+dx,618.5+dy],[226+dx,604+dy,204.5+dx,590+dy],[185+dx,578+dy,167.5+dx,578+dy],[107.5+dx,578+dy,107.5+dx,628+dy],[107.5+dx,642.5+dy,126+dx,656+dy],[144.5+dx,669.5+dy,162+dx,669.5+dy]]
+      };
+      function dieresisLeftCoded(dx,dy){
+        return codeList(dieresisLeftRaw(dx,dy))
+      };
+      function dieresisRightRaw(dx,dy){
+        return [[425+dx,673.5+dy],[441.5+dx,673.5+dy,458.5+dx,658+dy],[476+dx,643+dy,476+dx,628+dy],[476+dx,583+dy,406+dx,583+dy],[386+dx,583+dy,370.5+dx,593.5+dy],[353+dx,605+dy,353+dx,624.5+dy],[353+dx,658+dy,375+dx,667.5+dy],[387+dx,673.5+dy,425+dx,673.5+dy]]
+      };
+      function dieresisRightCoded(dx,dy){
+        return codeList(dieresisRightRaw(dx,dy))
+      };
+      function dieresisYmax(y){return 707+y};
+
+      function tildeRaw(dx,dy){
+        // "M 221.5 758.5 Q 270.5 758.5 300 730 L 340.5 678.5 Q 363.5 650 395.5 650 Q 423 650 437 668 L 459 711 L 469 740 Q 476 754 498.5 754 Q 535 754 535 718 Q 535 700.5 514 659 Q 494.5 620 480 605 Q 453 577.5 410.5 577.5 Q 346.5 577.5 310.5 605 Q 297 615.5 267.5 657.5 Q 247 685.5 221.5 685.5 Q 206.5 685.5 194.5 679.5 Q 182.5 674 173.5 663 L 152 621.5 Q 140 599.5 120.5 599.5 Q 105 599.5 94 609.5 Q 83 619.5 83 634.5 Q 83 640 84 645.5 Q 98 695.5 133.5 726.5 Q 171.5 758.5 221.5 758.5 Z"
+        return [[221.5+dx,758.5+dy],[270.5+dx,758.5+dy,300+dx,730+dy],[340.5+dx,678.5+dy],[363.5+dx,650+dy,395.5+dx,650+dy],[423+dx,650+dy,437+dx,668+dy],[459+dx,711+dy],[469+dx,740+dy],[476+dx,754+dy,498.5+dx,754+dy],[535+dx,754+dy,535+dx,718+dy],[535+dx,700.5+dy,514+dx,659+dy],[494.5+dx,620+dy,480+dx,605+dy],[453+dx,577.5+dy,410.5+dx,577.5+dy],[346.5+dx,577.5+dy,310.5+dx,605+dy],[297+dx,615.5+dy,267.5+dx,657.5+dy],[247+dx,685.5+dy,221.5+dx,685.5+dy],[206.5+dx,685.5+dy,194.5+dx,679.5+dy],[182.5+dx,674+dy,173.5+dx,663+dy],[152+dx,621.5+dy],[140+dx,599.5+dy,120.5+dx,599.5+dy],[105+dx,599.5+dy,94+dx,609.5+dy],[83+dx,619.5+dy,83+dx,634.5+dy],[83+dx,640+dy,84+dx,645.5+dy],[98+dx,695.5+dy,133.5+dx,726.5+dy],[171.5+dx,758.5+dy,221.5+dx,758.5+dy]]
+      };
+      function tildeCoded(dx,dy){
+        return codeList(tildeRaw(dx,dy))
+      };
+      function tildeYmax(y){return 714+y};
+
+      function ringHoleRaw(dx,dy){
+        // "M 128 707.5 Q 128 778 178.5 819 Q 227 858 305.5 858 Q 366.5 858 410 824 Q 457.5 786.5 457.5 727 Q 457.5 654.5 413.5 617.5 Q 370 580.5 282.5 579 Q 216 578 172 616 Q 128 653.5 128 707.5 Z"
+        return [
+          [[290+dx,650.5+dy],[332+dx,652+dy,351.5+dx,662.5+dy],[384+dx,680+dy,384+dx,727+dy],[384+dx,755+dy,357.5+dx,771+dy],[335.5+dx,785.5+dy,305.5+dx,785.5+dy],[199.5+dx,785.5+dy,201.5+dx,707.5+dy],[202+dx,685+dy,231+dx,667+dy],[260.5+dx,649.5+dy,290+dx,650.5+dy]]
+          // [[128+dx,707.5+dy],[128+dx,778+dy,178.5+dx,819+dy],[227+dx,858+dy,305.5+dx,858+dy],[366.5+dx,858+dy,410+dx,824+dy],[457.5+dx,786.5+dy,457.5+dx,727+dy],[457.5+dx,654.5+dy,413.5+dx,617.5+dy],[370+dx,580.5+dy,282.5+dx,579+dy],[216+dx,578+dy,172+dx,616+dy],[128+dx,653.5+dy,128+dx,707.5+dy]]
+        ]
+      };
+      function ringHoleCoded(dx,dy){
+        return [codeList(ringHoleRaw(dx,dy)[0])]
+      };
+      function ringRaw(dx,dy){
+        // "M 290 650.5 Q 332 652 351.5 662.5 Q 384 680 384 727 Q 384 755 357.5 771 Q 335.5 785.5 305.5 785.5 Q 199.5 785.5 201.5 707.5 Q 202 685 231 667 Q 260.5 649.5 290 650.5 Z"
+        // "M 290 650.5 Q 260.5 649.5 231 667 Q 202 685 201.5 707.5 Q 199.5 785.5 305.5 785.5 Q 335.5 785.5 357.5 771 Q 384 755 384 727 Q 384 680 351.5 662.5 Q 332 652 290 650.5 Z"
+        // return [[290+dx,650.5+dy],[260.5+dx,649.5+dy,231+dx,667+dy],[202+dx,685+dy,201.5+dx,707.5+dy],[199.5+dx,785.5+dy,305.5+dx,785.5+dy],[335.5+dx,785.5+dy,357.5+dx,771+dy],[384+dx,755+dy,384+dx,727+dy],[384+dx,680+dy,351.5+dx,662.5+dy],[332+dx,652+dy,290+dx,650.5+dy]]
+        return [[128+dx,707.5+dy],[128+dx,778+dy,178.5+dx,819+dy],[227+dx,858+dy,305.5+dx,858+dy],[366.5+dx,858+dy,410+dx,824+dy],[457.5+dx,786.5+dy,457.5+dx,727+dy],[457.5+dx,654.5+dy,413.5+dx,617.5+dy],[370+dx,580.5+dy,282.5+dx,579+dy],[216+dx,578+dy,172+dx,616+dy],[128+dx,653.5+dy,128+dx,707.5+dy]]
+        // return [[290+dx,650.5+dy],[332+dx,652+dy,351.5+dx,662.5+dy],[384+dx,680+dy,384+dx,727+dy],[384+dx,755+dy,357.5+dx,771+dy],[335.5+dx,785.5+dy,305.5+dx,785.5+dy],[199.5+dx,785.5+dy,201.5+dx,707.5+dy],[202+dx,685+dy,231+dx,667+dy],[260.5+dx,649.5+dy,290+dx,650.5+dy]]
+      };
+      function ringCoded(dx,dy){
+        return codeList(ringRaw(dx,dy))
+      };
+      function ringYmax(y){return 785+y};
+
+
+      function dotlessiRaw(){
+        // "M 183 221.5 Q 183 192 184.5 134 Q 186.5 75.5 186.5 46 Q 186.5 24.5 173 11 Q 160 -2.5 138.5 -2.5 Q 117.5 -2.5 104 11 Q 90.5 24.5 90.5 46 Q 90.5 75.5 89 134 Q 87 192 87 221.5 Q 87 267.5 92 336 Q 97 404.5 97 450.5 Q 97 472.5 110.5 486 Q 124 500 145 500 Q 166 500 179 486 Q 192.5 472.5 192.5 450.5 Q 192.5 404.5 187.5 336 Q 183 267.5 183 221.5 Z"        // "M 183 221.5 Q 183 192 184.5 134 Q 186.5 75.5 186.5 46 Q 186.5 24.5 173 11 Q 160 -2.5 138.5 -2.5 Q 117.5 -2.5 104 11 Q 90.5 24.5 90.5 46 Q 90.5 75.5 89 134 Q 87 192 87 221.5 Q 87 267.5 92 336 Q 97 404.5 97 450.5 Q 97 472.5 110.5 486 Q 124 500 145 500 Q 166 500 179 486 Q 192.5 472.5 192.5 450.5 Q 192.5 404.5 187.5 336 Q 183 267.5 183 221.5 Z"
+        return [[183,221.5],[183,192,184.5,134],[186.5,75.5,186.5,46],[186.5,24.5,173,11],[160,-2.5,138.5,-2.5],[117.5,-2.5,104,11],[90.5,24.5,90.5,46],[90.5,75.5,89,134],[87,192,87,221.5],[87,267.5,92,336],[97,404.5,97,450.5],[97,472.5,110.5,486],[124,499.5,145,499.5],[166,499.5,179,486],[192.5,472.5,192.5,450.5],[192.5,404.5,187.5,336],[183,267.5,183,221.5]]
+      };
+      function dotlessiCoded(){
+        return codeList(dotlessiRaw())
+      };
     }
   }
 );

@@ -320,7 +320,7 @@ define(
         // ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~  ~
         // Scope warning:  letterOffsetX belongs to an outer closure
         // and persists through multiple characters
-        letterOffsetX            = letterOffsetX+spec.width*letterScale;
+        letterOffsetX            = letterOffsetX+spec.wdth*letterScale;
 
         if(debug&&spec.show){
           console.log([minX,maxX,minZ,maxZ]);

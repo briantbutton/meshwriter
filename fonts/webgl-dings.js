@@ -14,175 +14,28 @@ define(
         xMax                       : 675,
         yMin                       : 0,
         yMax                       : 714,
-        width                      : 667
+        wdth                       : 667
       };
       wgd["B"]                     = {
         xMin                       : 76,
         xMax                       : 667,
         yMin                       : 0,
         yMax                       : 714,
-        width                      : 704
-      };
-      wgd["C"]                     = {
-        xMin                       : 38,
-        xMax                       : 684,
-        yMin                       : -17,
-        yMax                       : 731,
-        width                      : 722
-      };
-      wgd["D"]                     = {
-        xMin                       : 76,
-        xMax                       : 687,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 722
-      };
-      wgd["E"]                     = {
-        xMin                       : 76,
-        xMax                       : 597,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 630
-      };
-      wgd["F"]                     = {
-        xMin                       : 76,
-        xMax                       : 569,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 593
-      };
-      wgd["G"]                     = {
-        xMin                       : 43,
-        xMax                       : 699,
-        yMin                       : -17,
-        yMax                       : 731,
-        width                      : 759
-      };
-      wgd["H"]                     = {
-        xMin                       : 73,
-        xMax                       : 648,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 722
-      };
-      wgd["I"]                     = {
-        xMin                       : 76,
-        xMax                       : 201,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 278
-      };
-      wgd["J"]                     = {
-        xMin                       : 13,
-        xMax                       : 461,
-        yMin                       : -17,
-        yMax                       : 714,
-        width                      : 537
-      };
-      wgd["K"]                     = {
-        xMin                       : 76,
-        xMax                       : 693,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 685
-      };
-      wgd["L"]                     = {
-        xMin                       : 76,
-        xMax                       : 564,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 574
-      };
-      wgd["M"]                     = {
-        xMin                       : 48,
-        xMax                       : 815,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 889
-      };
-      wgd["N"]                     = {
-        xMin                       : 71,
-        xMax                       : 650,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 722
-      };
-      wgd["O"]                     = {
-        xMin                       : 38,
-        xMax                       : 722,
-        yMin                       : -17,
-        yMax                       : 731,
-        width                      : 760
-      };
-      wgd["P"]                     = {
-        xMin                       : 76,
-        xMax                       : 634,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 667
-      };
-      wgd["Q"]                     = {
-        xMin                       : 38,
-        xMax                       : 722,
-        yMin                       : -65,
-        yMax                       : 731,
-        width                      : 760
-      };
-      wgd["R"]                     = {
-        xMin                       : 76,
-        xMax                       : 680,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 704
-      };
-      wgd["S"]                     = {
-        xMin                       : 33,
-        xMax                       : 615,
-        yMin                       : -17,
-        yMax                       : 731,
-        width                      : 648
-      };
-      wgd["T"]                     = {
-        xMin                       : 8,
-        xMax                       : 586,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 593
-      };
-      wgd["U"]                     = {
-        xMin                       : 68,
-        xMax                       : 654,
-        yMin                       : -17,
-        yMax                       : 714,
-        width                      : 722
-      };
-      wgd["V"]                     = {
-        xMin                       : -5,
-        xMax                       : 616,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 611
-      };
-      wgd["W"]                     = {
-        xMin                       : 6,
-        xMax                       : 938,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 944
+        wdth                       : 704
       };
       wgd["X"]                     = {
         xMin                       : -3,
         xMax                       : 651,
         yMin                       : 0,
         yMax                       : 714,
-        width                      : 648
+        wdth                       : 648
       };
       wgd["Y"]                     = {
         xMin                       : -6,
         xMax                       : 654,
         yMin                       : 0,
         yMax                       : 714,
-        width                      : 648
+        wdth                       : 648
       };
       wgd["Z"]                   = {
     // textChinese9300           = {
@@ -214,7 +67,7 @@ define(
         xMax                     : 976.5,
         yMin                     : -139.5,
         yMax                     : 812,
-        width                    : 999.5
+        wdth                     : 999.5
       };
       wgd["a"]                     = {
         shapeCmds                  : [
@@ -279,7 +132,7 @@ define(
         xMax                       : 340,
         yMin                       : 47,
         yMax                       : 806,
-        width                      : 700,
+        wdth                       : 700,
         show                       : true
       };
       wgd["á"]                     = {
@@ -364,7 +217,7 @@ define(
         xMax                       : 950,
         yMin                       : -145.6,
         yMax                       : 894.4,
-        width                      : 950,
+        wdth                       : 950,
         show                       : true
       };
       wgd["b"]                     = {
@@ -372,231 +225,35 @@ define(
         xMax                       : 575,
         yMin                       : -14,
         yMax                       : 714,
-        width                      : 611
+        wdth                       : 611
       };
       wgd["c"]                     = {
         xMin                       : 35,
         xMax                       : 523,
         yMin                       : -14,
         yMax                       : 531,
-        width                      : 556
-      };
-      wgd["d"]                     = {
-        xMin                       : 35,
-        xMax                       : 547,
-        yMin                       : -14,
-        yMax                       : 714,
-        width                      : 611
-      };
-      wgd["e"]                     = {
-        xMin                       : 35,
-        xMax                       : 531,
-        yMin                       : -14,
-        yMax                       : 531,
-        width                      : 556
-      };
-      wgd["f"]                     = {
-        xMin                       : 9,
-        xMax                       : 317,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 315
-      };
-      wgd["g"]                     = {
-        xMin                       : 35,
-        xMax                       : 538,
-        yMin                       : -205,
-        yMax                       : 531,
-        width                      : 593
-      };
-      wgd["h"]                     = {
-        xMin                       : 60,
-        xMax                       : 514,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 574
-      };
-      wgd["i"]                     = {
-        xMin                       : 48,
-        xMax                       : 159,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 241
-      };
-      wgd["í"]                     = {
-        xMin                       : 45,
-        xMax                       : 270,
-        yMin                       : 0,
-        yMax                       : 731,
-        width                      : 241
-      };
-      wgd["j"]                     = {
-        xMin                       : -22,
-        xMax                       : 177,
-        yMin                       : -205,
-        yMax                       : 714,
-        width                      : 241
-      };
-      wgd["k"]                     = {
-        xMin                       : 63,
-        xMax                       : 542,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 537
-      };
-      wgd["l"]                     = {
-        xMin                       : 63,
-        xMax                       : 177,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 241
-      };
-      wgd["m"]                     = {
-        xMin                       : 60,
-        xMax                       : 810,
-        yMin                       : 0,
-        yMax                       : 531,
-        width                      : 870
-      };
-      wgd["n"]                     = {
-        xMin                       : 60,
-        xMax                       : 514,
-        yMin                       : 0,
-        yMax                       : 531,
-        width                      : 574
-      };
-      wgd["o"]                     = {
-        xMin                       : 36,
-        xMax                       : 558,
-        yMin                       : -14,
-        yMax                       : 531,
-        width                      : 593
-      };
-      wgd["p"]                     = {
-        xMin                       : 63,
-        xMax                       : 575,
-        yMin                       : -191,
-        yMax                       : 531,
-        width                      : 611
-      };
-      wgd["q"]                     = {
-        xMin                       : 35,
-        xMax                       : 547,
-        yMin                       : -191,
-        yMax                       : 531,
-        width                      : 611
-      };
-      wgd["r"]                     = {
-        xMin                       : 60,
-        xMax                       : 363,
-        yMin                       : 0,
-        yMax                       : 531,
-        width                      : 352
-      };
-      wgd["s"]                     = {
-        xMin                       : 32,
-        xMax                       : 492,
-        yMin                       : -14,
-        yMax                       : 531,
-        width                      : 519
-      };
-      wgd["t"]                     = {
-        xMin                       : 8,
-        xMax                       : 311,
-        yMin                       : -5,
-        yMax                       : 672,
-        width                      : 333
-      };
-      wgd["u"]                     = {
-        xMin                       : 60,
-        xMax                       : 514,
-        yMin                       : -14,
-        yMax                       : 517,
-        width                      : 574
-      };
-      wgd["v"]                     = {
-        xMin                       : 9,
-        xMax                       : 510,
-        yMin                       : 0,
-        yMax                       : 517,
-        width                      : 519
-      };
-      wgd["w"]                     = {
-        xMin                       : 13,
-        xMax                       : 765,
-        yMin                       : 0,
-        yMax                       : 517,
-        width                      : 778
-      };
-      wgd["x"]                     = {
-        xMin                       : 4,
-        xMax                       : 533,
-        yMin                       : 0,
-        yMax                       : 517,
-        width                      : 537
-      };
-      wgd["y"]                     = {
-        xMin                       : 3,
-        xMax                       : 515,
-        yMin                       : -205,
-        yMax                       : 517,
-        width                      : 519
-      };
-      wgd["z"]                     = {
-        xMin                       : 22,
-        xMax                       : 477,
-        yMin                       : 0,
-        yMax                       : 517,
-        width                      : 500
-      };
-      wgd["0"]                     = { 
-        xMin                       : 36,
-        xMax                       : 520,
-        yMin                       : -14,
-        yMax                       : 714,
-        width                      : 556
-      };
-      wgd["1"]                     = {
-        xMin                       : 53,
-        xMax                       : 350,
-        yMin                       : 0,
-        yMax                       : 700,
-        width                      : 556
-      };
-      wgd["2"]                     = {
-        xMin                       : 39,
-        xMax                       : 518,
-        yMin                       : 0,
-        yMax                       : 714,
-        width                      : 556
-      };
-      wgd["3"]                     = {
-        xMin                       : 31,
-        xMax                       : 525,
-        yMin                       : -14,
-        yMax                       : 714,
-        width                      : 556
+        wdth                       : 556
       };
       wgd["4"]                     = {
         xMin                       : 24,
         xMax                       : 522,
         yMin                       : 0,
         yMax                       : 700,
-        width                      : 556
+        wdth                       : 556
       };
       wgd["5"]                     = { 
         xMin                       : 34,
         xMax                       : 522,
         yMin                       : -14,
         yMax                       : 700,
-        width                      : 556
+        wdth                       : 556
       };
       wgd[nbsp]                    = {
         xMin                       : 31,
         xMax                       : 400,
         yMin                       : -4,
         yMax                       : 644,
-        width                      : 278
+        wdth                       : 278
       };
       wgd[" "]                     = wgd[nbsp];
 
