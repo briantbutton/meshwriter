@@ -26,9 +26,9 @@ Generate letters in BABYLON meshes.
 
 ### Superconstructor - BABYLON.MeshWriter()
 
-After MeshWriter is loaded (see below), BABYLON.MeshWriter is defined.  It is called with one or two parameters.
-- **scene** &nbsp; required
-- **preferences** &nbsp; optional &nbsp; The preferences object may specify up to three values
+After MeshWriter is loaded (see below), BABYLON.MeshWriter is defined.  It is called with one or two parameters.  
+&#9679; **scene** &nbsp; required  
+&#9679; **preferences** &nbsp; optional &nbsp; The preferences object may specify up to three values
 
 	      FIELD                 DEFAULT
 	    default-font           Helvetica
@@ -85,17 +85,49 @@ If you wish to do extensive things with position, rotation or animation, retriev
 Colors:&nbsp; With most lighting, it is enough just to use the "color" field to specify the letter coloring.&nbsp; However, programmers may specify all four color types by putting a "colors" object in the options object.
 
 
-### Fonts
+### Font Families and Supported Glyphs
 
-There are four font families available, 'Helvetica', 'HirukoPro-Book', 'Jura', 'Comic' and 'WebGL-Dings.&nbsp;
+There are four font families available, 'Helvetica', 'HirukoPro-Book', 'Jura' and 'Comic'.&nbsp;
 The default font, Helvetica, is probably the one you want.&nbsp;
 If it is, no font family need be specified.&nbsp;
 Also, Helvetica, has the most extensive characters and the fewest faces; it will be the most efficient if you have a lot of text.&nbsp;
-&#9679; See playground example:&nbsp; https://www.babylonjs-playground.com/#PL752W#45
 
-Jura was added because the author likes it for numbers.
+	Helvetica
+	"0","1","2","3","4","5","6","7","8","9",
+	"a","á","à","ä","â","å","æ","b","c","ç","č","d","e","é","è","ë","ê","f","g","h","i","ı","í","ì","ï","î","j",
+	"k","l","m","n","ñ","ń","o","ô","ò","ó","ö","p","q","r","s","t","u","ú","ù","ü","û","v","w","x","y","ÿ","z",
+	"A","Á","À","Ã","Â","Ä","Å","Æ","B","C","D","E","É","È","Ê","Ë","F","G","H","I","J","K","L","M",
+	"N","Ñ","O","Ó","Ò","Ô","Ö","Õ","P","Q","R","S","T","U","Ú","Ù","Û","Ü","V","W","X","Y","Z",
+	"¡","!","|",'"',"'","#","$","%","&","{","}","(",")","*","+",",","-",".",
+	"/",":",";","<","=",">","¿","?","@","[","]","^","_"," "
 
-**Important:** Comic and Web-Dings are really just placeholders as of this writing, with only a few glyphs.
+	Comic
+	"0","1","2","3","4","5","6","7","8","9",
+	"a","á","à","ä","â","å","æ","b","c","ç","d","e","é","è","ë","ê","f","g","h","i","ı","í","ì","ï","î","j",
+	"k","l","m","n","ñ","o","ô","ò","ó","ö","p","q","r","s","t","u","ú","ù","ü","û","v","w","x","y","z",
+	"A","Á","À","Ä","Â","Å","Æ","B","C","Ç","D","E","É","È","Ê","Ë","F","G","H","I",
+	"J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+	"¡","!","|",'"',"'","#","$","%","&","(",")","*","+",",","-",".",
+	"/",":",";","<","=",">","¿","?","@","[","]","{","}","^","_"," "
+
+	Jura
+	"0","1","2","3","4","5","6","7","8","9",
+	"a","b","c","d","e","f","g","h","i","j","k","l","m",
+	"n","o","p","q","r","s","t","u","v","w","x","y","z",
+	"A","B","C","D","E","F","G","H","I","J","K","L","M",
+	"N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+	"!","|",'"',"'","#","$","%","&","(",")","*","+",",",
+	"-",".","/",":",";","<","=",">","?","@","[","]","^","_"," "
+
+	HirukoPro
+	"0","1","2","3","4","5","6","7","8","9",
+	"A","B","C","D","E","F","G","H","I","J","K","L","M",
+	"N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+	"a","b","c","d","e","f","g","h","i","j","k","l","m",
+	"n","o","p","q","r","s","t","u","v","w","x","y","z",
+	"%","#","$","&","?","!","|","(",")","-","_","=","+",",","."," "
+
+As of last viewing, the total "meshwriter.min.js" file was under 120K.
 
 **And:** Unless you are a font master, Helvetica and Arial are synonymous.
 
