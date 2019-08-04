@@ -136,21 +136,47 @@ As of last viewing, the total "meshwriter.min.js" file was under 120K.
 
 ## Loading MeshWriter
 
-Both meshwriter.js and meshwriter.min.js are all-inclusive and should be loadable in any of the normal ways (e.g. AMD).&nbsp;
+Both meshwriter.js and meshwriter.min.js are all-inclusive and should be loadable in any of the normal ways (e.g. AMD); see below for some examples.&nbsp;
 BABYLON should be loaded first.&nbsp;
-If BABYLON is already loaded, then MeshWriter will attach itself to BABYLON, allowing this call.
+In Node, MeshWriter will become a global variable.&nbsp;
+In a browser, MeshWriter will become a global variable 'TYPE'.&nbsp;
+(Inherited naming convention, sorry.)&nbsp;
+If BABYLON is already loaded, then MeshWriter will also attach itself to BABYLON, allowing this call.&nbsp;
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});
 
-Otherwise MeshWriter will attach to window.
+### Loading The File In BABYLON Playground
 
-### Earcut
+Use jQuery
+
+	const typeURL   = "https://host/path/meshwriter.min.js";  
+
+	// These lines load the module, if not already loaded, and then call write
+	if ( typeof TYPE === "undefined" ) {
+		jQuery.getScript(typeURL).then(write)
+	} else {
+		write()
+	}
+	# use BABYLON.MeshWriter
+
+### In Production
+
+HTML tag
+
+	<script type="text/javascript" src="path/meshwriter.min.js"></script>
+	<!-- use BABYLON.MeshWriter or window.TYPE or window.MeshWriter -->
+
+### In NodeJS
+
+	require("meshwriter");
+	# use global.MeshWriter
+
+### Remember Earcut
 
 Earcut is a simple, stable and small utility that is needed by PolygonMeshBuilder, which MeshWriter calls.&nbsp;
 If you haven't otherwise loaded Earcut, do so; it is _not_ included in meshwriter.min.js.&nbsp;
 The repo is here: https://github.com/mapbox/earcut.&nbsp;
 And there is a recent version in this repo.
-
 
 ## Custom font packages
 
