@@ -22,6 +22,7 @@ define(
 
     var scene,FONTS,defaultColor,defaultOpac,naturalLetterHeight,curveSampleSize,Γ=Math.floor,hpb,hnm,csn,jur,wgd,debug;
     var b128back,b128digits;
+    var earcut = require("earcut");
     prepArray();
     // >>>>>  STEP 2 <<<<<
     hpb                          = HPB(codeList);
@@ -186,7 +187,8 @@ define(
 
     };
     if ( typeof window !== "undefined" ) {
-      window.TYPE                = Wrapper
+      window.TYPE                = Wrapper;
+      window.MeshWriter          = Wrapper
     }
     if ( typeof global !== "undefined" ) {
       global.MeshWriter          = Wrapper
@@ -195,6 +197,9 @@ define(
       BABYLON.MeshWriter         = Wrapper;
       supplementCurveFunctions();
     };
+    if ( typeof module === 'object' && module.exports ) {
+      module.exports             = Wrapper;
+    }
     return Wrapper;
 
     //  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =  ~  -  =
@@ -381,7 +386,7 @@ define(
             if ( array[first].x===array[last].x && array[first].y===array[last].y ) { array = array.slice(1) }
             if ( reverse ) { array.reverse() }
 
-            meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene);
+            meshBuilder          = new BABYLON.PolygonMeshBuilder("MeshWriter-"+letter+index+"-"+weeid(), array, scene, earcut);
             return meshBuilder.build(true,thickness)
           }
         };
