@@ -1,6 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = {};
+/******/ 	var installedModules = {}, Wrapper;                                                                // +-+
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -81,7 +81,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/  Wrapper = __webpack_require__(__webpack_require__.s = 0);                                          // +-+
+/******/  if ( typeof module === 'object' && module.exports ) {                                              // +-+
+/******/    module.exports = { MeshWriter : Wrapper }                                                        // +-+
+/******/  }                                                                                                  // +-+
+/******/  if ( typeof define === 'function' && define.amd ) {                                                // +-+
+/******/    define ( 'meshwriter' , [], function() { return MeshWriter } )                                   // +-+
+/******/  }                                                                                                  // +-+
+/******/  return Wrapper;                                                                                    // +-+
+/******/ 	// return __webpack_require__(__webpack_require__.s = 0);                                          // +-+
 /******/ })
 /************************************************************************/
 /******/ ([

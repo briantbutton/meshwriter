@@ -168,8 +168,8 @@ HTML tag
 
 ### In NodeJS
 
-	require("meshwriter");
-	# use global.MeshWriter
+	Wrapper   = require("meshwriter");
+	Writer    = Wrapper.MeshWriter(scene, {scale:scale});
 
 ### Earcut
 
