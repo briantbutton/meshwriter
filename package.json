@@ -2,7 +2,7 @@
   "name": "meshwriter",
   "version": "1.2.3",
   "description": "Generate text in BABYLON meshes",
-  "main": "./dist/meshwriter.min.js",
+  "main": "./dist/meshwriter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
@@ -18,8 +18,7 @@
   ],
   "author": "Brian T Button",
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
