@@ -1,6 +1,6 @@
 {
   "name": "meshwriter",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Generate text in BABYLON meshes",
   "main": "./dist/meshwriter.min.js",
   "scripts": {
