@@ -208,3 +208,5 @@ All the methods listed below must be present on the &apos;methods&apos; object o
 	"SolidParticleSystem", "PolygonMeshBuilder", "CSG",
 	"StandardMaterial", "Mesh"
 
+This playground puts BABYLON in the &apos;methods&apos; parameter to show you the syntax.&nbsp;
+https://www.babylonjs-playground.com/#PL752W#384
