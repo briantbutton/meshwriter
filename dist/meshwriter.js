@@ -1,12 +1,12 @@
 /*!
  * Babylon MeshWriter
- * https://github.com/BabylonJS/Babylon.js
- * (c) 2018-2019 Brian Todd Button
+ * https://github.com/briantbutton/meshwriter
+ * (c) 2018-2021 Brian Todd Button
  * Released under the MIT license
  */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
-/******/ 	var installedModules = {};
+/******/ 	var installedModules = {}, Wrapper;                                                                // +-+
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -87,7 +87,15 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/  Wrapper = __webpack_require__(__webpack_require__.s = 0);                                          // +-+
+/******/  if ( typeof module === 'object' && module.exports ) {                                              // +-+
+/******/    module.exports = { MeshWriter : Wrapper }                                                        // +-+
+/******/  }                                                                                                  // +-+
+/******/  if ( typeof define === 'function' && define.amd ) {                                                // +-+
+/******/    define ( 'meshwriter' , [], function() { return MeshWriter } )                                   // +-+
+/******/  }                                                                                                  // +-+
+/******/  return Wrapper;                                                                                    // +-+
+/******/ 	// return __webpack_require__(__webpack_require__.s = 0);                                          // +-+
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -286,7 +294,7 @@
       cacheMethods(BABYLON);
       BABYLON.MeshWriter         = Wrapper;
     };
-    if (  true && module.exports ) {
+    if ( typeof module === 'object' && module.exports ) {
       module.exports             = Wrapper;
     }
     return Wrapper;
@@ -1789,7 +1797,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//  HELVETICANEU
         yMax           : 714,
         wdth           : 241
       };
-      font["ı"]        = {
+      font[String.fromCharCode(305)]        = {
         sC             : [
                            'D#AB B@AB B@IL D#IL D#AB'
                          ],
@@ -1799,10 +1807,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//  HELVETICANEU
         yMax           : 500,
         wdth           : 241
       };
-      font["í"]        = supplement(font["ı"],"acute",0,0);
-      font["ì"]        = supplement(font["ı"],"grave",0,0);
-      font["ï"]        = supplement(font["ı"],"dieresis",0,0);
-      font["î"]        = supplement(font["ı"],"circumflex",0,0);
+      font["í"]        = supplement(font[String.fromCharCode(305)],"acute",0,0);
+      font["ì"]        = supplement(font[String.fromCharCode(305)],"grave",0,0);
+      font["ï"]        = supplement(font[String.fromCharCode(305)],"dieresis",0,0);
+      font["î"]        = supplement(font[String.fromCharCode(305)],"circumflex",0,0);
       font["j"]        = {
         sC      : [
                            'D#J¡ B@J¡ B@LV D#LV D#J¡',
@@ -2964,7 +2972,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//  COMIC SANS M
         yMax           : 731,
         wdth           : 280
       };
-      font["ı"]        = {
+      font[String.fromCharCode(305)]        = {
         sC             : [
                            'D0D~ D0DBD3CN D7BYD7AÁ D7AtC¿AX C¥A=CWA= C-A=BµAX BxAtBxAÁ BxBYBuCN BqDBBqD~ BqEYB{Fc B§GlB§HG B§HtBÂH± C:I)CeI) C±I)D(H± DCHtDCHG DCGlD9Fc D0EYD0D~'
                          ],
@@ -2974,10 +2982,10 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//  COMIC SANS M
         yMax           : 730,
         wdth           : 280
       };
-      font["í"]        = supplement(font["ı"],"acute",-20,0);
-      font["ì"]        = supplement(font["ı"],"grave",-20,0);
-      font["ï"]        = supplement(font["ı"],"dieresis",-120,0);
-      font["î"]        = supplement(font["ı"],"circumflex",-60,0);
+      font["í"]        = supplement(font[String.fromCharCode(305)],"acute",-20,0);
+      font["ì"]        = supplement(font[String.fromCharCode(305)],"grave",-20,0);
+      font["ï"]        = supplement(font[String.fromCharCode(305)],"dieresis",-120,0);
+      font["î"]        = supplement(font[String.fromCharCode(305)],"circumflex",-60,0);
       font["j"]        = {
         sC             : [
                            'D¥?` D¦@QDbD( D?HB D?HtD[H¼ DxI?E!I? ECI?EeI& E©H±E«Hv F(DB FB?j FB>bEr=t D¼<{C¾<{ BI<{A<?> A0?XA0?n A0?·AO@0 An@LA¸@L BN@LB°?M B¿?,CC>o Cj>=C¾>= DF>=De>~ D}?.D¥?`',
@@ -5665,7 +5673,7 @@ function eliminateHoles(data, holeIndices, outerNode, dim) {
 
     // process holes from left to right
     for (i = 0; i < queue.length; i++) {
-        outerNode = eliminateHole(queue[i], outerNode);
+        eliminateHole(queue[i], outerNode);
         outerNode = filterPoints(outerNode, outerNode.next);
     }
 
@@ -5678,19 +5686,11 @@ function compareX(a, b) {
 
 // find a bridge between vertices that connects hole with an outer ring and and link it
 function eliminateHole(hole, outerNode) {
-    var bridge = findHoleBridge(hole, outerNode);
-    if (!bridge) {
-        return outerNode;
+    outerNode = findHoleBridge(hole, outerNode);
+    if (outerNode) {
+        var b = splitPolygon(outerNode, hole);
+        filterPoints(b, b.next);
     }
-
-    var bridgeReverse = splitPolygon(bridge, hole);
-
-    // filter collinear points around the cuts
-    var filteredBridge = filterPoints(bridge, bridge.next);
-    filterPoints(bridgeReverse, bridgeReverse.next);
-
-    // Check if input node was removed by the filtering
-    return outerNode === bridge ? filteredBridge : outerNode;
 }
 
 // David Eberly's algorithm for finding a bridge between hole and outer polygon

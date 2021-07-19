@@ -1,7 +1,7 @@
 /*!
  * Babylon MeshWriter
- * https://github.com/BabylonJS/Babylon.js
- * (c) 2018-2019 Brian Todd Button
+ * https://github.com/briantbutton/meshwriter
+ * (c) 2018-2021 Brian Todd Button
  * Released under the MIT license
  */
 
