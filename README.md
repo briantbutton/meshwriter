@@ -146,7 +146,7 @@ If BABYLON is already loaded, then MeshWriter will also attach itself to BABYLON
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});
 
-**See important note below about MeshWriter's BABYLON dependencies.**&nbsp;
+*See important note below about MeshWriter's BABYLON dependencies.*&nbsp;
 
 ### Loading The File In BABYLON Playground
 
@@ -191,29 +191,28 @@ MeshWriter *requires* a few methods from BABYLON.&nbsp;
 If BABYLON is in the global address space, it will find them there.&nbsp;
 Job done.&nbsp;
 
-	BABYLON    = &lt;get babylon*gt;
+	BABYLON    = <get-babylon>
 	import { MeshWriter } from "meshwriter";
 	Writer     = MeshWriter(scene, {scale:scale});
 
 If not, then the programmer must get those methods and hand them to MeshWriter.&nbsp;
 
-	methodsObj = &lt;get methods*gt;
+	methodsObj = <get methods>
 	import { MeshWriter } from "meshwriter";
-	Writer    = MeshWriter(scene, {scale:scale, methods:methodsObj});
+	Writer     = MeshWriter(scene, {scale:scale, methods:methodsObj});
 
 ### Required BABYLON Methods
 
-Collect these methods and put them on a single object and then hand that to MeshWriter as shown above.&nbsp; 
-
-&bull; Vector2 &nbsp; 
-&bull; Vector3 &nbsp; 
-&bull; Path2 &nbsp; 
-&bull; Curve3 &nbsp; 
-&bull; SolidParticleSystem &nbsp; 
-&bull; PolygonMeshBuilder &nbsp; 
-&bull; CSG &nbsp; 
-&bull; StandardMaterial &nbsp; 
-&bull; Mesh &nbsp; 
+Collect these methods and put them on a single object and then hand that to MeshWriter as shown above.&nbsp;  
+&bull; Vector2 &nbsp;  
+&bull; Vector3 &nbsp;  
+&bull; Path2 &nbsp;  
+&bull; Curve3 &nbsp;  
+&bull; SolidParticleSystem &nbsp;  
+&bull; PolygonMeshBuilder &nbsp;  
+&bull; CSG &nbsp;  
+&bull; StandardMaterial &nbsp;  
+&bull; Mesh &nbsp;  
 
 ## Custom font packages
 
