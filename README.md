@@ -146,6 +146,8 @@ If BABYLON is already loaded, then MeshWriter will also attach itself to BABYLON
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});
 
+**See important note below about MeshWriter's BABYLON dependencies.**&nbsp;
+
 ### Loading The File In BABYLON Playground
 
 Use jQuery
@@ -172,11 +174,46 @@ HTML tag
 	Wrapper   = require("meshwriter");
 	Writer    = Wrapper.MeshWriter(scene, {scale:scale});
 
+### Using Module Syntax
+
+	import { MeshWriter } from "meshwriter";
+	Writer    = MeshWriter(scene, {scale:scale});
+
 ### Earcut
 
 Earcut is a simple, stable and small utility that is needed by BABYLON.PolygonMeshBuilder, which MeshWriter calls.&nbsp;
 As of version **1.2.0** (December 2019) Earcut is included in meshwriter.min.js.&nbsp;
 There is no need to load Earcut for MeshWriter.
+
+## Critical Environment Requirement
+
+MeshWriter *requires* a few methods from BABYLON.&nbsp;
+If BABYLON is in the global address space, it will find them there.&nbsp;
+Job done.&nbsp;
+
+	BABYLON    = &lt;get babylon*gt;
+	import { MeshWriter } from "meshwriter";
+	Writer     = MeshWriter(scene, {scale:scale});
+
+If not, then the programmer must get those methods and hand them to MeshWriter.&nbsp;
+
+	methodsObj = &lt;get methods*gt;
+	import { MeshWriter } from "meshwriter";
+	Writer    = MeshWriter(scene, {scale:scale, methods:methodsObj});
+
+### Required BABYLON Methods
+
+Collect these methods and put them on a single object and then hand that to MeshWriter as shown above.&nbsp; 
+
+&bull; Vector2 &nbsp; 
+&bull; Vector3 &nbsp; 
+&bull; Path2 &nbsp; 
+&bull; Curve3 &nbsp; 
+&bull; SolidParticleSystem &nbsp; 
+&bull; PolygonMeshBuilder &nbsp; 
+&bull; CSG &nbsp; 
+&bull; StandardMaterial &nbsp; 
+&bull; Mesh &nbsp; 
 
 ## Custom font packages
 
@@ -203,7 +240,7 @@ If present, MeshWriter will refer to it for these methods, and will not look for
 This will be handy for systems that wish to load BABYLON functions modularly.&nbsp;
 All the methods listed below must be present on the &apos;methods&apos; object or MeshWriter will complain vigorously.
 
-	Methods
+	**Methods**
 	"Vector2", "Vector3", "Path2", "Curve3", "Color3",
 	"SolidParticleSystem", "PolygonMeshBuilder", "CSG",
 	"StandardMaterial", "Mesh"
