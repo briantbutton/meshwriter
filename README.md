@@ -138,10 +138,8 @@ As of last viewing, the total "meshwriter.min.js" file was under 120K.
 ## Loading MeshWriter
 
 Both meshwriter.js and meshwriter.min.js are all-inclusive and should be loadable in any of the normal ways (e.g. AMD); see below for some examples.&nbsp;
-BABYLON should be loaded first.&nbsp;
 In Node, MeshWriter will become a global variable.&nbsp;
 In a browser, MeshWriter will become a global variable 'TYPE'.&nbsp;
-(Inherited naming convention, sorry.)&nbsp;
 If BABYLON is already loaded, then MeshWriter will also attach itself to BABYLON, allowing this call.&nbsp;
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});
@@ -162,9 +160,7 @@ Use jQuery
 	}
 	# use BABYLON.MeshWriter
 
-### In Production
-
-HTML tag
+### In An HTML Tag
 
 	<script type="text/javascript" src="path/meshwriter.min.js"></script>
 	<!-- use BABYLON.MeshWriter or window.TYPE or window.MeshWriter -->
@@ -179,11 +175,7 @@ HTML tag
 	import { MeshWriter } from "meshwriter";
 	Writer    = MeshWriter(scene, {scale:scale});
 
-### Earcut
-
-Earcut is a simple, stable and small utility that is needed by BABYLON.PolygonMeshBuilder, which MeshWriter calls.&nbsp;
-As of version **1.2.0** (December 2019) Earcut is included in meshwriter.min.js.&nbsp;
-There is no need to load Earcut for MeshWriter.
+Please read the section immediately below.
 
 ## Critical Environment Requirement
 
@@ -215,6 +207,31 @@ Collect these methods and put them on a single object and then hand that to Mesh
 &bull; StandardMaterial &nbsp;  
 &bull; Mesh &nbsp;  
 
+### A recommended recipe
+
+A knowledgeable source suggested this incantation to collect all the methods.&nbsp;
+If you find an error in this, please let us know, pronto.
+
+	// Collect the methods
+	import { Vector2, Vector3 } from "@babylonjs/core/Maths/math.vector";
+	import { Path2, Curve3 } from "@babylonjs/core/Maths/math.path";
+	import { Mesh } from "@babylonjs/core/Meshes/mesh";
+	import { CSG } from "@babylonjs/core/Meshes/csg";
+	import { PolygonMeshBuilder} from "@babylonjs/core/Meshes/polygonMesh";
+	import { SolidParticleSystem } from "@babylonjs/core/Particles/solidParticleSystem";
+	import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
+
+	// Put them in an object
+	const methodsObj = {Vector2, Vector3, Path2, Curve3, Color3, SolidParticleSystem, PolygonMeshBuilder, CSG,
+	StandardMaterial, Mesh};
+
+	// Methods assembled, onward! 
+	import { MeshWriter } from "meshwriter";
+	Writer     = MeshWriter(scene, {scale:scale, methods:methodsObj});
+
+This playground puts BABYLON in the &apos;methods&apos; parameter to show you the syntax.&nbsp;
+https://www.babylonjs-playground.com/#PL752W#384
+
 ## Custom font packages
 
 MeshWriter comes with only a few fonts.&nbsp;
@@ -229,21 +246,3 @@ It will convert most common font files into MeshWriter compatible font files.&nb
 
 For the second step, refer to the README in this repo in the 'fonts' directory.&nbsp;
 It will help you create a build with your custom fonts (i.e. a new meshwriter.min.js).
-
-## Methods &mdash; optimizing memory
-
-Until August 2021, MeshWriter required &apos;BABYLON&apos; to be in the global address space.&nbsp;
-MeshWriter would reference this object to retrieve methods like &apos;Color3&apos; and &apos;StandardMaterial&apos;.&nbsp;
-
-In 1.3.0, the optional parameter &apos;methods&apos; was added.&nbsp; 
-If present, MeshWriter will refer to it for these methods, and will not look for &apos;BABYLON&apos;.&nbsp; 
-This will be handy for systems that wish to load BABYLON functions modularly.&nbsp;
-All the methods listed below must be present on the &apos;methods&apos; object or MeshWriter will complain vigorously.
-
-	**Methods**
-	"Vector2", "Vector3", "Path2", "Curve3", "Color3",
-	"SolidParticleSystem", "PolygonMeshBuilder", "CSG",
-	"StandardMaterial", "Mesh"
-
-This playground puts BABYLON in the &apos;methods&apos; parameter to show you the syntax.&nbsp;
-https://www.babylonjs-playground.com/#PL752W#384
