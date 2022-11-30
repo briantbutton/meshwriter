@@ -191,7 +191,7 @@ If not, then the programmer must get those methods and hand them to MeshWriter a
 The required methods are put in a single object ('methodsObj') which is handed to MeshWriter as a parameter.&nbsp; 
 
 	methodsObj = <get methods>
-	import { MeshWriter } from "meshwriter";
+	import MeshWriter from "meshwriter";
 	Writer     = MeshWriter(scene, {scale:scale, methods:methodsObj});
 
 ### Required BABYLON Methods
