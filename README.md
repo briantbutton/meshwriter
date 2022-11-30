@@ -172,7 +172,7 @@ Use jQuery
 
 ### Using Module Syntax
 
-	import { MeshWriter } from "meshwriter";
+	import MeshWriter from "meshwriter";
 	Writer    = MeshWriter(scene, {scale:scale});
 
 Please read the section immediately below.
@@ -222,8 +222,7 @@ If you find an error in this, please let us know, pronto.
 	import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 
 	// Put them in an object
-	const methodsObj = {Vector2, Vector3, Path2, Curve3, Color3, SolidParticleSystem, PolygonMeshBuilder, CSG,
-	StandardMaterial, Mesh};
+	const methodsObj = {Vector2, Vector3, Path2, Curve3, Color3, SolidParticleSystem, PolygonMeshBuilder, CSG, StandardMaterial, Mesh};
 
 	// Methods assembled, onward! 
 	import { MeshWriter } from "meshwriter";
