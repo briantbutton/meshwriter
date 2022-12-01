@@ -144,7 +144,7 @@ If BABYLON is already loaded, then MeshWriter will also attach itself to BABYLON
 
 	Writer = BABYLON.MeshWriter(scene, {scale:scale});
 
-:warning: See important note below about MeshWriter's dependencies (*&apos;Critical Environment Requirement&apos;*) :warning:&nbsp;
+:warning: See important note below about MeshWriter dependencies (**&apos;Critical Environment Requirement&apos;**) :warning:&nbsp;
 
 ### Loading The File In BABYLON Playground
 
